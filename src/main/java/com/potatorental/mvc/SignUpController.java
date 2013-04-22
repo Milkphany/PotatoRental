@@ -34,11 +34,12 @@ public class SignUpController {
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody String signUp(@Valid Customer customer, BindingResult bindingResult,
                                        @ModelAttribute("signupForm") boolean signup,
-                                       Model model, RedirectAttributes redirectAttributes) {
+                                       ModelMap model, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors())
-            return "sadness";
+            return null;
 
-        return "congrats";
+        model.addAttribute("message", "congrats");
+        return "redirect:/signup";
     }
 
 

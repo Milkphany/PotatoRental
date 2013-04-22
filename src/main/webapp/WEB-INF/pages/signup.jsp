@@ -5,12 +5,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
     <title>${title}</title>
 </head>
 <body>
+
+<p>Is: <c:if test="${not empty message}">${messsage}</c:if></p>
 <fieldset>
 <form:form modelAttribute="signupForm" cssClass="table" id="table">
     <form:label path="firstName">
