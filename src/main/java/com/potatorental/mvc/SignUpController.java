@@ -16,7 +16,7 @@ import javax.validation.Valid;
  * Time: 4:52 AM
  */
 @Controller
-@SessionAttributes("signupForm")
+@SessionAttributes("signupSess")
 @RequestMapping("/signup")
 public class SignUpController {
 
@@ -32,7 +32,8 @@ public class SignUpController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String signUp(@Valid Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttrs) {
+    public String signUp(@Valid @ModelAttribute Customer customer,
+                         BindingResult bindingResult, RedirectAttributes redirectAttrs) {
         if (bindingResult.hasErrors()) {
             redirectAttrs.addAttribute("message", "problem");
             return "redirect:signup";

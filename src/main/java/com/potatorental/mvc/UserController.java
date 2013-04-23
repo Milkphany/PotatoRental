@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
 
     @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
-    public String getUser(@PathVariable("userid") String userid, ModelMap modelMap) {
+    public String getUser(@PathVariable String userid, ModelMap modelMap) {
         modelMap.addAttribute("message", userid);
         return "hello";
     }
@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "{userid}/rental/{rentalid}")
-    public String getRentals(@PathVariable("rentalid") int rentalid, ModelMap modelMap) {
+    public String getRentals(@PathVariable int rentalid, ModelMap modelMap) {
         return "hello";
     }
 }
