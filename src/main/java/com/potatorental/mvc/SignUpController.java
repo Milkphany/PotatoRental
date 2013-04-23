@@ -26,21 +26,19 @@ public class SignUpController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getSignUp(ModelMap modelMap) {
-        modelMap.addAttribute("title", "Good day");
+    public String getSignUp(Model model) {
+        model.addAttribute("title", "Good day");
         return "signup";
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody String signUp(@Valid Customer customer, BindingResult bindingResult,
-                                       @ModelAttribute("signupForm") boolean signup,
-                                       ModelMap model, RedirectAttributes redirectAttributes) {
-        if (bindingResult.hasErrors())
-            return null;
+    public String signUp(@Valid Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttrs) {
+        if (bindingResult.hasErrors()) {
+            redirectAttrs.addAttribute("message", "problem");
+            return "redirect:signup";
+        }
 
-        model.addAttribute("message", "congrats");
-        return "redirect:/signup";
+        redirectAttrs.addAttribute("message", "congrats");
+        return "redirect:signup";
     }
-
-
 }
