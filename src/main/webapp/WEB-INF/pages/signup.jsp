@@ -9,11 +9,12 @@
 <html>
 <head>
     <title>${title}</title>
+    <script type="text/javascript" src="<c:url value="/resources/jquery-2.0.0.js" />"></script>
 </head>
 <body>
 
 <p>Is: <c:if test="${not empty message}">${messsage}</c:if></p>
-<form:form modelAttribute="signupForm" cssClass="table" id="table">
+<form:form modelAttribute="signupForm" cssClass="table" id="table" action="signup">
     <form:label path="firstName">
         First Name <form:errors path="firstName" cssClass="error"/>
     </form:label>
@@ -53,9 +54,9 @@
 </form:form>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#form").submit(function() {
+        $("*").submit(function() {
             $.post($(this).attr("action"), $(this).serialize(), function(html) {
-                $("#formsContent").replaceWith(html);
+                $("*").replaceWith(html);
                 $('html, body').animate({ scrollTop: $("#message").offset().top }, 500);
             });
             return false;
