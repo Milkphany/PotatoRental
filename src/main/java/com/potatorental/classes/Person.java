@@ -1,5 +1,6 @@
 package com.potatorental.classes;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.validation.Validator;
 
@@ -14,17 +15,16 @@ import javax.validation.constraints.Size;
  */
 public class Person {
 
-    @Size(min=2, max=64)
+    @Size(min = 2, max = 64, message = "not a valid name")
     private String firstName, lastName;
 
-    @Size(min=3, max=128)
+    @Size(min = 3, max = 128, message = "not a valid address")
     private String address;
 
     @NumberFormat(pattern = "(###) ###-####")
     private int telephone;
 
-    @Min(10000)
-    @Max(99999)
+    @Range(min = 10000, max = 99999, message = "not a valid zipcode")
     private int zipCode;
 
     @NumberFormat(pattern = "##########")

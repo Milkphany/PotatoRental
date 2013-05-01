@@ -10,10 +10,9 @@ import javax.validation.constraints.Pattern;
  */
 public class Customer extends Person {
 
-    @Pattern(regexp=".*@.*")
+    @Pattern(regexp = ".*@.*", message = "not a valid email")
     private String email;
 
-    @NotNull
     private int id, rating;
 
     public String getEmail() {
