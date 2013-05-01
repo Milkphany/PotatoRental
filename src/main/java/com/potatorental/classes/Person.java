@@ -2,10 +2,6 @@ package com.potatorental.classes;
 
 import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.NumberFormat;
-import org.springframework.validation.Validator;
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 /**

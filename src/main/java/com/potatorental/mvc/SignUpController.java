@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
@@ -26,21 +27,23 @@ public class SignUpController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public void signup() {
-
+    public String getSignUp(Model model) {
+        return "signup";
     }
-//    public String getSignUp(Model model) {
-//        model.addAttribute("title", "Good day");
-//        return "signup";
-//    }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String signUp(@Valid @ModelAttribute Customer customer,
-                         BindingResult bindingResult, RedirectAttributes redirectAttrs) {
-        if (bindingResult.hasErrors())
+    public String signUp(@Valid @ModelAttribute("signupForm") Customer customer, BindingResult bindingResult,
+                         Model model, RedirectAttributes redirectAttrs, SessionStatus sessionStatus) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("message", "There is an error with the form submission");
             return null;
+        }
+        sessionStatus.setComplete();
 
-        redirectAttrs.addAttribute("message", "congrats");
-        return "redirect:signup";
+        return "redirect:/";
+    }
+
+    private void authenticateUser() {
+
     }
 }
