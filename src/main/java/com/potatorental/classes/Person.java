@@ -1,8 +1,10 @@
 package com.potatorental.classes;
 
-import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.NumberFormat;
+import org.springframework.validation.Validator;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 /**
@@ -21,7 +23,8 @@ public class Person {
     @NumberFormat(pattern = "(###) ###-####")
     private int telephone;
 
-    @Range(min = 10000, max = 99999)
+    @Min(10000)
+    @Max(99999)
     private int zipCode;
 
     @NumberFormat(pattern = "##########")

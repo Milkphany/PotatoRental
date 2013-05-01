@@ -3,9 +3,9 @@
   Date: 4/22/13
   Time: 12:50 AM
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page session="false" %>
 <html>
 <head>
     <title>${title}</title>
@@ -14,7 +14,7 @@
 <body>
 
 <p>Is: <c:if test="${not empty message}">${messsage}</c:if></p>
-<form:form modelAttribute="signupForm" cssClass="table" id="table" action="signup">
+<form:form modelAttribute="signupForm" cssClass="table" id="table">
     <form:label path="firstName">
         First Name <form:errors path="firstName" cssClass="error"/>
     </form:label>
@@ -52,16 +52,5 @@
 
     <button type="submit" >Submit</button>
 </form:form>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("*").submit(function() {
-            $.post($(this).attr("action"), $(this).serialize(), function(html) {
-                $("*").replaceWith(html);
-                $('html, body').animate({ scrollTop: $("#message").offset().top }, 500);
-            });
-            return false;
-        });
-    });
-</script>
 </body>
 </html>

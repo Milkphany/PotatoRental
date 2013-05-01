@@ -16,8 +16,8 @@ import javax.validation.Valid;
  * Time: 4:52 AM
  */
 @Controller
-@SessionAttributes("signupSess")
 @RequestMapping("/signup")
+@SessionAttributes("signupForm")
 public class SignUpController {
 
     @ModelAttribute("signupForm")
@@ -26,18 +26,19 @@ public class SignUpController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getSignUp(Model model) {
-        model.addAttribute("title", "Good day");
-        return "signup";
+    public void signup() {
+
     }
+//    public String getSignUp(Model model) {
+//        model.addAttribute("title", "Good day");
+//        return "signup";
+//    }
 
     @RequestMapping(method = RequestMethod.POST)
     public String signUp(@Valid @ModelAttribute Customer customer,
                          BindingResult bindingResult, RedirectAttributes redirectAttrs) {
-        if (bindingResult.hasErrors()) {
-            redirectAttrs.addAttribute("message", "problem");
-            return "redirect:signup";
-        }
+        if (bindingResult.hasErrors())
+            return null;
 
         redirectAttrs.addAttribute("message", "congrats");
         return "redirect:signup";
