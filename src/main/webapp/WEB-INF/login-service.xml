@@ -8,7 +8,7 @@
             <value>com.mysql.jdbc.Driver</value>
         </property>
         <property name="url">
-            <value>jdbc:mysql://25.105.234.142:3306/potatocat</value>
+            <value>jdbc:mysql://localhost:3306/potatocat</value>
         </property>
         <property name="username">
             <value>spring</value>
