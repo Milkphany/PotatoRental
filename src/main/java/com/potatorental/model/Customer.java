@@ -1,7 +1,4 @@
-package com.potatorental.classes;
-
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+package com.potatorental.model;
 
 /**
  * User: Milky
@@ -10,18 +7,7 @@ import javax.validation.constraints.Pattern;
  */
 public class Customer extends Person {
 
-    @Pattern(regexp = ".*@.*", message = "not a valid email")
-    private String email;
-
     private int id, rating;
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public int getId() {
         return id;

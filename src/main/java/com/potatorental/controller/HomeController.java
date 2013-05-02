@@ -1,4 +1,4 @@
-package com.potatorental.mvc;
+package com.potatorental.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,7 +12,7 @@ public class HomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) {
         model.addAttribute("message", "It happens easily...");
-        return "hello";
+        return "userprofile";
     }
 
     /*@RequestMapping(value = "signup", method = RequestMethod.POST)

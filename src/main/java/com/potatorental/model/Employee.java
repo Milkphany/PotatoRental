@@ -1,4 +1,4 @@
-package com.potatorental.classes;
+package com.potatorental.model;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.joda.time.LocalDate;

@@ -1,9 +1,8 @@
-package com.potatorental.mvc;
+package com.potatorental.controller;
 
-import com.potatorental.classes.Customer;
+import com.potatorental.model.Customer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
@@ -40,7 +39,8 @@ public class SignUpController {
         }
         sessionStatus.setComplete();
 
-        return "redirect:/";
+        authenticateUser();
+        return "redirect:/user/{userid}";
     }
 
     private void authenticateUser() {
