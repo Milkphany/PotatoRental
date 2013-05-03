@@ -1,0 +1,295 @@
+/* 
+    Document   : potato
+    Created on : Apr 4, 2013, 4:11:08 PM
+    Author     : Monika Tuchowska
+    
+*/
+
+@font-face {
+    font-family:"Steinem-Italic";
+    src:url("STEINEMI.eot?") format("eot"),url("STEINEMI.woff") format("woff"),url("STEINEMI.ttf") format("truetype"),url("STEINEMI.svg#Steinem-Italic") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+
+body, html {
+    background-color: #eee;
+    font-family: calibri;
+    height: 100%;
+    margin-top: 0;
+    
+}
+
+#wrap {
+    width: 85%;
+    min-width: 860px;
+    margin-left: auto;
+    margin-right:auto;
+    height:100%;
+    min-height: 100%;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+}
+
+
+#header {
+    position:fixed;
+    top:0;
+    z-index: 999;
+    overflow: auto;
+}
+
+#subheader {
+    background-color: #125f94;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.55);
+    color:white;
+    min-width: 100%;
+    left:0;
+    position:fixed;
+    display:none;
+    padding-top: 95px;
+    padding-bottom: 13px;
+    padding-left: 300px;
+    margin-bottom: 100px;
+    font-family: "Lato", sans-serif;
+    font-size: 10pt;
+
+}
+
+#subheader a {
+    color: #a7d6d0;
+    text-decoration: none;
+}
+
+#subheader a:hover {
+    color:white;
+}
+
+.movies-links, .queue-links, .genres-links{display:none}
+
+#logo {
+    float:left;
+    padding: 13px 30px 15px 50px;
+}
+
+#rightside {
+    z-index: 1000;
+    position:absolute;
+    padding-top: 20px;
+    right:20px;
+}
+
+#topnav {
+    font-family: "Lato", sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    color: #3a767b;
+    padding-bottom: 10px;
+    float:right;    
+}
+
+#topnav a {
+    color: #3a767b;
+    padding: 3px;
+    text-decoration:none}
+
+#topnav a:hover, .content a:hover {
+    color: #0a919c;}
+
+.content a{color: #00caa6; text-decoration:none}
+
+
+#mainnav {
+    background-color: #00caa6;
+
+    text-align: right;
+    font-family: "Steinem-Italic", sans-serif;
+    font-size: 16pt;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-right:20px;
+    height: 80px;
+
+}
+
+h1 {
+    font-family: "Steinem-Italic", sans-serif;
+    font-size: 16pt;
+    text-shadow: 0px 1px 3px #bbb;
+    
+}
+
+h2, #firstelem {
+    font-family: "Lato", sans-serif;
+    font-weight:bold;
+    font-size: 12pt;
+
+}
+
+
+#main {
+    padding: 30px;
+    background-color: white;
+    color: #111;
+
+}
+
+#pagebody {
+    padding-top: 100px;
+    width:860px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#signuppagebody {
+    padding-top: 100px;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#moviepagebody {
+    padding: 100px 30px 30px 30px;
+    width: 860px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.breadcrumb {
+    /*centering*/
+    margin-top: 0;
+    width: 100%;
+    display: inline;
+    text-align: center;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    display: inline;
+    padding: 30px 20px 13px 20px;
+    line-height: 40px;
+    color: white;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    float:left;
+    text-shadow: 0px 1px 3px #bbb;}
+
+.flat a, .flat a:after {
+    color: #3a767b;
+    transition: all 0.5s;
+}
+.flat a:before {
+    box-shadow: 0 0 0 1px #ccc;
+}
+.flat a:hover, 
+.flat a:hover:after, .flat a.active:after{
+
+    color: #eee;
+    box-shadow: inset 0px -10px #125f94,
+        inset 0px -85px #0a919c;
+    text-shadow: 0px 1px 3px #000;
+}
+
+#active {
+    box-shadow: inset 0px -10px #3a767b;
+
+}
+
+#active:hover {
+    box-shadow: inset 0px -10px #125f94,
+        inset 0px -85px #0a919c;
+
+}
+
+
+.cf:before, .cf:after{
+    content:"";
+}
+
+.cf:after{
+    clear:both;
+}
+
+.cf{
+    zoom:1;
+}  
+
+
+
+
+.image_carousel {
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:white;
+
+
+}
+.image_carousel img {
+    padding: 9px;
+    margin: 7px;
+    float: left;
+    height: 350px;
+    width: 246px;
+
+}
+
+.pagination {
+    text-align: center;
+}
+
+#bprev {
+    height: 350px;
+    width: 90px;
+    position:relative;
+}
+
+.movieposter {
+    float:left;
+    padding-right: 20px;
+
+}
+
+.content{
+    background-color:white;
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:justify;
+    padding: 20px;
+}
+
+#potatocat{padding:40px}
+
+
+.contentsignup {
+    background-color:white;
+    width: 350px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:justify;
+    float:right;
+    padding: 5px;
+}
+
+
+dt, dd {
+    border-bottom: 0; 
+}
+dd {
+    border-top: 0; 
+    margin-left:0;
+    padding-top: 3px;
+}
+
+
+
+
