@@ -71,7 +71,7 @@ form input:focus {
     padding: 0;
 }
 
-.form-login button, .form-signup button {
+.form-login button {
     font-family: "Steinem-Italic", sans-serif;
     overflow: visible;
     border: 0;
@@ -82,6 +82,23 @@ form input:focus {
     background: #00caa6;     
     margin:4px;
 } 
+
+.form-signup button {
+    font-family: "Lato", sans-serif;
+    font-size: 12pt;
+    overflow: visible;
+    border: 0;
+    cursor: pointer;
+    height: 50px;
+    width: 320px;
+    color: #fff;
+    background-color: #00caa6;     
+    margin:4px;
+    border: 1px solid #ddd;
+    
+} 
+
+.form-signup button:hover {background-color: #0a919c;}
 
 .form-login input {
     width: 200px;
@@ -108,12 +125,38 @@ form input:focus {
     color: #999;
     font-size: 12pt;
     border: 0;
-    background: #eee;     
+    background: #eee;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+#name {
+    width: 137px;
+    height: 30px;
+    margin:4px;
+    padding: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    display:inline;
+    font-family: "Lato", sans-serif;
+    color: #999;
+    font-size: 12pt;
+    border: 0;
+    background: #eee; 
+    border: 1px solid #ddd;
+    background-color: white;
 }
 
 
-.form-login, .form-signup {
+.form-login {
     text-align: center;
     margin-left:auto;
     margin-right:auto;
+}
+
+.form-signup {
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    
 }
