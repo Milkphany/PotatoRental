@@ -16,12 +16,17 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping("/login*")
-@SessionAttributes("login")
+@SessionAttributes("loginForm")
 public class LoginController {
 
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String defaultPage() {
         return "login";
+    }
+
+    @RequestMapping(value = "loginCheck", method = RequestMethod.POST)
+    public ModelAndView homeLogin() {
+        return new ModelAndView("login", "message", "came here form home");
     }
 
     @RequestMapping(value = "loginfailed", method = RequestMethod.GET)

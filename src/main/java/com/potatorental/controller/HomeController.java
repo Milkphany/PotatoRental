@@ -11,8 +11,7 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) {
-        model.addAttribute("message", "It happens easily...");
-        return "userprofile";
+        return "home";
     }
 
     /*@RequestMapping(value = "signup", method = RequestMethod.POST)

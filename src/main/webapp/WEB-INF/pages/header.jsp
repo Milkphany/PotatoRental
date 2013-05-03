@@ -1,10 +1,13 @@
-<div id ="rightside">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<div id="rightside">
     <div id="topnav">
-        <a id ="loginlink" href="#">Log In</a> |
+        <a id="loginlink" href="#">Log In</a> |
         <a href="#">Sign Out</a> |
-        <a href="help.jsp">Help</a>
+        <a href="help">Help</a>
     </div>
     <br/>
+
     <form class="form-wrapper cf">
         <input type="text" placeholder="Search for movies, actors, or genres..." required>
         <button type="submit">Search</button>
@@ -13,9 +16,8 @@
 </div>
 
 <div id="header">
-
-    <div id ="mainnav" class="breadcrumb flat">
-        <a id ="logo" href="home.jsp"><img src="images/logo4.png" /></a>
+    <div id="mainnav" class="breadcrumb flat">
+        <a id="logo" href="/"><img src="/images/logo4.png"/></a>
 
         <a class="headermenu" href="#" id="inactive">Browse</a>
         <a class="headermenu" href="#" id="inactive">Queue</a>
@@ -23,13 +25,19 @@
     </div>
 </div>
 
-<div id ="subheader"></div>
+<div id="subheader"></div>
 
 <div id="login">
-    <form class="form-login">
+    <%--<form class="form-login" action="checkLogin" method="post">
         <input type="text" placeholder="Email Address">
         <input type="password" placeholder="Password">
-
         <button type="submit">Submit</button>
-    </form>
+    </form>--%>
+    <form:form modelAttribute="loginForm" cssClass="form-login" method="post" action="loginCheck">
+        <input type="text" name="username" placeholder="Email Address"/>
+        <input type="text" name="password" placeholder="Password"/>
+        <button type="submit">Submit</button>
+    </form:form>
 </div>
+
+<div id="padheader" />

@@ -137,14 +137,12 @@ h2, #firstelem {
 }
 
 #pagebody {
-    padding-top: 100px;
     width:860px;
     margin-left:auto;
     margin-right:auto;
 }
 
 #signuppagebody {
-    padding-top: 100px;
     width:100%;
     margin-left:auto;
     margin-right:auto;
@@ -155,6 +153,10 @@ h2, #firstelem {
     width: 860px;
     margin-left:auto;
     margin-right:auto;
+}
+
+#padheader {
+    padding-top: 100px;
 }
 
 .breadcrumb {

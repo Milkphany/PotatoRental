@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Sign up</title>
-    <script type="text/javascript" src="<c:url value="/resources/jquery-2.0.0.js" />"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/jquery-2.0.0.js" />"></script>
 </head>
 <body>
 
