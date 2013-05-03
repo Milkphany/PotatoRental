@@ -21,13 +21,13 @@ public class Person {
     private String address;
 
     @NumberFormat(pattern = "(###) ###-####")
-    private int telephone;
+    private Integer telephone;
 
     @Range(min = 10000, max = 99999, message = "not a valid zipcode")
-    private int zipCode;
+    private Integer zipCode;
 
     @NumberFormat(pattern = "##########")
-    private int ssn;
+    private Integer ssn;
 
     @Pattern(regexp = ".*@.*", message = "not a valid email")
     private String email;
@@ -75,27 +75,27 @@ public class Person {
         this.address = address;
     }
 
-    public int getTelephone() {
+    public Integer getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(Integer telephone) {
         this.telephone = telephone;
     }
 
-    public int getZipCode() {
+    public Integer getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(Integer zipCode) {
         this.zipCode = zipCode;
     }
 
-    public int getSsn() {
+    public Integer getSsn() {
         return ssn;
     }
 
-    public void setSsn(int ssn) {
+    public void setSsn(Integer ssn) {
         this.ssn = ssn;
     }
 }
