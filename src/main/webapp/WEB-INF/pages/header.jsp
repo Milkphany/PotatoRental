@@ -1,9 +1,16 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div id="rightside">
     <div id="topnav">
-        <a id="loginlink" href="#">Log In</a> |
-        <a href="#">Sign Out</a> |
+        <sec:authorize access="isAuthenticated()">
+            <sec:authentication property="principal.username" var="userid" />
+            <a id="userid" href="user/${userid}">${userid}</a> |
+        </sec:authorize>
+
+        <sec:authorize access="isAnonymous()"><a id="loginlink" href="#">Log In</a> |</sec:authorize>
+        <sec:authorize access="isAuthenticated()"><a href="#">Sign Out</a> |</sec:authorize>
         <a href="help">Help</a>
     </div>
     <br/>
@@ -21,7 +28,6 @@
 
         <a class="headermenu" href="#" id="inactive">Browse</a>
         <a class="headermenu" href="#" id="inactive">Queue</a>
-
     </div>
 </div>
 
@@ -40,4 +46,4 @@
     </form:form>
 </div>
 
-<div id="padheader" />
+<div id="padheader"></div>

@@ -23,6 +23,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 
 

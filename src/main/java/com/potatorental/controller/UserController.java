@@ -56,7 +56,7 @@ public class UserController {
 
     @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
     public String getUser(@PathVariable String userid, ModelMap modelMap) {
-
+        modelMap.addAttribute("message", "Your user id is " + userid);
         return "userprofile";
     }
 

@@ -25,7 +25,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "loginfailed", method = RequestMethod.GET)
-    public ModelAndView failLogin() {
-        return new ModelAndView("login", "message", "there is errors, not");
+    public ModelAndView failLogin(Model model) {
+        return new ModelAndView("login", "message", "there is errors, not okay");
     }
 }

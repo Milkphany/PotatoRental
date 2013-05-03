@@ -21,6 +21,8 @@
         <input type="text" name="password" placeholder="Password"/>
         <input type="submit"/>
     </form:form>
+    ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+    </br>
     ${message} is ready!
 </div>
 </body>
