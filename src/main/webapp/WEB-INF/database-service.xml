@@ -8,5 +8,7 @@
         <property name="jdbcUrl" value="jdbc:mysql://25.105.234.142:3306/potatocat" />
         <property name="user"  value="spring" />
         <property name="password"  value="potato" />
+
+        <property name="maxIdleTime" value="300" />
     </bean>
 </beans>
