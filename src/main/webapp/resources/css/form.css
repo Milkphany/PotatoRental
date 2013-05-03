@@ -5,7 +5,6 @@
     background: rgba(0,0,0,.2);
     float:right;
     position: relative;
-
 }
 
 /* Form text input */
@@ -146,7 +145,6 @@ form input:focus {
     border: 1px solid #ddd;
     background-color: white;
 }
-
 
 .form-login {
     text-align: center;
