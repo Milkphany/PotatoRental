@@ -27,28 +27,34 @@ public class PersonDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(final String email) throws UsernameNotFoundException {
 
-        System.out.println("USER NAME" + email);
         String sql = "select email, pass from person where email = ?";
 
         jdbcTemplate = new JdbcTemplate(dataSource);
+        Person person = jdbcTemplate.queryForObject(sql, new PersonMapper(), email);
 
         ArrayList<GrantedAuthority> list = new ArrayList<>();
+
         list.add(new GrantedAuthority() {
             @Override
             public String getAuthority() {
                 return "ROLE_USER";
             }
         });
-        Person person = jdbcTemplate.queryForObject(sql, new RowMapper<Person>() {
-            @Override
-            public Person mapRow(ResultSet resultSet, int i) throws SQLException {
-                Person person1 = new Person();
-                person1.setEmail(resultSet.getString("email"));
-                person1.setPassword(resultSet.getString("pass"));
-                return person1;
-            }
-        }, email);
+
         return new User(person.getEmail(), person.getPassword(), list);
+    }
+
+    private class PersonMapper implements RowMapper<Person> {
+
+        @Override
+        public Person mapRow(ResultSet resultSet, int i) throws SQLException {
+            Person person = new Person();
+            person.setEmail(resultSet.getString("email"));
+            person.setPassword(resultSet.getString("password"));
+            person.setSsn(resultSet.getInt("ssn"));
+
+            return person;
+        }
     }
 
     public void setDataSource(DataSource dataSource) {

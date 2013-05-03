@@ -156,5 +156,24 @@ form input:focus {
     text-align: center;
     margin-left:auto;
     margin-right:auto;
-    
+}
+
+.error {
+    color: blue;
+}
+
+.form-signup input.error {
+    border: 2px solid red;
+}
+
+#name.error {
+    border: 2px solid red;
+}
+
+.errorblock{
+    color: #000;
+    background-color: #ffEEEE;
+    border: 2px solid #ff0000;
+    padding:8px;
+    margin:16px;
 }

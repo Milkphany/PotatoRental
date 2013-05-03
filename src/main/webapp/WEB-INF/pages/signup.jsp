@@ -17,8 +17,19 @@
     <c:import url="header.jsp"/>
     <div id="signuppagebody">
         <div class="contentsignup">
-
             <form:form modelAttribute="signupForm" cssClass="form-signup" id="form-table" action="signup">
+                <c:if test="${not empty message}">
+                    <div class="errorblock">
+                        <div class="error">Error: ${message}</div>
+                        <form:errors path="firstName" element="div"/>
+                        <form:errors path="lastName" element="div"/>
+                        <form:errors path="email" element="div"/>
+                        <form:errors path="address" element="div"/>
+                        <form:errors path="zipCode" element="div"/>
+                        <form:errors path="telephone" element="div"/>
+                        <form:errors path="ssn" element="div"/>
+                    </div>
+                </c:if>
 
                 <form:input path="firstName" cssErrorClass="error" id="name" type="text" placeholder="First Name"/>&nbsp;
                 <form:input path="lastName" cssErrorClass="error" id="name" type="text" placeholder="Last Name"/>

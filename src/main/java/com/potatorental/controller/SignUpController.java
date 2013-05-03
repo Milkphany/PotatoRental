@@ -35,7 +35,7 @@ public class SignUpController {
                          Model model, RedirectAttributes redirectAttrs, SessionStatus sessionStatus) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("message", "There is an error with the form submission");
-            return null;
+            return "signup";
         }
         sessionStatus.setComplete();
 
