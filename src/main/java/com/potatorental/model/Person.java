@@ -14,25 +14,26 @@ import javax.validation.constraints.Size;
  */
 public class Person {
 
-    @Size(min = 2, max = 64, message = "not a valid name")
+    @Size(min = 2, max = 64, message = "Name is not valid")
     private String firstName, lastName;
 
-    @Size(min = 3, max = 128, message = "not a valid address")
+    @Size(min = 3, max = 128, message = "Address is not valid")
     private String address;
 
     @NumberFormat(pattern = "(###) ###-####")
     private Integer telephone;
 
-    @Range(min = 10000, max = 99999, message = "not a valid zipcode")
+    @Range(min = 10000, max = 99999, message = "Zipcode is not valid")
     private Integer zipCode;
 
+    @NotNull(message = "SSN cannot be empty")
     @NumberFormat(pattern = "##########")
     private Integer ssn;
 
-    @Pattern(regexp = ".*@.*", message = "not a valid email")
+    @Pattern(regexp = ".*@.*", message = "Email is not valid")
     private String email;
 
-    @NotNull
+    @NotNull(message = "Password cannot be empty")
     private String password;
 
     public String getPassword() {

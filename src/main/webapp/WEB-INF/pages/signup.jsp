@@ -28,6 +28,7 @@
                         <form:errors path="zipCode" element="div"/>
                         <form:errors path="telephone" element="div"/>
                         <form:errors path="ssn" element="div"/>
+                        <form:errors path="password" element="div"/>
                     </div>
                 </c:if>
 
@@ -38,6 +39,8 @@
                 <form:input path="zipCode" cssErrorClass="error" type="text" placeholder="Zip Code"/>
                 <form:input path="telephone" cssErrorClass="error" type="text" placeholder="Telephone Number"/>
                 <form:input path="ssn" cssErrorClass="error" type="text" placeholder="Social Security Number"/>
+                <form:password path="password" cssErrorClass="error" placeholder="Password"/>
+                <form:password path="password" cssErrorClass="error" placeholder="Confirm Password"/>
 
                 <button type="submit">Sign Up</button>
             </form:form>
