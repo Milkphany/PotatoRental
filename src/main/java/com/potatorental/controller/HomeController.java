@@ -14,9 +14,4 @@ public class HomeController {
     public String printWelcome(ModelMap model) {
         return "home";
     }
-
-    /*@RequestMapping(value = "signup", method = RequestMethod.POST)
-    public String signUp(@RequestParam(value = "hello")) {
-        return "hello";
-    }*/
 }

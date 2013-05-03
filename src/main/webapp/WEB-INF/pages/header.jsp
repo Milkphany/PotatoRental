@@ -11,7 +11,7 @@
 
         <sec:authorize access="isAnonymous()"><a id="loginlink" href="#">Log In</a> |</sec:authorize>
         <sec:authorize access="isAnonymous()"><a id="signuplink" href="signup">Sign up</a> |</sec:authorize>
-        <sec:authorize access="isAuthenticated()"><a href="#">Sign Out</a> |</sec:authorize>
+        <sec:authorize access="isAuthenticated()"><a href="logout">Log Out</a> |</sec:authorize>
         <a href="help">Help</a>
     </div>
     <br/>

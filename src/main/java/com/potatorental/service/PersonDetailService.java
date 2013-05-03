@@ -27,7 +27,7 @@ public class PersonDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(final String email) throws UsernameNotFoundException {
 
-        String sql = "select email, pass from person where email = ?";
+        String sql = "select email, pass, ssn from person where email = ?";
 
         jdbcTemplate = new JdbcTemplate(dataSource);
         Person person = jdbcTemplate.queryForObject(sql, new PersonMapper(), email);
@@ -50,7 +50,7 @@ public class PersonDetailService implements UserDetailsService {
         public Person mapRow(ResultSet resultSet, int i) throws SQLException {
             Person person = new Person();
             person.setEmail(resultSet.getString("email"));
-            person.setPassword(resultSet.getString("password"));
+            person.setPassword(resultSet.getString("pass"));
             person.setSsn(resultSet.getInt("ssn"));
 
             return person;

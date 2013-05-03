@@ -28,4 +28,9 @@ public class LoginController {
     public ModelAndView failLogin(Model model) {
         return new ModelAndView("login", "message", "there is errors, not okay");
     }
+
+/*    @RequestMapping(value = "logout")
+    public String logout() {
+        return "login";
+    }*/
 }
