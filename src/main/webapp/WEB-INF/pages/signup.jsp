@@ -17,15 +17,14 @@
             <div id="signuppagebody">
                 <div class="contentsignup">
                     <form:form modelAttribute="signupForm" cssClass="form-signup" id="form-table" action="signup">
-                        <form:input path="firstName" id ="name" type="text" placeholder="First Name" />&nbsp;
-                        <form:input path="lastName" id ="name" type="text" placeholder="Last Name" />
-                        <form:input path="email" type="text" placeholder="Email Address" />
-                        <form:input path="address" type="text" placeholder="Address" />
-                        <form:input path="zipCode" type="text" placeholder="Zip Code" />
-                        <form:input path="telephone" type="text" placeholder="Telephone Number" />
-                        <form:input path="ssn" type="text" placeholder="Social Security Number" />
-                        
 
+                        <form:input path="firstName" cssErrorClass="error" id ="name" type="text" placeholder="First Name" />&nbsp;
+                        <form:input path="lastName" cssErrorClass="error" id ="name" type="text" placeholder="Last Name" />
+                        <form:input path="email" cssErrorClass="error" type="text" placeholder="Email Address" />
+                        <form:input path="address" cssErrorClass="error" type="text" placeholder="Address" />
+                        <form:input path="zipCode" cssErrorClass="error" type="text" placeholder="Zip Code" />
+                        <form:input path="telephone" cssErrorClass="error" type="text" placeholder="Telephone Number" />
+                        <form:input path="ssn" cssErrorClass="error" type="text" placeholder="Social Security Number" />
 
                         <button type="submit">Sign Up</button>
                     </form:form>
