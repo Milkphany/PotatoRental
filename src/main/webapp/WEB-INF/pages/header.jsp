@@ -15,7 +15,7 @@
 <div id="header">
 
     <div id ="mainnav" class="breadcrumb flat">
-        <a id ="logo" href="index.jsp"><img src="images/logo4.png" /></a>
+        <a id ="logo" href="home.jsp"><img src="images/logo4.png" /></a>
 
         <a class="headermenu" href="#" id="inactive">Browse</a>
         <a class="headermenu" href="#" id="inactive">Queue</a>

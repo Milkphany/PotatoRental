@@ -24,9 +24,9 @@
 
     <authentication-manager>
         <authentication-provider >
-            <!--<user-service>
-                <user name="jas" password="123" authorities="ROLE_USER" />
-            </user-service>-->
+            <!--<user-service>-->
+                <!--<user name="jas" password="123" authorities="ROLE_USER" />-->
+            <!--</user-service>-->
             <jdbc-user-service data-source-ref="dataSource"
                                users-by-username-query="select email, pass, from person where email = ?" />
         </authentication-provider>

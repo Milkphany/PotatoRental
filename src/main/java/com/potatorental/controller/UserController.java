@@ -25,41 +25,41 @@ import java.sql.SQLException;
 public class UserController {
 
     private DataSource dataSource;
+//
+//    @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
+//    public String getUser(@PathVariable String userid, ModelMap modelMap) {
+//        String name = "default";
+//        DriverManagerDataSource db = new DriverManagerDataSource();
+//        db.setDriverClassName("com.mysql.jdbc.Driver");
+//        db.setUrl("jdbc:mysql://25.105.234.142:3306/potatocat");
+//        db.setUsername("spring");
+//        db.setPassword("potato");
+//        dataSource = db;
+//        Connection connection = null;
+//        try {
+//            connection = dataSource.getConnection();
+//            PreparedStatement ps = connection.prepareStatement("select * from person where lastname = ?");
+//            ps.setString(1, userid);
+//            ResultSet rs = ps.executeQuery();
+//
+//            if (rs.next())
+//                name = rs.getString("firstname");
+//            else
+//                name = "failure";
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//
+//        modelMap.addAttribute("message", name);
+//        return "userprofile";
+//    }
 
     @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
     public String getUser(@PathVariable String userid, ModelMap modelMap) {
-        String name = "default";
-        DriverManagerDataSource db = new DriverManagerDataSource();
-        db.setDriverClassName("com.mysql.jdbc.Driver");
-        db.setUrl("jdbc:mysql://25.105.234.142:3306/potatocat");
-        db.setUsername("spring");
-        db.setPassword("potato");
-        dataSource = db;
-        Connection connection = null;
-        try {
-            connection = dataSource.getConnection();
-            PreparedStatement ps = connection.prepareStatement("select * from person where lastname = ?");
-            ps.setString(1, userid);
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next())
-                name = rs.getString("firstname");
-            else
-                name = "failure";
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        modelMap.addAttribute("message", name);
-        return "userprofile";
-    }
-/*
-    @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
-    public String getUser(@PathVariable String userid, ModelMap modelMap) {
 
         return "userprofile";
     }
-*/
+
     @RequestMapping(value = "{userid}/rental", method = RequestMethod.GET)
     public String getRental(ModelMap modelMap) {
         return "userprofile";
