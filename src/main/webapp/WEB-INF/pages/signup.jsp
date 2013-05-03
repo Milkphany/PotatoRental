@@ -9,57 +9,52 @@
 <html>
 <head>
     <title>Sign up</title>
-    <script type="text/javascript" src="<c:url value="/resources/js/jquery-2.0.0.js" />"></script>
+    <c:import url="head.jsp"/>
 </head>
 <body>
+<c:import url="header.jsp"/>
+<div>
+    <fieldset>
+        <form:form modelAttribute="signupForm" cssClass="table" id="table">
+            <form:label path="firstName">First Name</form:label>
+            <form:input path="firstName"/>
+            <form:errors path="firstName" cssClass="error"/>
+            </br>
 
-<p>Is: ${message}</p>
-<fieldset>
-    <form:form modelAttribute="signupForm" cssClass="table" id="table">
-        <form:label path="firstName">
-            First Name <form:errors path="firstName" cssClass="error"/>
-        </form:label>
-        <form:input path="firstName" />
-        </br>
+            <form:label path="lastName">Last Name</form:label>
+            <form:input path="lastName"/>
+            <form:errors path="lastName" cssClass="error"/>
+            </br>
 
-        <form:label path="lastName">
-            Last Name <form:errors path="lastName" cssClass="error"/>
-        </form:label>
-        <form:input path="lastName" />
-        </br>
+            <form:label path="address">Address</form:label>
+            <form:input path="address"/>
+            <form:errors path="address" cssClass="error"/>
+            </br>
 
-        <form:label path="address">
-            Address <form:errors path="address" cssClass="error"/>
-        </form:label>
-        <form:input path="address"/>
-        </br>
+            <form:label path="zipCode">ZipCode</form:label>
+            <form:input path="zipCode"/>
+            <form:errors path="zipCode" cssClass="error"/>
+            </br>
 
-        <form:label path="zipCode">
-            ZipCode <form:errors path="zipCode" cssClass="error" />
-        </form:label>
-        <form:input path="zipCode" />
-        </br>
+            <form:label path="telephone">Telephone</form:label>
+            <form:input path="telephone"/>
+            <form:errors path="telephone" cssClass="error"/>
 
-        <form:label path="telephone">
-            Telephone <form:errors path="telephone" cssClass="error"/>
-        </form:label>
-        <form:input path="telephone" />
-        </br>
+            </br>
 
-        <form:label path="ssn">
-            Social Security Number <form:errors path="ssn" cssClass="error"/>
-        </form:label>
-        <form:input path="ssn" />
-        </br>
+            <form:label path="ssn">Social Security Number</form:label>
+            <form:input path="ssn"/>
+            <form:errors path="ssn" cssClass="error"/>
+            </br>
 
-        <form:label path="email">
-            Email <form:errors path="email" cssClass="error"/>
-        </form:label>
-        <form:input path="email" />
-        </br>
+            <form:label path="email">Email</form:label>
+            <form:input path="email"/>
+            <form:errors path="email" cssClass="error"/>
+            </br>
 
-        <button type="submit" >Submit</button>
-    </form:form>
-</fieldset>
+            <button type="submit">Submit</button>
+        </form:form>
+    </fieldset>
+</div>
 </body>
 </html>

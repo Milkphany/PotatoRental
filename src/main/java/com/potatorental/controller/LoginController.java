@@ -24,13 +24,8 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(value = "loginCheck", method = RequestMethod.POST)
-    public ModelAndView homeLogin() {
-        return new ModelAndView("login", "message", "came here form home");
-    }
-
     @RequestMapping(value = "loginfailed", method = RequestMethod.GET)
     public ModelAndView failLogin() {
-        return new ModelAndView("login", "message", "errors bro");
+        return new ModelAndView("login", "message", "there is errors, not");
     }
 }
