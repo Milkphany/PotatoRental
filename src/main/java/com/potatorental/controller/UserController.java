@@ -26,7 +26,7 @@ public class UserController {
 
     private DataSource dataSource;
 
-    /*@RequestMapping(value = "/{userid}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
     public String getUser(@PathVariable String userid, ModelMap modelMap) {
         String name = "default";
         DriverManagerDataSource db = new DriverManagerDataSource();
@@ -52,14 +52,14 @@ public class UserController {
 
         modelMap.addAttribute("message", name);
         return "userprofile";
-    }*/
-
+    }
+/*
     @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
     public String getUser(@PathVariable String userid, ModelMap modelMap) {
 
         return "userprofile";
     }
-
+*/
     @RequestMapping(value = "{userid}/rental", method = RequestMethod.GET)
     public String getRental(ModelMap modelMap) {
         return "userprofile";
