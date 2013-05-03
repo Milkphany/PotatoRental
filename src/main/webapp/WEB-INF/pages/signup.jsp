@@ -9,52 +9,36 @@
 <html>
 <head>
     <title>Sign up</title>
-    <c:import url="head.jsp"/>
+    <jsp:include page="head.jsp"/>
 </head>
-<body>
-<c:import url="header.jsp"/>
-<div>
-    <fieldset>
-        <form:form modelAttribute="signupForm" cssClass="table" id="table">
-            <form:label path="firstName">First Name</form:label>
-            <form:input path="firstName"/>
-            <form:errors path="firstName" cssClass="error"/>
-            </br>
+    <body style="background:url('') no-repeat fixed center;">
+        <div id="wrap">
+            <jsp:include page="header.jsp"/>
+            <div id="signuppagebody">
+                <div class="contentsignup">
+                    <form:form modelAttribute="signupForm" cssClass="form-signup" id="form-table" action="signup">
+                        <form:input path="firstName" id ="name" type="text" placeholder="First Name" />&nbsp;
+                        <form:input path="lastName" id ="name" type="text" placeholder="Last Name" />
+                        <form:input path="email" type="text" placeholder="Email Address" />
+                        <form:input path="address" type="text" placeholder="Address" />
+                        <form:input path="zipCode" type="text" placeholder="Zip Code" />
+                        <form:input path="telephone" type="text" placeholder="Telephone Number" />
+                        <form:input path="ssn" type="text" placeholder="Social Security Number" />
+                        
 
-            <form:label path="lastName">Last Name</form:label>
-            <form:input path="lastName"/>
-            <form:errors path="lastName" cssClass="error"/>
-            </br>
 
-            <form:label path="address">Address</form:label>
-            <form:input path="address"/>
-            <form:errors path="address" cssClass="error"/>
-            </br>
+                        <button type="submit">Sign Up</button>
+                    </form:form>
+                </div>
+                <div class ="potatoleft">
+                    <img id ="potatocat" src="images/potatocat2.png" width="350"/>
+                    <p>Movies delivered right to your door for as low as $10/month.
+                        <br/>
+                        <a href="#">Find out more</a></p>
+                </div>
+            </div>
 
-            <form:label path="zipCode">ZipCode</form:label>
-            <form:input path="zipCode"/>
-            <form:errors path="zipCode" cssClass="error"/>
-            </br>
-
-            <form:label path="telephone">Telephone</form:label>
-            <form:input path="telephone"/>
-            <form:errors path="telephone" cssClass="error"/>
-
-            </br>
-
-            <form:label path="ssn">Social Security Number</form:label>
-            <form:input path="ssn"/>
-            <form:errors path="ssn" cssClass="error"/>
-            </br>
-
-            <form:label path="email">Email</form:label>
-            <form:input path="email"/>
-            <form:errors path="email" cssClass="error"/>
-            </br>
-
-            <button type="submit">Submit</button>
-        </form:form>
-    </fieldset>
-</div>
-</body>
+        </div>
+    </body>
+ 
 </html>
