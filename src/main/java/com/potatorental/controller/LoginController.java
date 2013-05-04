@@ -1,6 +1,5 @@
 package com.potatorental.controller;
 
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,10 +32,10 @@ public class LoginController {
     }
 
     @RequestMapping(value = "loginsuccess", method = RequestMethod.GET)
-    public String successLogin(Model model) {
-        model.addAttribute("message", "Welcome back dear " +
+    public String successLogin(RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("message", "Welcome back dear " +
                 SecurityContextHolder.getContext().getAuthentication().getName());
-        return "forward:/";
+        return "redirect:/";
     }
 
 /*    @RequestMapping(value = "logout")

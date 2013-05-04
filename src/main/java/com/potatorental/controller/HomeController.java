@@ -14,4 +14,9 @@ public class HomeController {
     public String printWelcome() {
         return "home";
     }
+
+    @RequestMapping(value = "home", method = RequestMethod.GET)
+    public String printHome() {
+        return "home";
+    }
 }
