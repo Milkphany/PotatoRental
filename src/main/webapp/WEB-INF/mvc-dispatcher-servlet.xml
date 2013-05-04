@@ -19,13 +19,15 @@
     <mvc:resources mapping="/js/**" location="/resources/js/" />
     <mvc:resources mapping="/fonts/**" location="/resources/fonts/" />
 
+    <import resource="database-service.xml" />
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
     <bean id="customerDAOImpl" class="com.potatorental.jdbc.CustomerDAOImpl" >
-
+        <property name="dataSource" ref="dataSource" />
     </bean>
 
     <bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
