@@ -10,7 +10,10 @@
 
 <!DOCTYPE html>
 <html>
-<head><c:import url="head.jsp"/></head>
+<head>
+    <c:import url="head.jsp"/>
+    <title>Signup</title>
+</head>
 
 <body style="background:url('') no-repeat fixed center;">
 <div id="wrap">
@@ -46,7 +49,7 @@
             </form:form>
         </div>
         <div class="potatoleft">
-            <img id="potatocat" src="images/potatocat2.png" width="350"/>
+            <img id="potatocat" src="/images/potatocat2.png" width="350"/>
 
             <p>Movies delivered right to your door for as low as $10/month.
                 <br/>

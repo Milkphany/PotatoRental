@@ -6,7 +6,7 @@
     <div id="topnav">
         <sec:authorize access="isAuthenticated()">
             <sec:authentication property="principal.username" var="userid" />
-            <a id="userid" href="user/${userid}">${userid}</a> |
+            <a id="userid" href="/user/${userid}">${userid}</a> |
         </sec:authorize>
 
         <sec:authorize access="isAnonymous()"><a id="loginlink" href="#">Log In</a> |</sec:authorize>

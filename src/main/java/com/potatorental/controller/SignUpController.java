@@ -35,12 +35,13 @@ public class SignUpController {
                          Model model, RedirectAttributes redirectAttrs, SessionStatus sessionStatus) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("message", "There is an error with the form submission");
-            return "signup";
+            return null;
         }
         sessionStatus.setComplete();
 
+        /* TODO need to authenticate user so that they will automatically login after signup*/
         authenticateUser();
-        return "redirect:/user/{userid}";
+        return "redirect:/user/" + customer.getEmail();
     }
 
     private void authenticateUser() {
