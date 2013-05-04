@@ -1,7 +1,8 @@
-package com.potatorental.model.data;
+package com.potatorental.repository;
 
 import com.potatorental.model.Customer;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 /**
@@ -13,13 +14,7 @@ public interface CustomerDAO {
 
     public void createCustomer();
 
-    public void setDataSource();
-
-    public Customer getCustomer();
-
-    public List<Customer> getAllCustomers();
-
-    public void deleteCustomer(String email);
+    public Customer getCustomerByEmail(String email);
 
     public void updateCustomer();
 }

@@ -6,6 +6,7 @@ import org.springframework.format.annotation.NumberFormat;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 /**
  * User: Milky
@@ -21,7 +22,7 @@ public class Person {
     private String address;
 
     @NumberFormat(pattern = "(###) ###-####")
-    private Integer telephone;
+    private BigDecimal telephone;
 
     @Range(min = 10000, max = 99999, message = "Zipcode is not valid")
     private Integer zipCode;
@@ -76,11 +77,11 @@ public class Person {
         this.address = address;
     }
 
-    public Integer getTelephone() {
+    public BigDecimal getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(Integer telephone) {
+    public void setTelephone(BigDecimal telephone) {
         this.telephone = telephone;
     }
 

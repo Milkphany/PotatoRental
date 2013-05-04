@@ -3,6 +3,7 @@ package com.potatorental.service;
 import com.potatorental.model.Customer;
 import com.potatorental.model.Employee;
 import com.potatorental.model.Person;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,6 +11,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -21,9 +23,12 @@ import java.util.ArrayList;
  * Date: 5/3/13
  * Time: 3:31 AM
  */
+@Repository
 public class PersonDetailService implements UserDetailsService {
 
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
     private DataSource dataSource;
 
     @Override
@@ -80,11 +85,8 @@ public class PersonDetailService implements UserDetailsService {
         }
     }
 
+    @Autowired
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
-    }
-
-    public DataSource getDataSource() {
-        return dataSource;
     }
 }

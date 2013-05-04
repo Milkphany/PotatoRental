@@ -17,7 +17,7 @@
 <c:import url="header.jsp" />
 <div>
     <form:form modelAttribute="loginForm" cssClass="login-page" method="post" action="loginCheck">
-        <input type="text" name="username" placeholder="Email Address"/>
+        <input type="text" name="username" autofocus="autofocus" placeholder="Email Address"/>
         <input type="text" name="password" placeholder="Password"/>
         <input type="submit"/>
     </form:form>

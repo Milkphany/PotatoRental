@@ -20,7 +20,7 @@
 <c:import url="header.jsp" />
 <h2>${message}</h2>
 <h1>${userid} | Profile Settings</h1>
-
+${user.address} | ${user.email} | ${user.firstName} | ${user.lastName}
 
 
 </body>

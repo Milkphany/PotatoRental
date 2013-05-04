@@ -1,6 +1,11 @@
 package com.potatorental.controller;
 
+import com.potatorental.jdbc.CustomerDAOImpl;
+import com.potatorental.model.Customer;
+import com.potatorental.repository.CustomerDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,6 +20,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Collection;
 
 /**
  * User: Milky
@@ -26,35 +32,12 @@ import java.sql.SQLException;
 @SessionAttributes("user")
 public class UserController {
 
-    private DataSource dataSource;
-//
-//    @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
-//    public String getUser(@PathVariable String userid, ModelMap modelMap) {
-//        String name = "default";
-//        DriverManagerDataSource db = new DriverManagerDataSource();
-//        db.setDriverClassName("com.mysql.jdbc.Driver");
-//        db.setUrl("jdbc:mysql://25.105.234.142:3306/potatocat");
-//        db.setUsername("spring");
-//        db.setPassword("potato");
-//        dataSource = db;
-//        Connection connection = null;
-//        try {
-//            connection = dataSource.getConnection();
-//            PreparedStatement ps = connection.prepareStatement("select * from person where lastname = ?");
-//            ps.setString(1, userid);
-//            ResultSet rs = ps.executeQuery();
-//
-//            if (rs.next())
-//                name = rs.getString("firstname");
-//            else
-//                name = "failure";
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        modelMap.addAttribute("message", name);
-//        return "userprofile";
-//    }
+    private final CustomerDAOImpl customerDAOImpl;
+
+    @Autowired
+    public UserController(CustomerDAOImpl customerDAOImpl) {
+        this.customerDAOImpl = customerDAOImpl;
+    }
 
     @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
     public String getUser(@PathVariable String userid, ModelMap modelMap) {
@@ -76,6 +59,10 @@ public class UserController {
     public String getProfile(ModelMap modelMap, Principal principal) {
         modelMap.addAttribute("userid", principal.getName());
         modelMap.addAttribute("message", "This is going to be " + principal.getName() + "'s profile");
+
+        Customer customer = customerDAOImpl.getCustomerByEmail(principal.getName());
+        modelMap.addAttribute("user", customer);
+
         return "userprofile";
     }
 
