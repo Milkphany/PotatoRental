@@ -9,6 +9,8 @@
 
     <beans:import resource="database-service.xml" />
 
+    <http pattern="/resources/**" security="none" />
+
     <http use-expressions="true">
 
         <intercept-url pattern="/signup" access="isAnonymous()" />

@@ -35,9 +35,9 @@
                     </div>
                 </c:if>
 
-                <form:input path="firstName" cssErrorClass="error" id="name" type="text" placeholder="First Name"/>&nbsp;
+                <form:input path="firstName" cssErrorClass="error" id="name" type="text" placeholder="First Name" autofocus="autofocus"/>&nbsp;
                 <form:input path="lastName" cssErrorClass="error" id="name" type="text" placeholder="Last Name"/>
-                <form:input path="email" cssErrorClass="error" type="text" placeholder="Email Address"/>
+                <form:input path="email" cssErrorClass="error" type="email" placeholder="Email Address"/>
                 <form:input path="address" cssErrorClass="error" type="text" placeholder="Address"/>
                 <form:input path="zipCode" cssErrorClass="error" type="text" placeholder="Zip Code"/>
                 <form:input path="telephone" cssErrorClass="error" type="text" placeholder="Telephone Number"/>
