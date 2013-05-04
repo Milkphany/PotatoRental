@@ -1,5 +1,7 @@
 package com.potatorental.service;
 
+import com.potatorental.model.Customer;
+import com.potatorental.model.Employee;
 import com.potatorental.model.Person;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -32,16 +34,37 @@ public class PersonDetailService implements UserDetailsService {
         jdbcTemplate = new JdbcTemplate(dataSource);
         Person person = jdbcTemplate.queryForObject(sql, new PersonMapper(), email);
 
-        ArrayList<GrantedAuthority> list = new ArrayList<>();
-
-        list.add(new GrantedAuthority() {
-            @Override
-            public String getAuthority() {
-                return "ROLE_USER";
-            }
-        });
+        ArrayList<GrantedAuthority> list = getUserAuthority(person);
 
         return new User(person.getEmail(), person.getPassword(), list);
+    }
+
+    private ArrayList<GrantedAuthority> getUserAuthority(Person person) {
+        String sql = "select count(*) from customer where id = ?";
+
+        ArrayList<GrantedAuthority> list = new ArrayList<>();
+        if (jdbcTemplate.queryForInt(sql, person.getSsn()) != 0) {
+            list.add(new UserGrantedAuthority("ROLE_USER"));
+        } else {
+            list.add(new UserGrantedAuthority("ROLE_USER"));
+            list.add(new UserGrantedAuthority("ROLE_STAFF"));
+        }
+
+        return list;
+    }
+
+    private class UserGrantedAuthority implements GrantedAuthority {
+
+        public String authority;
+
+        public UserGrantedAuthority(String authority) {
+            this.authority = authority;
+        }
+
+        @Override
+        public String getAuthority() {
+            return authority;
+        }
     }
 
     private class PersonMapper implements RowMapper<Person> {

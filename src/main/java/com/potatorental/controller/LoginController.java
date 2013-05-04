@@ -1,5 +1,7 @@
 package com.potatorental.controller;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +29,13 @@ public class LoginController {
     @RequestMapping(value = "loginfailed", method = RequestMethod.GET)
     public ModelAndView failLogin(Model model) {
         return new ModelAndView("login", "message", "there is errors, not okay");
+    }
+
+    @RequestMapping(value = "loginsuccess", method = RequestMethod.GET)
+    public String successLogin(Model model) {
+        model.addAttribute("message", "Welcome back dear " +
+                SecurityContextHolder.getContext().getAuthentication().getName());
+        return "forward:/";
     }
 
 /*    @RequestMapping(value = "logout")

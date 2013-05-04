@@ -11,11 +11,12 @@
 
     <http>
         <!--TODO: change this back-->
-<!--        <intercept-url pattern="/user/*" access="ROLE_USER" />-->
+        <intercept-url pattern="/user/*" access="ROLE_USER" />
         <intercept-url pattern="/admin" access="ROLE_ADMIN" />
+        <intercept-url pattern="/staff" access="ROLE_STAFF" />
         <form-login username-parameter="username" password-parameter="password"
                     login-processing-url="/loginCheck"
-                    login-page="/login" default-target-url="/"
+                    login-page="/login" default-target-url="/loginsuccess"
                     authentication-failure-url="/loginfailed" />
         <logout logout-success-url="/" logout-url="/logout"/>
     </http>

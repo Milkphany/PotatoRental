@@ -11,7 +11,7 @@
 <div id="wrap">
     <jsp:include page="header.jsp"/>
     <div id="pagebody">
-
+        ${message}
 
         <div class="content">
             <h1>Popular</h1>
