@@ -1,6 +1,7 @@
 package com.potatorental.controller;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.sql.DataSource;
+import java.security.Principal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
@@ -68,5 +70,17 @@ public class UserController {
     @RequestMapping(value = "{userid}/rental/{rentalid}")
     public String getRentals(@PathVariable int rentalid, ModelMap modelMap) {
         return "userprofile";
+    }
+
+    @RequestMapping(value = "profile", method = RequestMethod.GET)
+    public String getProfile(ModelMap modelMap, Principal principal) {
+        modelMap.addAttribute("userid", principal.getName());
+        modelMap.addAttribute("message", "This is going to be " + principal.getName() + "'s profile");
+        return "userprofile";
+    }
+
+    @RequestMapping(value = "queue", method = RequestMethod.GET)
+    public String getQueue(ModelMap modelMap) {
+        return "queue";
     }
 }

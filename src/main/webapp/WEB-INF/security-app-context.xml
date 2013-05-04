@@ -9,11 +9,18 @@
 
     <beans:import resource="database-service.xml" />
 
-    <http>
-        <!--TODO: change this back-->
-        <intercept-url pattern="/user/*" access="ROLE_USER" />
-        <intercept-url pattern="/admin" access="ROLE_ADMIN" />
-        <intercept-url pattern="/staff" access="ROLE_STAFF" />
+    <http use-expressions="true">
+
+        <intercept-url pattern="/signup" access="isAnonymous()" />
+        <intercept-url pattern="/login" access="isAnonymous()" />
+        <intercept-url pattern="/profile/**" access="isAuthenticated()" />
+        <intercept-url pattern="/queue/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_STAFF')" />
+        <intercept-url pattern="/user/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_STAFF')" />
+        <intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/staff/**" access="hasAnyRole('ROLE_STAFF')" />
+
+        <!--TODO uncomment this and find a page for access denied-->
+        <!--<access-denied-handler error-page="/" />-->
         <form-login username-parameter="username" password-parameter="password"
                     login-processing-url="/loginCheck"
                     login-page="/login" default-target-url="/loginsuccess"

@@ -19,4 +19,16 @@ public class HomeController {
     public String printHome() {
         return "home";
     }
+
+    @RequestMapping(value = "profile", method = RequestMethod.GET)
+    public String setProfile() {
+        /*TODO check for user to be authenticated then forward request*/
+        return "forward:/user/profile";
+    }
+
+    @RequestMapping(value = "queue", method = RequestMethod.GET)
+    public String getQueue() {
+        /*TODO check for user to be authenticated then forward request*/
+        return "forward:/user/queue";
+    }
 }

@@ -7,21 +7,18 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
 <html>
 <head>
     <c:import url="head.jsp" />
-    <title>Profile | ${userid}</title>
+    <sec:authentication property="principal.username" var="userid" />
+    <title>${userid} Queue</title>
 </head>
 <body>
 <c:import url="header.jsp" />
-<h2>${message}</h2>
-<h1>${userid} | Profile Settings</h1>
-
-
-
+<h1>This is going to be ${userid}'s queue.</h1>
 </body>
 </html>

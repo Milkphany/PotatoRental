@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
+
 /**
  * Created with IntelliJ IDEA.
  * User: milky
@@ -32,9 +34,8 @@ public class LoginController {
     }
 
     @RequestMapping(value = "loginsuccess", method = RequestMethod.GET)
-    public String successLogin(RedirectAttributes redirectAttributes) {
-        redirectAttributes.addFlashAttribute("message", "Welcome back dear " +
-                SecurityContextHolder.getContext().getAuthentication().getName());
+    public String successLogin(RedirectAttributes redirectAttributes, Principal principal) {
+        redirectAttributes.addFlashAttribute("message", "Welcome back dear " + principal.getName());
         return "redirect:/";
     }
 
