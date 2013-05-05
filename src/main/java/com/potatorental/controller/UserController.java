@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 
 /**
@@ -48,18 +49,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "profile", method = RequestMethod.GET)
-    public String getProfile(ModelMap modelMap, Principal principal) {
+    public String getProfile(ModelMap modelMap, Principal principal, HttpServletRequest request) {
         modelMap.addAttribute("userid", principal.getName());
         modelMap.addAttribute("message", "This is going to be " + principal.getName() + "'s profile");
 
-        Person person = personDAOImpl.getPersonByEmail(principal.getName());
-        modelMap.addAttribute("user", person);
+        if (request.getSession().getAttribute("user") == null) {
+            Person person = personDAOImpl.getPersonByEmail(principal.getName());
+            request.getSession().setAttribute("user", person);
+            System.err.println("Doing it NOW");
+        } else {
+            System.err.println("Not doing it now");
+        }
 
-        /*if (person instanceof Customer)
-            modelMap.addAttribute("customer", person);
-        else
-            modelMap.addAttribute("employee", person);
-*/
         return "userprofile";
     }
 
