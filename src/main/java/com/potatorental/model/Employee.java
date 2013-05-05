@@ -1,11 +1,11 @@
 package com.potatorental.model;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.joda.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.validation.constraints.Past;
+import java.sql.Date;
 
 /**
  * User: Milky
@@ -15,36 +15,51 @@ import javax.validation.constraints.Past;
 public class Employee extends Person {
 
     @NotBlank
-    private int id;
+    private Integer id;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Past
-    private LocalDate startDate;
+    private Date startDate;
 
     @NumberFormat(style = NumberFormat.Style.CURRENCY)
-    private float hourlyRate;
+    private Float hourlyRate;
 
-    public int getId() {
+    public Employee() {
+        super();
+    }
+
+    public Employee(Person person) {
+        this.ssn = person.ssn;
+        this.firstName = person.firstName;
+        this.lastName = person.lastName;
+        this.address = person.address;
+        this.zipCode = person.zipCode;
+        this.email = person.email;
+        this.pass = person.pass;
+        this.telephone = person.telephone;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public LocalDate getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public float getHourlyRate() {
+    public Float getHourlyRate() {
         return hourlyRate;
     }
 
-    public void setHourlyRate(float hourlyRate) {
+    public void setHourlyRate(Float hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
 }

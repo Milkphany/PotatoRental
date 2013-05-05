@@ -1,9 +1,12 @@
 package com.potatorental.jdbc;
 
 import com.potatorental.model.Customer;
+import com.potatorental.model.Employee;
 import com.potatorental.model.Person;
 import com.potatorental.repository.CustomerDAO;
+import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -36,7 +39,7 @@ public class PersonDaoImpl implements CustomerDAO {
 
     public Person getPersonByEmail(String email) {
         String sql = "select * from person where email = ?";
-        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Person.class), email);
+        return getPersonRole(jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Person.class), email));
 
         /*return jdbcTemplate.queryForObject(sql, new PersonMapper(), email);*/
     }
@@ -62,11 +65,58 @@ public class PersonDaoImpl implements CustomerDAO {
         }
     }*/
 
+    private Person getPersonRole(Person person) {
+        String customersql = "select rating from customer where id = ?";
+        String employeesql = "select id, startdate, hourlyrate from employee where ssn = ?";
+
+        try {
+            return jdbcTemplate.queryForObject(customersql, new CustomerMapper(person), person.getSsn());
+        } catch (DataAccessException e) {
+            return jdbcTemplate.queryForObject(employeesql, new EmployeeMapper(person), person.getSsn());
+        }
+    }
+
+    private class EmployeeMapper implements RowMapper<Employee> {
+
+        private Person person;
+
+        public EmployeeMapper(Person person) {
+            this.person = person;
+        }
+
+        @Override
+        public Employee mapRow(ResultSet resultSet, int i) throws SQLException {
+            Employee employee = new Employee(person);
+            employee.setHourlyRate(resultSet.getFloat("hourlyrate"));
+            employee.setId(resultSet.getInt("id"));
+            employee.setStartDate(resultSet.getDate("startdate"));
+
+            return employee;
+        }
+    }
+
+    private class CustomerMapper implements RowMapper<Customer> {
+
+        private Person person;
+
+        public CustomerMapper(Person person) {
+            this.person = person;
+        }
+
+        @Override
+        public Customer mapRow(ResultSet resultSet, int i) throws SQLException {
+            Customer customer = new Customer(person);
+            customer.setRating(resultSet.getInt("rating"));
+
+            return customer;
+        }
+    }
+
     public boolean isPersonEmployee(Person person) {
         return true;
     }
 
-    public boolean isPersonCustomer(Person person) {
+    private boolean isPersonCustomer(Person person) {
         String sql = "select count(exists(select 1 from customer where id = ?))";
         return jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()) != null;
     }
@@ -76,16 +126,7 @@ public class PersonDaoImpl implements CustomerDAO {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    public Customer getCustomerByPerson(Person person) {
-        String sql = "select id from customer where id = ?";
-        Customer customer = new Customer(person);
-
-        customer.setRating(jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()));
-
-        return customer;
-    }
-
-    @Override
+/*    @Override
     public Customer getCustomerByEmail(String email) {
         String sql = "select id from customer where id = ?";
         Person person =  getPersonByEmail(email);
@@ -97,7 +138,7 @@ public class PersonDaoImpl implements CustomerDAO {
         customer.setRating(jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()));
 
         return customer;
-    }
+    }*/
 
     @Override
     public void updateCustomer() {

@@ -14,7 +14,5 @@ public interface CustomerDAO {
 
     public void createCustomer();
 
-    public Customer getCustomerByEmail(String email);
-
     public void updateCustomer();
 }

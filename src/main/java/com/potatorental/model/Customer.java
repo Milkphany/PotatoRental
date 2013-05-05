@@ -7,7 +7,7 @@ package com.potatorental.model;
  */
 public class Customer extends Person {
 
-    private int rating;
+    private Integer rating;
 
     public Customer() {
         super();
@@ -24,11 +24,11 @@ public class Customer extends Person {
         this.telephone = person.telephone;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 }

@@ -53,14 +53,12 @@ public class UserController {
         modelMap.addAttribute("message", "This is going to be " + principal.getName() + "'s profile");
 
         Person person = personDAOImpl.getPersonByEmail(principal.getName());
-        if (personDAOImpl.isPersonCustomer(person)) {
-            Customer customer = personDAOImpl.getCustomerByEmail(principal.getName());
-            modelMap.addAttribute("user", customer);
-        } else if (personDAOImpl.isPersonEmployee(person)) {
+        modelMap.addAttribute("user", person);
 
-        }
-        /*Customer customer = customerDAOImpl.getCustomerByEmail(principal.getName());
-        if (customerDAOImpl.isPersonCustomer())
+        /*if (person instanceof Customer)
+            modelMap.addAttribute("customer", person);
+        else
+            modelMap.addAttribute("employee", person);
 */
         return "userprofile";
     }
