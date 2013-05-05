@@ -1,6 +1,8 @@
 package com.potatorental.jdbc;
 
+import com.potatorental.model.Customer;
 import com.potatorental.model.Person;
+import com.potatorental.repository.CustomerDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,7 +17,7 @@ import java.sql.SQLException;
  * Date: 5/4/13
  * Time: 7:58 PM
  */
-public abstract class PersonDaoImpl {
+public class PersonDaoImpl implements CustomerDAO {
 
     protected JdbcTemplate jdbcTemplate;
 
@@ -39,14 +41,14 @@ public abstract class PersonDaoImpl {
         /*return jdbcTemplate.queryForObject(sql, new PersonMapper(), email);*/
     }
 
-    private class PersonMapper implements RowMapper<Person> {
+   /* private class PersonMapper implements RowMapper<Person> {
 
         @Override
         public Person mapRow(ResultSet resultSet, int i) throws SQLException {
             Person person = new Person();
 
-/*            TODO delete this
-            person.setRating(resultSet.getInt("rating"));*/
+*//*            TODO delete this
+            person.setRating(resultSet.getInt("rating"));*//*
             person.setSsn(resultSet.getInt("ssn"));
             person.setLastName(resultSet.getString("lastname"));
             person.setFirstName(resultSet.getString("firstname"));
@@ -58,13 +60,47 @@ public abstract class PersonDaoImpl {
 
             return person;
         }
-    }
+    }*/
 
     public boolean isPersonEmployee(Person person) {
         return true;
     }
 
     public boolean isPersonCustomer(Person person) {
-        return true;
+        String sql = "select count(exists(select 1 from customer where id = ?))";
+        return jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()) != null;
+    }
+
+    @Override
+    public void createCustomer() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public Customer getCustomerByPerson(Person person) {
+        String sql = "select id from customer where id = ?";
+        Customer customer = new Customer(person);
+
+        customer.setRating(jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()));
+
+        return customer;
+    }
+
+    @Override
+    public Customer getCustomerByEmail(String email) {
+        String sql = "select id from customer where id = ?";
+        Person person =  getPersonByEmail(email);
+
+        if (person == null || !isPersonCustomer(person))
+            return null;
+
+        Customer customer = new Customer(person);
+        customer.setRating(jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()));
+
+        return customer;
+    }
+
+    @Override
+    public void updateCustomer() {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 }

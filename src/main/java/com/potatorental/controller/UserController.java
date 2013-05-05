@@ -1,12 +1,9 @@
 package com.potatorental.controller;
 
-import com.potatorental.jdbc.CustomerDAOImpl;
+import com.potatorental.jdbc.PersonDaoImpl;
 import com.potatorental.model.Customer;
-import com.potatorental.repository.CustomerDAO;
+import com.potatorental.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,13 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import javax.sql.DataSource;
 import java.security.Principal;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Collection;
 
 /**
  * User: Milky
@@ -32,11 +23,12 @@ import java.util.Collection;
 @SessionAttributes("user")
 public class UserController {
 
-    private final CustomerDAOImpl customerDAOImpl;
+    @Autowired
+    private final PersonDaoImpl personDAOImpl;
 
     @Autowired
-    public UserController(CustomerDAOImpl customerDAOImpl) {
-        this.customerDAOImpl = customerDAOImpl;
+    public UserController(PersonDaoImpl personDAOImpl ) {
+        this.personDAOImpl = personDAOImpl;
     }
 
     @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
@@ -60,9 +52,16 @@ public class UserController {
         modelMap.addAttribute("userid", principal.getName());
         modelMap.addAttribute("message", "This is going to be " + principal.getName() + "'s profile");
 
-        Customer customer = customerDAOImpl.getCustomerByEmail(principal.getName());
-        modelMap.addAttribute("user", customer);
+        Person person = personDAOImpl.getPersonByEmail(principal.getName());
+        if (personDAOImpl.isPersonCustomer(person)) {
+            Customer customer = personDAOImpl.getCustomerByEmail(principal.getName());
+            modelMap.addAttribute("user", customer);
+        } else if (personDAOImpl.isPersonEmployee(person)) {
 
+        }
+        /*Customer customer = customerDAOImpl.getCustomerByEmail(principal.getName());
+        if (customerDAOImpl.isPersonCustomer())
+*/
         return "userprofile";
     }
 
