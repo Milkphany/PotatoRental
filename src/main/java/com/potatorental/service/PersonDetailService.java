@@ -41,7 +41,7 @@ public class PersonDetailService implements UserDetailsService {
 
         ArrayList<GrantedAuthority> list = getUserAuthority(person);
 
-        return new User(person.getEmail(), person.getPassword(), list);
+        return new User(person.getEmail(), person.getPass(), list);
     }
 
     private ArrayList<GrantedAuthority> getUserAuthority(Person person) {
@@ -71,14 +71,13 @@ public class PersonDetailService implements UserDetailsService {
             return authority;
         }
     }
-
     private class PersonMapper implements RowMapper<Person> {
 
         @Override
         public Person mapRow(ResultSet resultSet, int i) throws SQLException {
             Person person = new Person();
             person.setEmail(resultSet.getString("email"));
-            person.setPassword(resultSet.getString("pass"));
+            person.setPass(resultSet.getString("pass"));
             person.setSsn(resultSet.getInt("ssn"));
 
             return person;

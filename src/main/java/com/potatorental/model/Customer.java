@@ -7,14 +7,21 @@ package com.potatorental.model;
  */
 public class Customer extends Person {
 
-    private int id, rating;
+    private int rating;
 
-    public int getId() {
-        return id;
+    public Customer() {
+        super();
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Customer(Person person) {
+        this.ssn = person.ssn;
+        this.firstName = person.firstName;
+        this.lastName = person.lastName;
+        this.address = person.address;
+        this.zipCode = person.zipCode;
+        this.email = person.email;
+        this.pass = person.pass;
+        this.telephone = person.telephone;
     }
 
     public int getRating() {

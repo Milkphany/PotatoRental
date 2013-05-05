@@ -15,34 +15,37 @@ import java.math.BigDecimal;
  */
 public class Person {
 
-    @Size(min = 2, max = 64, message = "Name is not valid")
-    private String firstName, lastName;
+    @Size(min = 2, max = 64, message = "First name is not valid")
+    protected String firstName;
+
+    @Size(min = 2, max = 64, message = "Last name is not valid")
+    protected String lastName;
 
     @Size(min = 3, max = 128, message = "Address is not valid")
-    private String address;
+    protected String address;
 
     @NumberFormat(pattern = "(###) ###-####")
-    private BigDecimal telephone;
+    protected BigDecimal telephone;
 
     @Range(min = 10000, max = 99999, message = "Zipcode is not valid")
-    private Integer zipCode;
+    protected Integer zipCode;
 
     @NotNull(message = "SSN cannot be empty")
     @NumberFormat(pattern = "##########")
-    private Integer ssn;
+    protected Integer ssn;
 
     @Pattern(regexp = ".*@.*", message = "Email is not valid")
-    private String email;
+    protected String email;
 
     @NotNull(message = "Password cannot be empty")
-    private String password;
+    protected String pass;
 
-    public String getPassword() {
-        return password;
+    public String getPass() {
+        return pass;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     public String getEmail() {

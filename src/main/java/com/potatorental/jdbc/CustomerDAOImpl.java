@@ -1,8 +1,10 @@
 package com.potatorental.jdbc;
 
 import com.potatorental.model.Customer;
+import com.potatorental.model.Person;
 import com.potatorental.repository.CustomerDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -17,16 +19,11 @@ import java.sql.SQLException;
  * Time: 2:21 AM
  */
 @Repository
-public class CustomerDAOImpl implements CustomerDAO {
-
-    private JdbcTemplate jdbcTemplate;
+public class CustomerDAOImpl extends PersonDaoImpl implements CustomerDAO {
 
     @Autowired
-    private DataSource dataSource;
-
-    @Autowired
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
+    public CustomerDAOImpl(DataSource dataSource) {
+        super(dataSource);
     }
 
     @Override
@@ -36,19 +33,24 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public Customer getCustomerByEmail(String email) {
-        jdbcTemplate = new JdbcTemplate(dataSource);
+        String sql = "select id from customer where id = ?";
+        Person person =  getPersonByEmail(email);
 
-        String sql = "select * from customer, person where email = ? and id = ssn";
-        return jdbcTemplate.queryForObject(sql, new CustomerMapper() , email);
+        if (person == null || !isPersonCustomer(person))
+            return null;
+
+        Customer customer = new Customer(person);
+        customer.setRating(jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()));
+
+        return customer;
     }
 
-    private class CustomerMapper implements RowMapper<Customer> {
+/*    private class CustomerMapper implements RowMapper<Customer> {
 
         @Override
         public Customer mapRow(ResultSet resultSet, int i) throws SQLException {
             Customer customer = new Customer();
 
-            customer.setId(resultSet.getInt("id"));
             customer.setRating(resultSet.getInt("rating"));
             customer.setSsn(resultSet.getInt("ssn"));
             customer.setLastName(resultSet.getString("lastname"));
@@ -61,7 +63,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
             return customer;
         }
-    }
+    }*/
 
     @Override
     public void updateCustomer() {
