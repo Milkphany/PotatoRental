@@ -19,17 +19,19 @@
 <body>
 <c:import url="header.jsp" />
 <h2>${message}</h2>
-<h1>${userid} | Profile Settings</h1>
+<c:if test="${customer == true}">
+    You are a customer
+    <%--Secret ${user.rating}--%>
+</c:if>
+<c:if test="${employee == true}">
+    You are an employee
+    <%-- Secret ${user.id} | ${user.hourlyRate} | --%>
+</c:if>
+<h1>${user.firstName} ${user.lastName} | Profile Settings</h1>
 ${user.firstName} | ${user.lastName} | ${user.ssn} | ${user.pass} </br>
-${user.telephone} | ${user.address} | ${user.email} | ${user.zipCode} |
-<%--This section is for the customer--%>
-<c:catch var="exception">
-    ${user.rating}
-</c:catch>
-<%--This section is for the employee--%>
-<c:catch var="exception">
-    ${user.id} | ${user.hourlyRate} | ${user.startDate}
-</c:catch>
-
+${user.telephone} | ${user.address} | ${user.email} | ${user.zipCode}
+<c:if test="${employee}">
+    | ${user.startDate}
+</c:if>
 </body>
 </html>
