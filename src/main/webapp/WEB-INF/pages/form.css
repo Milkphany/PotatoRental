@@ -5,6 +5,7 @@
     background: rgba(0,0,0,.2);
     float:right;
     position: relative;
+
 }
 
 /* Form text input */
@@ -21,7 +22,7 @@
     background: #eee;     
 }
 
-form input:focus, #name:focus, #zip:focus {
+form input:focus {
     outline: 0;
     background: #eee;
     box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
@@ -94,7 +95,7 @@ form input:focus, #name:focus, #zip:focus {
     background-color: #00caa6;     
     margin:4px;
     border: 1px solid #ddd;
-
+    
 } 
 
 .form-signup button:hover {background-color: #0a919c;}
@@ -129,8 +130,8 @@ form input:focus, #name:focus, #zip:focus {
     background-color: white;
 }
 
-#name {
-    width: 137px;
+#name  {
+    width: 136px;
     height: 30px;
     margin:4px;
     padding: 10px;
@@ -146,42 +147,10 @@ form input:focus, #name:focus, #zip:focus {
     background-color: white;
 }
 
-.form-login {
-    text-align: center;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.form-signup {
-    text-align: center;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.error {
-    color: blue;
-}
-
-.form-signup input.error {
-    border: 2px solid red;
-}
-
-#name.error {
-    border: 2px solid red;
-}
-
-.errorblock{
-    color: #000;
-    background-color: #ffEEEE;
-    border: 2px solid #ff0000;
-    padding:8px;
-    margin:16px;
-}
-
 #zip  {
-    width: 135px;
+    width: 136px;
     height: 30px;
-    margin-right:2px;
+    margin:4px;
     padding: 10px;
     margin-left:auto;
     margin-right:auto;
@@ -196,20 +165,18 @@ form input:focus, #name:focus, #zip:focus {
 }
 
 select {
-    width: 160px;
-    height: 50px;
-    margin-left: 3px;
-    font-family: "Lato", sans-serif;
-    color: #999;
-    font-size: 12pt;
-    border: 1px solid #ddd;
-    background-color: white;
-    -webkit-appearance: none;
-    overflow:auto;
-    padding-left: 10px;
-    border-radius: 0
+    background-color: black;
 }
 
-elect:active {
-    background-color: white;
+.form-login {
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.form-signup {
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    
 }

@@ -74,7 +74,7 @@ body, html {
 
 #rightside {
     z-index: 1000;
-    position:absolute;
+    position:fixed;
     padding-top: 20px;
     right:20px;
 }
@@ -149,7 +149,7 @@ h2, #firstelem {
 
 
 #moviepagebody {
-    padding: 100px 30px 30px 30px;
+    padding: 0px 30px 30px 30px;
     width: 860px;
     margin-left:auto;
     margin-right:auto;
@@ -247,6 +247,7 @@ h2, #firstelem {
     margin-right:auto;
     text-align:justify;
     padding: 20px;
+    line-height: 115%
 }
 
 #potatocat{
@@ -286,4 +287,35 @@ dd {
 .potatoleft a{
     color: #00caa6;
     text-decoration: none;
+}
+
+#sortable {
+    list-style-type: none; margin: 0; padding: 0; width: 30%;
+}
+
+#sortable li { 
+    margin: 0 5px 5px 5px; padding: 5px;
+    height: 1.5em;
+    
+    background-color: #0a919c;
+    color: white;
+    cursor: hand; cursor:pointer;
+    overflow:hidden;
+}
+
+#sortable li:hover {
+    background-color: #00caa6
+}
+
+
+.header1 {
+    font-family: "Lato", sans-serif;
+    font-size: 16pt;
+    font-weight: 300;
+}
+
+hr {
+    margin-bottom: 15px;
+     margin-top: 15px;
+     border-top: 1px solid #ddd;
 }

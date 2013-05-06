@@ -13,11 +13,11 @@
 
             <div id ="moviepagebody">
 
-
-                <h1>Help Center</h1>
-
                 <div class="content">
-                    <span id="firstelem">General</span>
+                    <span class="header1">Help Center</span>
+                    <hr>
+                    <h2>General</h2>
+                    
                     <dl class ="accordion">
                         
                         <dt><a href="#">How does PotatoCat work?</a><br/></dt>
@@ -26,7 +26,7 @@
                         <dd>We have thousands of movies in stock, including new releases, classics, kids' movies, and foreign films. Click <a href="#">here</a> to browse our entire collection.</dd>
                         <dt><a href="#">How much does this service cost?</a><br/></dt>
                         <dd>
-                            There are four different plans to choose from:<br/>
+                            There are four different plans to choose from. You can pick the one that works for you.<br/>
                             <table id ="planlist">
                                 <tr>
                                     <th>Plan</th>
@@ -59,12 +59,20 @@
                             </table>
 
                         </dd>
-                        <a href="#"></a>
-
+                        
                         <h2>Account</h2>
-                        <a href="#">How do I change my password?</a><br/>
-                        <a href="#">How do I update my account information?</a><br/>
-                        <a href="#">How do I add or remove movies from my queue?</a><br/>
+                        <dt><a href="#">How do I change my password?</a></dt>
+                        <dd>Meow first.</dd>
+                        
+                        <dt><a href="#">How do I update my account information?</a><br/></dt>
+                        <dd>ANSWER HERE</dd>
+                        
+                        <dt><a href="#">What is the queue and how does it work?</a></dt>
+                        <dd>The queue allows you to keep track of movies you would like to rent in the future. 
+                            When you return a movie, the next movie(s) in your queue are automatically shipped out to you.<br/>
+                            
+                            You can add, delete, and rearrange the movies in your queue.
+                        </dd>
                         <a href="#">How many movies can I rent per month?</a><br/>
                         <a href="#">Can I downgrade/upgrade my account?</a><br/>
                         <a href="#">How do I cancel my account?</a><br/>
