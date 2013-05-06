@@ -26,12 +26,13 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="personDAO" class="com.potatorental.service.PersonDaoImpl" >
-        <property name="dataSource" ref="dataSource" />
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg ref="dataSource" />
     </bean>
+
+    <bean id="personDao" class="com.potatorental.service.PersonDaoImpl" />
+    <bean id="locationDao" class="com.potatorental.service.LocationDaoImpl" />
 
     <bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
-
-
 </beans>

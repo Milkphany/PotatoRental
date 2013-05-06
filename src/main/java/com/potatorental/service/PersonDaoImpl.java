@@ -2,7 +2,9 @@ package com.potatorental.service;
 
 import com.potatorental.model.Customer;
 import com.potatorental.model.Employee;
+import com.potatorental.model.Location;
 import com.potatorental.model.Person;
+import com.potatorental.repository.LocationDao;
 import com.potatorental.repository.PersonDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -21,25 +23,25 @@ import java.sql.SQLException;
  */
 public class PersonDaoImpl implements PersonDao {
 
-    protected JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
+    private LocationDao locationDao;
 
     @Autowired
-    protected DataSource dataSource;
-
-    @Autowired
-    public PersonDaoImpl(DataSource dataSource) {
+    public PersonDaoImpl(DataSource dataSource, LocationDao locationDao) {
         jdbcTemplate = new JdbcTemplate(dataSource);
-    }
-
-    @Autowired
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
+        this.locationDao = locationDao;
     }
 
     @Override
     public Person getPersonByEmail(String email) {
         String sql = "select * from person where email = ?";
         return getPersonRole(jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Person.class), email));
+    }
+
+    @Override
+    public Location getLocationByZipCode(Integer zipCode) {
+        String sql = "select * from location where zipcode = ?";
+        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Location.class), zipCode);
     }
 
     private Person getPersonRole(Person person) {
@@ -89,22 +91,26 @@ public class PersonDaoImpl implements PersonDao {
         }
     }
 
-    public boolean isPersonEmployee(Person person) {
-        return true;
-    }
+    @Override
+    public void insertCustomer(Customer customer, Location location) {
+        String personsql = "insert into person values (?, ?, ?, ?, ?, ?, ?, ?)";
+        String customersql = "insert into customer values (?, ?)";
 
-    private boolean isPersonCustomer(Person person) {
-        String sql = "select count(exists(select 1 from customer where id = ?))";
-        return jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()) != null;
+        locationDao.insertLocation(location);
+        jdbcTemplate.update(personsql, customer.getSsn(), customer.getLastName(), customer.getFirstName(),
+                customer.getAddress(), customer.getZipCode(), customer.getTelephone(), customer.getEmail(), customer.getPass());
+        jdbcTemplate.update(customersql, customer.getSsn(), customer.getRating());
     }
 
     @Override
-    public void createPerson() {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
+    public boolean updateCustomer(Customer customer) {
+        String sql = "update customer c, person p " +
+                "set p.lastname = ?, p.firstname = ?, p.address = ?, p.zipcode = ?," +
+                "p.telephone = ?, c.rating = ? where ssn = id and p.ssn = ?";
 
-    @Override
-    public void updatePerson() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        /*TODO Can update user except the zipcode cause it has a foreign key constraint, must add so it inserts zipcode if doesnt exist*/
+
+        return jdbcTemplate.update(sql, customer.getLastName(), customer.getFirstName(), customer.getAddress(),
+                customer.getZipCode(), customer.getTelephone(), customer.getRating(), customer.getSsn()) == 1;
     }
 }

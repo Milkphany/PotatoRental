@@ -47,8 +47,7 @@ public class UserController {
 
     @RequestMapping(value = "{userid}", method = RequestMethod.POST)
     public String updateuser(@PathVariable String userid, ModelMap modelMap, @ModelAttribute("customer") Customer customer) {
-        /*TODO The below sql is not done yet, but it will need to udpate person table as well as customer*/
-        personDao.updatePerson();
+        personDao.updateCustomer(customer);
 
         return "redirect:/users/{userid}";
     }

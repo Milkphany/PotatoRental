@@ -31,7 +31,7 @@
                         <form:errors path="zipCode" element="div"/>
                         <form:errors path="telephone" element="div"/>
                         <form:errors path="ssn" element="div"/>
-                        <form:errors path="password" element="div"/>
+                        <form:errors path="pass" element="div"/>
                     </div>
                 </c:if>
 
@@ -40,6 +40,8 @@
                 <form:input path="email" cssErrorClass="error" type="email" placeholder="Email Address"/>
                 <form:input path="address" cssErrorClass="error" type="text" placeholder="Address"/>
                 <form:input path="zipCode" cssErrorClass="error" type="text" placeholder="Zip Code"/>
+                <input name="state" type="text" placeholder="State" />
+                <input name="city" type="text" placeholder="City" />
                 <form:input path="telephone" cssErrorClass="error" type="text" placeholder="Telephone Number"/>
                 <form:input path="ssn" cssErrorClass="error" type="text" placeholder="Social Security Number"/>
                 <form:password path="pass" cssErrorClass="error" placeholder="Password"/>

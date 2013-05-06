@@ -22,7 +22,6 @@ import java.security.Principal;
 @SessionAttributes({"user", "customer", "employee"})
 public class AccountController {
 
-    @Autowired
     private final PersonDao personDao;
 
     @Autowired

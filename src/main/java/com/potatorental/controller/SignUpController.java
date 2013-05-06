@@ -1,6 +1,11 @@
 package com.potatorental.controller;
 
 import com.potatorental.model.Customer;
+import com.potatorental.model.Location;
+import com.potatorental.repository.LocationDao;
+import com.potatorental.repository.PersonDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,6 +24,15 @@ import javax.validation.Valid;
 @RequestMapping("/signup")
 public class SignUpController {
 
+    private PersonDao personDao;
+    private LocationDao locationDao;
+
+    @Autowired
+    public SignUpController(PersonDao personDao, LocationDao locationDao) {
+        this.personDao = personDao;
+        this.locationDao = locationDao;
+    }
+
     @ModelAttribute("signupForm")
     public Customer newCustomer() {
         return new Customer();
@@ -31,16 +45,25 @@ public class SignUpController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String signUp(@Valid @ModelAttribute("signupForm") Customer customer, BindingResult bindingResult,
-                         Model model, RedirectAttributes redirectAttrs, SessionStatus sessionStatus) {
+                         Model model, RedirectAttributes redirectAttrs, SessionStatus sessionStatus,
+                         @RequestParam("state") String state, @RequestParam("city") String city) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("message", "There is an error with the form submission");
             return null;
         }
-        sessionStatus.setComplete();
 
+        /*Need to validate zipcode, haven't done that*/
+        try {
+            personDao.insertCustomer(customer, new Location(customer.getZipCode(), state, city));
+        } catch (DataIntegrityViolationException e) {
+            model.addAttribute("message", "email has already been used");
+            return null;
+        }
+
+        sessionStatus.setComplete();
         /* TODO need to authenticate user so that they will automatically login after signup*/
         authenticateUser();
-        return "redirect:/user/" + customer.getEmail();
+        return "redirect:/users/" + customer.getEmail();
     }
 
     private void authenticateUser() {

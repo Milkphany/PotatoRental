@@ -1,6 +1,7 @@
 package com.potatorental.repository;
 
 import com.potatorental.model.Customer;
+import com.potatorental.model.Location;
 import com.potatorental.model.Person;
 
 import javax.sql.DataSource;
@@ -15,7 +16,9 @@ public interface PersonDao {
 
     public Person getPersonByEmail(String email);
 
-    public void createPerson();
+    public Location getLocationByZipCode(Integer zipCode);
 
-    public void updatePerson();
+    public void insertCustomer(Customer customer, Location Location);
+
+    public boolean updateCustomer(Customer customer);
 }

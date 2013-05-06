@@ -21,7 +21,6 @@
 <form:form modelAttribute="editForm" cssClass="form-signup" action="/users/${userid}" method="post">
     <form:input path="firstName" cssErrorClass="error" id="name" type="text" value="${customer.firstName}"/>
     <form:input path="lastName" cssErrorClass="error" id="name" type="text" value="${customer.lastName}" />
-    <form:input path="email" cssErrorClass="error" type="text" value="${customer.email}"/>
     <form:input path="address" cssErrorClass="error" type="text" value="${customer.address}"/>
     <form:input path="zipCode" cssErrorClass="error" type="text" value="${customer.zipCode}"/>
     <form:input path="telephone" cssErrorClass="error" type="text" value="${customer.telephone}"/>
