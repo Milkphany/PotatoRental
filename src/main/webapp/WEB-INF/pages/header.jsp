@@ -27,7 +27,7 @@
         <a id="logo" href="/"><img src="/images/logo4.png"/></a>
 
         <a class="headermenu" href="#">Browse</a>
-        <sec:authorize access="isAuthenticated()"><a class="headermenu" href="/queue" >Queue</a></sec:authorize>
+        <sec:authorize access="hasRole('ROLE_USER')"><a class="headermenu" href="/account/queue" >Queue</a></sec:authorize>
         <sec:authorize access="isAuthenticated()"><a class="headermenu" href="/account" >Settings</a></sec:authorize>
     </div>
 </div>

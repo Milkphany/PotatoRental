@@ -17,7 +17,7 @@
         <intercept-url pattern="/login" access="isAnonymous()" />
         <intercept-url pattern="/account/**" access="isAuthenticated()" />
         <intercept-url pattern="/queue/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_STAFF')" />
-        <intercept-url pattern="/user/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_STAFF')" />
+        <intercept-url pattern="/user/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_STAFF')" />
         <intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')" />
         <intercept-url pattern="/staff/**" access="hasAnyRole('ROLE_STAFF')" />
 

@@ -1,10 +1,9 @@
-package com.potatorental.jdbc;
+package com.potatorental.service;
 
 import com.potatorental.model.Customer;
 import com.potatorental.model.Employee;
 import com.potatorental.model.Person;
-import com.potatorental.repository.CustomerDAO;
-import org.joda.time.LocalDate;
+import com.potatorental.repository.PersonDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -20,7 +19,7 @@ import java.sql.SQLException;
  * Date: 5/4/13
  * Time: 7:58 PM
  */
-public class PersonDaoImpl implements CustomerDAO {
+public class PersonDaoImpl implements PersonDao {
 
     protected JdbcTemplate jdbcTemplate;
 
@@ -37,6 +36,7 @@ public class PersonDaoImpl implements CustomerDAO {
         this.dataSource = dataSource;
     }
 
+    @Override
     public Person getPersonByEmail(String email) {
         String sql = "select * from person where email = ?";
         return getPersonRole(jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Person.class), email));
@@ -99,26 +99,12 @@ public class PersonDaoImpl implements CustomerDAO {
     }
 
     @Override
-    public void createCustomer() {
+    public void createPerson() {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-/*    @Override
-    public Customer getCustomerByEmail(String email) {
-        String sql = "select id from customer where id = ?";
-        Person person =  getPersonByEmail(email);
-
-        if (person == null || !isPersonCustomer(person))
-            return null;
-
-        Customer customer = new Customer(person);
-        customer.setRating(jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()));
-
-        return customer;
-    }*/
-
     @Override
-    public void updateCustomer() {
+    public void updatePerson() {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 }

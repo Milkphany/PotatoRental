@@ -1,6 +1,7 @@
 package com.potatorental.repository;
 
 import com.potatorental.model.Customer;
+import com.potatorental.model.Person;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -10,9 +11,11 @@ import java.util.List;
  * Date: 5/2/13
  * Time: 1:17 PM
  */
-public interface CustomerDAO {
+public interface PersonDao {
 
-    public void createCustomer();
+    public Person getPersonByEmail(String email);
 
-    public void updateCustomer();
+    public void createPerson();
+
+    public void updatePerson();
 }

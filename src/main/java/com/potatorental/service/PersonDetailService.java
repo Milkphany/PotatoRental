@@ -1,7 +1,5 @@
 package com.potatorental.service;
 
-import com.potatorental.model.Customer;
-import com.potatorental.model.Employee;
 import com.potatorental.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -51,7 +49,6 @@ public class PersonDetailService implements UserDetailsService {
         if (jdbcTemplate.queryForInt(sql, person.getSsn()) != 0) {
             list.add(new UserGrantedAuthority("ROLE_USER"));
         } else {
-            list.add(new UserGrantedAuthority("ROLE_USER"));
             list.add(new UserGrantedAuthority("ROLE_STAFF"));
         }
 

@@ -17,7 +17,6 @@ import javax.validation.Valid;
  */
 @Controller
 @RequestMapping("/signup")
-@SessionAttributes("signupForm")
 public class SignUpController {
 
     @ModelAttribute("signupForm")

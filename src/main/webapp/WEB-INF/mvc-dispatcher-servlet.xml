@@ -26,7 +26,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="personDAOImpl" class="com.potatorental.jdbc.PersonDaoImpl" >
+    <bean id="personDAO" class="com.potatorental.service.PersonDaoImpl" >
         <property name="dataSource" ref="dataSource" />
     </bean>
 

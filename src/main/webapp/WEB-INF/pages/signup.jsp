@@ -20,7 +20,7 @@
     <c:import url="header.jsp"/>
     <div id="signuppagebody">
         <div class="contentsignup">
-            <form:form modelAttribute="signupForm" cssClass="form-signup" id="form-table" action="signup">
+            <form:form modelAttribute="signupForm" cssClass="form-signup" id="form-table" action="signup" method = "post">
                 <c:if test="${not empty message}">
                     <div class="errorblock">
                         <div class="error">Error: ${message}</div>

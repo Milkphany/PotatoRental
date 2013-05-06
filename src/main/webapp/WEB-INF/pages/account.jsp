@@ -8,8 +8,9 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,5 +36,12 @@ ${user.telephone} | ${user.address} | ${user.email} | ${user.zipCode}
 <c:if test="${employee}">
     | ${user.startDate}
 </c:if>
+</br>
+<%--Documentation on why spring url is used here:
+http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/spring.tld.html#spring.tld.url
+
+Long story short, it has scoping features
+--%>
+<a href="<spring:url value='/account' />">Account</a>
 </body>
 </html>
