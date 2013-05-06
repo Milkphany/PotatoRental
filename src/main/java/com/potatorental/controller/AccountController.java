@@ -31,8 +31,8 @@ public class AccountController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getProfile(ModelMap modelMap, Principal principal) {
-        modelMap.addAttribute("message", "This is going to be " + principal.getName() + "'s profile");
+    public String getSettings(ModelMap modelMap, Principal principal) {
+        modelMap.addAttribute("message", "This is going to be " + principal.getName() + "'s profile setting");
 
         if (modelMap.get("user") == null) {
             Person person = personDao.getPersonByEmail(principal.getName());

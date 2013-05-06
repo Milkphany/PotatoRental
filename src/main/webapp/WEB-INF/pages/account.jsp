@@ -11,11 +11,11 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
     <c:import url="head.jsp" />
-    <title>Profile | ${user.email}</title>
+    <title>Settings | ${user.email}</title>
 </head>
 <body>
 <c:import url="header.jsp" />
@@ -42,6 +42,16 @@ http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html
 
 Long story short, it has scoping features
 --%>
-<a href="<spring:url value='/account' />">Account</a>
+<sec:authorize access="hasRole('ROLE_USER')" >
+    <a href="<spring:url value="/account/queue" />">Queue</a>
+</sec:authorize>
+<%--Employee code here--%>
+<sec:authorize access="hasRole('ROLE_STAFF')">
+    <a href="<spring:url value="/users" />">Search Users</a>
+    <a href="<spring:url value="/record" />">Record Order</a>
+    <a href="<spring:url value="/mailing" />">Mail</a>
+    <a href="<spring:url value="/suggest" />">Suggest</a>
+</sec:authorize>
+
 </body>
 </html>
