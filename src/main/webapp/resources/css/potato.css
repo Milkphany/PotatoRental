@@ -134,7 +134,7 @@ h2, #firstelem {
 }
 
 #pagebody {
-    width: 860px;
+    width:100%;
     margin: 0 auto;
 }
 
@@ -218,10 +218,15 @@ h2, #firstelem {
 }
 .image_carousel img {
     padding: 9px;
-    margin: 7px;
+    margin: 5px;
     float: left;
-    height: 350px;
-    width: 246px;
+    height: 300px;
+    width: 211px;
+}
+
+.image_carousel img:hover {
+    opacity: 0.8;
+    cursor: pointer; 
 }
 
 .pagination {
