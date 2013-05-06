@@ -1,7 +1,6 @@
 package com.potatorental.controller;
 
 import com.potatorental.model.Customer;
-import com.potatorental.model.Person;
 import com.potatorental.repository.PersonDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,7 +36,7 @@ public class UserController {
         return new Customer();
     }
 
-    @RequestMapping(value = "{userid}", method = RequestMethod.GET)
+    @RequestMapping(value = "{userid:.*}", method = RequestMethod.GET)
     public ModelAndView getUser(@PathVariable String userid, ModelMap modelMap) {
         Customer customer = (Customer) personDao.getPersonByEmail(userid);
         modelMap.addAttribute("customer", customer);
@@ -45,7 +44,7 @@ public class UserController {
         return new ModelAndView("useraccount", modelMap);
     }
 
-    @RequestMapping(value = "{userid}", method = RequestMethod.POST)
+    @RequestMapping(value = "{userid:.*}", method = RequestMethod.POST)
     public String updateuser(@PathVariable String userid, ModelMap modelMap, @ModelAttribute("customer") Customer customer) {
         personDao.updateCustomer(customer);
 
@@ -53,12 +52,12 @@ public class UserController {
     }
 
     @RequestMapping(value = "{userid}/rental", method = RequestMethod.GET)
-    public String getRental(ModelMap modelMap) {
-        return "useraccount";
+    public String getRentals(@PathVariable String userid, ModelMap modelMap) {
+        return "rental";
     }
 
-    @RequestMapping(value = "{userid}/rental/{rentalid}")
-    public String getRentals(@PathVariable int rentalid, ModelMap modelMap) {
-        return "useraccount";
+    @RequestMapping(value = "{userid}/rental/{rentalid:.*}")
+    public String getRental(@PathVariable String userid, @PathVariable int rentalid, ModelMap modelMap) {
+        return "rental";
     }
 }

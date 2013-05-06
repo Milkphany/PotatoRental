@@ -17,6 +17,6 @@
 <jsp:include page="header.jsp" />
 Search the user, this could be a subheader for all employee pages
 </br>
-<a href="<spring:url value="/users/abcdefg@gmail.com" htmlEscape="true" />">Value</a>
+<a href="<spring:url value="/users/cats@cats.com" htmlEscape="true" />">Value</a>
 </body>
 </html>

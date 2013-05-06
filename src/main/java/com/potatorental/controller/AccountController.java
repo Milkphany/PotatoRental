@@ -50,4 +50,10 @@ public class AccountController {
         return "queue";
     }
 
+    @RequestMapping(value = "rental", method = RequestMethod.GET)
+    public String getRental(ModelMap modelMap, Principal principal) {
+
+        return "rental";
+    }
+
 }
