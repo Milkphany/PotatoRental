@@ -46,17 +46,18 @@
                     http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/spring.tld.html#spring.tld.url
 
 Long story short, it has scoping features
-                    --%>
-                    <sec:authorize access="hasRole('ROLE_USER')" >
-                        <a href="<spring:url value="/account/queue" />">Queue</a>
-                    </sec:authorize>
-                    <%--Employee code here--%>
-                    <sec:authorize access="hasRole('ROLE_STAFF')">
-                        <a href="<spring:url value="/users" />">Search Users</a>
-                        <a href="<spring:url value="/record" />">Record Order</a>
-                        <a href="<spring:url value="/mailing" />">Mail</a>
-                        <a href="<spring:url value="/suggest" />">Suggest</a>
-                    </sec:authorize>
+--%>
+<sec:authorize access="hasRole('ROLE_USER')" >
+    <a href="<spring:url value="/account/rentals" />">Rentals</a>
+    <a href="<spring:url value="/account/queue" />">Queue</a>
+</sec:authorize>
+<%--Employee code here--%>
+<sec:authorize access="hasRole('ROLE_STAFF')">
+    <a href="<spring:url value="/users" />">Search Users</a>
+    <a href="<spring:url value="/record" />">Record Order</a>
+    <a href="<spring:url value="/mailing" />">Mail</a>
+    <a href="<spring:url value="/suggest" />">Suggest</a>
+</sec:authorize>
 
                 </div></div></div>
 
