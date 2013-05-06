@@ -40,30 +40,7 @@ public class PersonDaoImpl implements CustomerDAO {
     public Person getPersonByEmail(String email) {
         String sql = "select * from person where email = ?";
         return getPersonRole(jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Person.class), email));
-
-        /*return jdbcTemplate.queryForObject(sql, new PersonMapper(), email);*/
     }
-
-   /* private class PersonMapper implements RowMapper<Person> {
-
-        @Override
-        public Person mapRow(ResultSet resultSet, int i) throws SQLException {
-            Person person = new Person();
-
-*//*            TODO delete this
-            person.setRating(resultSet.getInt("rating"));*//*
-            person.setSsn(resultSet.getInt("ssn"));
-            person.setLastName(resultSet.getString("lastname"));
-            person.setFirstName(resultSet.getString("firstname"));
-            person.setAddress(resultSet.getString("address"));
-            person.setZipCode(resultSet.getInt("zipcode"));
-            person.setTelephone(resultSet.getBigDecimal("telephone"));
-            person.setEmail(resultSet.getString("email"));
-            person.setPass(resultSet.getString("pass"));
-
-            return person;
-        }
-    }*/
 
     private Person getPersonRole(Person person) {
         String customersql = "select rating from customer where id = ?";

@@ -6,7 +6,7 @@
     <div id="topnav">
         <sec:authorize access="isAuthenticated()">
             <sec:authentication property="principal.username" var="userid" />
-            <a id="userid" href="/profile">${userid}</a> |
+            <a id="userid" href="/account">${userid}</a> |
         </sec:authorize>
         <sec:authorize access="isAnonymous()"><a id="loginlink" href="#">Log In</a> |</sec:authorize>
         <sec:authorize access="isAnonymous()"><a id="signuplink" href="signup">Sign up</a> |</sec:authorize>
@@ -27,8 +27,8 @@
         <a id="logo" href="/"><img src="/images/logo4.png"/></a>
 
         <a class="headermenu" href="#">Browse</a>
-        <sec:authorize access="isAuthenticated()"><a class="headermenu" href="queue" >Queue</a></sec:authorize>
-        <sec:authorize access="isAuthenticated()"><a class="headermenu" href="profile" >Profile</a></sec:authorize>
+        <sec:authorize access="isAuthenticated()"><a class="headermenu" href="/queue" >Queue</a></sec:authorize>
+        <sec:authorize access="isAuthenticated()"><a class="headermenu" href="/account" >Settings</a></sec:authorize>
     </div>
 </div>
 

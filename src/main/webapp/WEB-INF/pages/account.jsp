@@ -14,20 +14,22 @@
 <html>
 <head>
     <c:import url="head.jsp" />
-    <title>Profile | ${userid}</title>
+    <title>Profile | ${user.email}</title>
 </head>
 <body>
 <c:import url="header.jsp" />
+<%--This page does not have to display all user details, just what they can do, editing user detail will be another page--%>
 <h2>${message}</h2>
-<c:if test="${customer == true}">
+<%--Use the following code block to test for customer or employee--%>
+<c:if test="${customer}">
     You are a customer
     <%--Secret ${user.rating}--%>
 </c:if>
-<c:if test="${employee == true}">
+<c:if test="${employee}">
     You are an employee
     <%-- Secret ${user.id} | ${user.hourlyRate} | --%>
 </c:if>
-<h1>${user.firstName} ${user.lastName} | Profile Settings</h1>
+<h1>${user.firstName} ${user.lastName}</h1>
 ${user.firstName} | ${user.lastName} | ${user.ssn} | ${user.pass} </br>
 ${user.telephone} | ${user.address} | ${user.email} | ${user.zipCode}
 <c:if test="${employee}">

@@ -42,8 +42,8 @@
                 <form:input path="zipCode" cssErrorClass="error" type="text" placeholder="Zip Code"/>
                 <form:input path="telephone" cssErrorClass="error" type="text" placeholder="Telephone Number"/>
                 <form:input path="ssn" cssErrorClass="error" type="text" placeholder="Social Security Number"/>
-                <form:password path="password" cssErrorClass="error" placeholder="Password"/>
-                <form:password path="password" cssErrorClass="error" placeholder="Confirm Password"/>
+                <form:password path="pass" cssErrorClass="error" placeholder="Password"/>
+                <form:password path="pass" cssErrorClass="error" placeholder="Confirm Password"/>
 
                 <button type="submit">Sign Up</button>
             </form:form>
