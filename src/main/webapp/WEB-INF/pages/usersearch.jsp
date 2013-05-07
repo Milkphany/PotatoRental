@@ -9,14 +9,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html>
-<head>
-    <jsp:include page="head.jsp" />
-    <title>Search users</title>
-</head>
-<body>
-<jsp:include page="header.jsp" />
-Search the user, this could be a subheader for all employee pages
-</br>
-<a href="<spring:url value="/users/cats@cats.com" htmlEscape="true" />">Value</a>
-</body>
+    <head>
+        <jsp:include page="head.jsp" />
+        <title>Search users</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <jsp:include page="header.jsp" />
+            <div id="moviepagebody">
+                <div class="content">
+                    Search the user, this could be a subheader for all employee pages
+                    </br>
+                    <a href="<spring:url value="/users/cats@cats.com" htmlEscape="true" />">Value</a>
+
+                </div></div></div>
+    </body>
 </html>
