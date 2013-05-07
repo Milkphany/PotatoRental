@@ -35,7 +35,7 @@
                             </div>
                         </c:if>
 
-                        <form:input path="firstName" cssErrorClass="error" id="name" type="text" placeholder="First Name" autofocus="autofocus"/>&nbsp;
+                        <form:input path="firstName" cssErrorClass="error" id="name" type="text" placeholder="First Name" />&nbsp;
                         <form:input path="lastName" cssErrorClass="error" id="name" type="text" placeholder="Last Name"/>
                         <form:input path="email" cssErrorClass="error" type="email" placeholder="Email Address"/>
                         <form:input path="address" cssErrorClass="error" type="text" placeholder="Address"/>
@@ -69,11 +69,28 @@
                             <option value="MS">MS</option>
                             <option value="MT">MT</option>
                             <option value="NE">NE</option>
+                            <option value="NC">NC</option>
+                            <option value="ND">ND</option>
                             <option value="NH">NH</option>
                             <option value="NJ">NJ</option>
+                            <option value="NM">NM</option>
                             <option value="NV">NV</option>
                             <option value="NY">NY</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option>
+                            <option value="OR">OR</option>
+                            <option value="PA">PA</option>
+                            <option value="RI">RI</option>
+                            <option value="SC">SC</option>
+                            <option value="SD">SD</option>
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option>
                             <option value="VA">VA</option>
+                            <option value="WA">WA</option>
+                            <option value="WI">WI</option>
+                            <option value="WV">WV</option>
+                            <option value="WY">WY</option>
+                            
                       
                         </select>
                         
@@ -91,7 +108,7 @@
 
                     <p>Movies delivered right to your door for as low as $10/month.
                         <br/>
-                        <a href="#">Find out more</a></p>
+                        <a href="help">Find out more</a></p>
                 </div>
             </div>
 
