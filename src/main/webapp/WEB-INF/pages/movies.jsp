@@ -10,15 +10,10 @@
     <head>
         <jsp:include page="head.jsp" />
         <title>Movies</title>
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-
+<script type="text/javascript" src="/js/jquery.tooltipster.min.js"></script>
         <script>
-            $(function() {
-                $( document ).tooltip({
-                    content: this.id
-                }
-            
-        );
+            $(document).ready(function() {
+                $('.toolmeow').tooltipster();
             });
         </script>
 
@@ -26,6 +21,7 @@
     <body>
         <jsp:include page="header.jsp" />  
 
+        
 
     <center> <span class="header2"><a id="prev3" class="prev" href="#">&lt;</a>
             Comedy <a id="next3" class="next" href="#">&gt;</a></span></center>
@@ -46,10 +42,10 @@
         <div class="movielist">
 
             <c:forEach var="movies" items="${movies}" >
-               
-                <img id ="${movies.id}"  title="" alt="${movies.name}" src="/images/posters/${movies.id}.jpg"/>
                 
-                </c:forEach>
+                <img class="toolmeow" id ="${movies.id}"  title="${movies.name}" alt="${movies.name}" src="/images/posters/${movies.id}.jpg"/>
+
+            </c:forEach>
 
         </div>
 
