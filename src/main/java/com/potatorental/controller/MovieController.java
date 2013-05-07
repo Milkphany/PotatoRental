@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.BufferedReader;
@@ -24,7 +26,7 @@ import java.util.Random;
  */
 @Controller
 @RequestMapping("/movies")
-
+@SessionAttributes("movies")
 public class MovieController {
 
     public MovieDao movieDao;
@@ -36,7 +38,15 @@ public class MovieController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getMovies(ModelMap modelMap) {
+        if (modelMap.get("movies") != null)
+            return new ModelAndView("movies", modelMap);
+
         modelMap.addAttribute("movies", movieDao.getAllMovies());
+/*        if (num == null)
+            modelMap.addAttribute("movies", movieDao.getAllMovies());
+        else
+            modelMap.addAttribute("movies", movieDao.getNumMovies(num));*/
+
         return new ModelAndView("movies", modelMap);
     }
 
