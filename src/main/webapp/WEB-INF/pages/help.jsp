@@ -7,9 +7,7 @@
     
     <body>
         <div id="wrap">
-            
             <jsp:include page="header.jsp" />
-
 
             <div id ="moviepagebody">
 
