@@ -19,7 +19,7 @@
             <hr>
 
             <div class="image_carousel" id="content">
-
+                <center>
                 <div id="foo2">
                     <img class="poster" src="/images/posters/dark.png"/>
                     <img class="poster" id="django" src="/images/posters/django.png"/>
@@ -32,7 +32,7 @@
                     <img class="poster" src="/images/posters/seven.png" />
                     <img class="poster" src="/images/posters/shawshank.png" />
                 </div>
-                
+                </center>
             </div>
         </div>
 
