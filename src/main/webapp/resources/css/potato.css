@@ -85,21 +85,29 @@ body, html {
     font-family: "Lato", sans-serif;
     font-size: 10pt;
     font-weight: 300;
-    color: #3a767b;
+    color: #111;
     padding-bottom: 10px;
     float:right;    
 }
 
 #topnav a  {
-    color: #3a767b;
+    color: #111;
     padding: 3px;
     text-decoration:none}
 
-#topnav a:hover, .content a:hover, body a:hover, .potatoleft a:hover{
-    color: #125f94;;}
+#topnav a:hover,  body a:hover, .potatoleft a:hover{
+    color: #125f94;
+    }
 
-.content a, body a{color: #00caa6; text-decoration:none}
+body a{ color: #00caa6; text-decoration:none}
 
+.content a {
+    color: #125f94;
+}
+
+.content a:hover {
+    color: #00caa6;
+}
 
 #mainnav {
     background-color: #00caa6;
@@ -183,7 +191,7 @@ h2, #firstelem {
     text-shadow: 0px 1px 3px #bbb;}
 
 .flat a, .flat a:after {
-    color: #3a767b;
+    color: #111;
     transition: all 0.5s;
 }
 .flat a:before {
@@ -367,4 +375,9 @@ hr {
 
 .movtt {
     text-align: justify
+}
+
+.red {
+    color:red;
+    font-weight: bold;
 }

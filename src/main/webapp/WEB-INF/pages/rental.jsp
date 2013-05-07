@@ -35,7 +35,7 @@
                         <tr>
                             <td>April 30, 2013</td>
                             <td><a href="django.jsp">Django</a><br/><a href="#">The Dark Knight</a></td>
-                            <td>DELIVERED
+                            <td><span class="red">CURRENTLY HELD</span>
                                 <br/>
                                 <a href="#">(Click here to return)</a>
                             </td>

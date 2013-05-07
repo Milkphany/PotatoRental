@@ -41,4 +41,8 @@ public class HomeController {
         return "help";
     }
 
+    @RequestMapping(value = "django", method = RequestMethod.GET)
+    public String getDjango() {
+        return "django";
+    }
 }
