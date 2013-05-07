@@ -10,21 +10,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html>
-<head>
-    <c:import url="head.jsp" />
-    <title>Login page</title>
-</head>
-<body>
-<c:import url="header.jsp" />
-<div>
-    <form:form modelAttribute="loginForm" cssClass="login-page" method="post" action="loginCheck">
-        <input type="text" name="username" autofocus="autofocus" placeholder="Email Address"/>
-        <input type="text" name="password" placeholder="Password"/>
-        <input type="submit"/>
-    </form:form>
-    ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
-    </br>
-    ${message} is ready!
-</div>
-</body>
+    <head>
+        <c:import url="head.jsp" />
+        <title>Login page</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <c:import url="header.jsp" />
+            <div id="moviepagebody"><div class="content">
+
+                    <span class="header1">PotatoCat Login</span>
+                    <hr>
+
+                    <p><span class="red">The username or password you entered is incorrect.</span></p>
+
+                    <form:form modelAttribute="loginForm" cssClass="form-login" method="post" action="loginCheck">
+                        <input type="text" name="username" autofocus="autofocus" placeholder="Email Address"/>
+                        <input type="text" name="password" placeholder="Password"/>
+                        <input id ="submitbutton" type="submit"/>
+                    </form:form>
+                    <p>
+                        ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+                        </br>
+                        ${message} is ready!
+                    </p>
+                </div></div></div>
+    </body>
 </html>
