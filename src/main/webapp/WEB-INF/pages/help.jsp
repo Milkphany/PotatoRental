@@ -21,9 +21,23 @@
                     <dl class ="accordion">
                         
                         <dt><a href="#">How does PotatoCat work?</a><br/></dt>
-                        <dd>meow</dd>
+                        <dd>Renting movies with PotatoCat is simple:
+                        
+                            <ol><strong>1.</strong>
+                                Select a plan that works for you. 
+                                We offer one limited and three different unlimited plans, starting at just $10/month.</ol>
+                            <ol><strong>2.</strong>
+                                Add movies you would like to see to your rental queue and we will send you your first DVD(s).
+                               
+                            </ol>
+                            <ol><strong>3.</strong>
+                                You can keep your rented DVDs for as long as you like. 
+                                To rent a new movie, return your current order to us and we will send you the next movie in your queue.</ol>
+                        
+                        </dd>
                         <dt><a href="#">What is the selection like?</a></dt>
-                        <dd>We have thousands of movies in stock, including new releases, classics, kids' movies, and foreign films. Click <a href="#">here</a> to browse our entire collection.</dd>
+                        <dd>We have thousands of movies in stock, including new releases, classics, kids' movies, and foreign films. 
+                            Click <a href="/movies">here</a> to browse our entire collection.</dd>
                         <dt><a href="#">How much does this service cost?</a><br/></dt>
                         <dd>
                             There are four different plans to choose from. You can pick the one that works for you.<br/>
@@ -73,13 +87,22 @@
                             
                             You can add, delete, and rearrange the movies in your queue.
                         </dd>
-                        <a href="#">How many movies can I rent per month?</a><br/>
-                        <a href="#">Can I downgrade/upgrade my account?</a><br/>
+                        <dt><a href="#">How many movies can I rent per month?</a></dt>
+                        <dd>This depends on which plan you've selected.
+                        PotatoCat offers four plans to choose from. With the limited plan, you can rent up to two movies a month. 
+                        The three unlimited plans are, well, unlimited and allow you to rent as many movies a month as you like. 
+                        Click <a href="#">here</a> to read more about the plans we offer.</dd>
+                        <dt><a href="#">Can I downgrade/upgrade my account?</a></dt>
+                        <dd>Yes! You can make changes to your account by going into your <a href="#">account settings</a>.</dd>
                         <a href="#">How do I cancel my account?</a><br/>
 
                         <h2>Orders</h2>
-                        <a href="#">How can I view my order history?</a><br/>
-                        <a href="#">How do I cancel an order?</a><br/>
+                        <dt><a href="#">How can I view my order history?</a></dt>
+                        <dd>You can view all of your orders by going to your <a href="#">account settings</a> and then clicking
+                            <strong>Order History</strong>.</dd>
+                        <dt><a href="#">How do I return an order?</a></dt>
+                        <dd>To return your order, simply visit your <a href="#">order history</a> 
+                            and click the return link next to the movies you'd like to send back to us.</dd>
                         <a href="#">How can I report a problem with my rental?</a><br/>
                         <a href="#"></a><br/>
                         <a href="#"></a><br/>
