@@ -6,14 +6,7 @@ $('body').ready(function() {
         // find it's children '.sub_navigation' and display/hide them
         $(this).find('.sub_navigation').slideDown();
         var name = this.innerHTML;
-        var moviehtml = "\
-                      <a href ='#'>New Arrivals</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
-                      <a href ='#'>A - Z</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
-                      <a href ='#'>Genres</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
-                      <a href ='#'>Recommendations</a>\
-                  ";
-
-        $('#subheader').html(moviehtml);
+        
         $('#login').slideUp();
         if (name === "Browse")
             $('#subheader').slideDown();

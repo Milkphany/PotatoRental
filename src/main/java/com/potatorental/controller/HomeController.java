@@ -45,4 +45,9 @@ public class HomeController {
     public String getDjango() {
         return "django";
     }
+    
+    @RequestMapping(value = "genres", method = RequestMethod.GET)
+    public String getGenres() {
+        return "genres";
+    }
 }

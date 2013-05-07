@@ -33,7 +33,13 @@
     </div>
 </div>
 
-<div id="subheader"></div>
+<div id="subheader">
+    <a href ='#'>New Arrivals</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href ='#'>A - Z</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href ='/genres'>Genres</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href ='#'>Recommendations</a>
+
+</div>
 
 <div id="login">
     <%--<form class="form-login" action="checkLogin" method="post">
