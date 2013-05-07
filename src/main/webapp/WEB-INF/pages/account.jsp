@@ -27,20 +27,20 @@
                     <span class="header1">${message}</span>
                     <hr>
                     <%--Use the following code block to test for customer or employee--%>
-                    <c:if test="${customer}">
+                    <sec:authorize access="hasRole('ROLE_USER')">
                         You are a customer
                         <%--Secret ${user.rating}--%>
-                    </c:if>
-                    <c:if test="${employee}">
+                    </sec:authorize>
+                    <sec:authorize access="hasRole('ROLE_STAFF')" >
                         You are an employee
                         <%-- Secret ${user.id} | ${user.hourlyRate} | --%>
-                    </c:if>
+                    </sec:authorize>
                     <h1>${user.firstName} ${user.lastName}</h1>
                     ${user.firstName} | ${user.lastName} | ${user.ssn} | ${user.pass} </br>
                     ${user.telephone} | ${user.address} | ${user.email} | ${user.zipCode}
-                    <c:if test="${employee}">
+                    <sec:authorize access="hasRole('ROLE_STAFF')">
                         | ${user.startDate}
-                    </c:if>
+                    </sec:authorize>
                     </br>
                     <%--Documentation on why spring url is used here:
                     http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/spring.tld.html#spring.tld.url

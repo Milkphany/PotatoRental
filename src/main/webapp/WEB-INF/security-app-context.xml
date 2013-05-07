@@ -15,12 +15,12 @@
 
         <intercept-url pattern="/signup" access="isAnonymous()" />
         <intercept-url pattern="/login" access="isAnonymous()" />
+        <intercept-url pattern="/account/queue/**" access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/account/**" access="isAuthenticated()" />
-        <intercept-url pattern="/queue/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_STAFF')" />
         <!--Uncomment this for security-->
         <!--<intercept-url pattern="/users/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_STAFF')" />-->
-        <intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/staff/**" access="hasAnyRole('ROLE_STAFF')" />
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/staff/**" access="hasRole('ROLE_STAFF')" />
 
         <!--TODO uncomment this and find a page for access denied-->
         <!--<access-denied-handler error-page="/" />-->
@@ -28,7 +28,7 @@
                     login-processing-url="/loginCheck"
                     login-page="/login" default-target-url="/loginsuccess"
                     authentication-failure-url="/loginfailed" />
-        <logout logout-success-url="/" logout-url="/logout"/>
+        <logout logout-success-url="/loginout" logout-url="/logout"/>
     </http>
 
     <authentication-manager>

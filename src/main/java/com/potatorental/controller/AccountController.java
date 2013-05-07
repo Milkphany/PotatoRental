@@ -19,7 +19,7 @@ import java.security.Principal;
  */
 @Controller
 @RequestMapping("/account")
-@SessionAttributes({"user", "customer", "employee"})
+@SessionAttributes({"user"})
 public class AccountController {
 
     private final PersonDao personDao;
@@ -33,14 +33,8 @@ public class AccountController {
     public String getSettings(ModelMap modelMap, Principal principal) {
         modelMap.addAttribute("message", "This is going to be " + principal.getName() + "'s profile setting");
 
-        if (modelMap.get("user") == null) {
-            Person person = personDao.getPersonByEmail(principal.getName());
-            modelMap.addAttribute("user", person);
-            if (person instanceof Customer)
-                modelMap.addAttribute("customer", true);
-            else
-                modelMap.addAttribute("employee", true);
-        }
+        if (modelMap.get("user") == null)
+            modelMap.addAttribute("user", personDao.getPersonByEmail(principal.getName()));
 
         return "account";
     }

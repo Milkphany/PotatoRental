@@ -28,6 +28,7 @@
 
         <a class="headermenu" href="/movies">Browse</a>
         <sec:authorize access="hasRole('ROLE_USER')"><a class="headermenu" href="/account/queue" >Queue</a></sec:authorize>
+        <sec:authorize access="hasRole('ROLE_STAFF')"><a class="headermenu" href="/users" />Customers</sec:authorize>
         <sec:authorize access="isAuthenticated()"><a class="headermenu" href="/account" >Settings</a></sec:authorize>
     </div>
 </div>
