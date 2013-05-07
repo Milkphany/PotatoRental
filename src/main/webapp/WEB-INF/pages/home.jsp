@@ -38,7 +38,10 @@
                 </center>
             </div>
         </div>
-
+        <h1>Popular movie list: Movies with ratings equal to 5, displaying 30</h1>
+        <c:forEach var="movies" items="${popular}" >
+            ${movies.name}</br>
+        </c:forEach>
     </div>
 </div>
 </body>

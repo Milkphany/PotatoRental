@@ -71,4 +71,12 @@ public class MovieDaoImpl implements MovieDao {
         jdbcTemplate.update(sql, movie.getName(), movie.getType(),
                 movie.getRating(), movie.getDistrFee(), movie.getNumCopies());
     }
+
+    @Override
+    public List<Movie> getPopularMovies(int numMovies) {
+        String sql = "select * from movie where rating = 5 limit ?";
+        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, numMovies);
+
+        return addMoviesFromMap(maps);
+    }
 }
