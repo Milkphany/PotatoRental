@@ -23,17 +23,13 @@
             <div id="foo3">
                 <c:forEach var="movies" items="${movies}" >
                     <c:if test="${movies.type == 'Comedy'}">
-                        <img class="poster" alt="${movies.name}" src="/images/posters/${movies.id}.png"/>
+                        <img class="poster" alt="${movies.name}" src="/images/posters/${movies.id}.jpg"/>
                     </c:if>
                 </c:forEach>
                
             </div>
-
-
-
         </center>
-        
-        
+
         <center> <span class="header2"><a id="prev2" class="prev" href="#">&lt;</a>
             Drama <a id="next2" class="next" href="#">&gt;</a></span></center>
     <hr>
@@ -43,7 +39,7 @@
             <div id="foo2">
                 <c:forEach var="movies" items="${movies}" >
                     <c:if test="${movies.type == 'Drama'}">
-                        <img class="poster" alt="${movies.name}" src="/images/posters/${movies.id}.png"/>
+                        <img class="poster" alt="${movies.name}" src="/images/posters/${movies.id}.jpg"/>
                     </c:if>
                 </c:forEach>
                
@@ -64,11 +60,8 @@
 
 
             <c:forEach var="movies" items="${movies}" >
-                <img src="/images/posters/${movies.id}.png"/>
+                <img src="/images/posters/${movies.id}.jpg"/>
             </c:forEach>
-
-
-
 
         </div>
     </body>
