@@ -29,9 +29,9 @@ $('body').ready(function() {
     });
     
     $('#loginlink').click(function(){
-       $('#subheader').slideUp();
-       $('#login').slideToggle();
-       $('#login > form > input:first').focus();
+        $('#subheader').slideUp();
+        $('#login').slideToggle();
+        $('#login > form > input:first').focus();
        
     });
 });

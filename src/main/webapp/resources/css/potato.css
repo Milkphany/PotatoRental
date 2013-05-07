@@ -253,7 +253,7 @@ h2, #firstelem {
     margin-right:auto;
     text-align:justify;
     padding: 20px;
-    line-height: 115%
+    line-height: 130%
 }
 
 #potatocat{
@@ -345,6 +345,7 @@ hr {
     text-align: center;
 }
 
+
 .movielist img {
     padding: 9px;
     margin: 2px;
@@ -352,7 +353,18 @@ hr {
     width: 211px;
 }
 
+
 .movielist img:hover {
     opacity: 0.8;
     cursor: pointer; 
+}
+
+.movtt a {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 16pt;
+}
+
+.movtt {
+    text-align: justify
 }
