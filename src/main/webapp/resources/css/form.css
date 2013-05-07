@@ -40,13 +40,13 @@ form input:focus, #name:focus, #zip:focus {
     height: 20px;
     width: 60px;
     color: #fff;
-    background: #3a767b;     
+    background-color: #125f94;     
 }
 
 
 
 .form-wrapper button:hover, .form-login button:hover, .form-submit button:hover{     
-    background: #0a919c;
+    background: #125f94;
 }   
 
 .form-wrapper button:active,
@@ -76,7 +76,7 @@ form input:focus, #name:focus, #zip:focus {
     border: 0;
     cursor: pointer;
     height: 40px;
-    width: 100px;
+    width: 220px;
     color: #fff;
     background: #00caa6;     
     margin:4px;
@@ -97,7 +97,7 @@ form input:focus, #name:focus, #zip:focus {
 
 } 
 
-.form-signup button:hover {background-color: #0a919c;}
+.form-signup button:hover {background-color: #125f94;}
 
 .form-login input {
     width: 200px;

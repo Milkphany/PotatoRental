@@ -13,6 +13,8 @@ public interface MovieDao {
 
     public List<Movie> getAllMovies();
 
+    public List<Movie> getNumMovies(int numMovies);
+
     public Movie getMovie(Integer movieid);
 
 

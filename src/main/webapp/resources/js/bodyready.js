@@ -45,7 +45,16 @@ $('body').ready(function() {
         auto: false,
         prev: '#prev2',
         next: '#next2',
-        mousewheel: true
+        mousewheel: false
+       
+    });
+    
+    $('#foo3').carouFredSel({     
+        scroll: 2,
+        auto: false,
+        prev: '#prev3',
+        next: '#next3',
+        mousewheel: false
         
         
     });

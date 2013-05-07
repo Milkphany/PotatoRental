@@ -27,11 +27,23 @@ public class MovieDaoImpl implements MovieDao {
     }
 
     @Override
+    public List<Movie> getNumMovies(int numMovies) {
+        String sql = "select * from movie limit ?";
+        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, numMovies);
+
+        return addMoviesFromMap(maps);
+    }
+
+    @Override
     public List<Movie> getAllMovies() {
         String sql = "select * from movie";
-
-        List<Movie> movies = new ArrayList<>();
         List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql);
+
+        return addMoviesFromMap(maps);
+    }
+
+    private List<Movie> addMoviesFromMap(List<Map<String, Object>> maps) {
+        List<Movie> movies = new ArrayList<>();
 
         for (Map map : maps) {
             Movie movie = new Movie();
