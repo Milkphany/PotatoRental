@@ -8,17 +8,17 @@
 </head>
 
 <body>
-<div id="wrap">
+<div id="">
     <jsp:include page="header.jsp"/>
     <div id="">
         ${message}
 
-        <div class="content">
+        <div class="">
             <center> <span class="header2"><a id="prev2" class="prev" href="#">&lt;</a>
                 Popular Movies <a id="next2" class="next" href="#">&gt;</a></span></center>
             <hr>
 
-            <div class="image_carousel" id="content">
+            <div class="image_carousel" >
                 <center>
                 <div id="foo2">
                     <img class="poster" src="/images/posters/dark.png"/>
@@ -32,6 +32,9 @@
                     <img class="poster" src="/images/posters/seven.png" />
                     <img class="poster" src="/images/posters/shawshank.png" />
                 </div>
+                    
+                   
+                    
                 </center>
             </div>
         </div>
