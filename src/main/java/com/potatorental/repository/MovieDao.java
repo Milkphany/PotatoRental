@@ -17,5 +17,6 @@ public interface MovieDao {
 
     public Movie getMovie(Integer movieid);
 
+    public void insertMovie(Movie movie);
 
 }

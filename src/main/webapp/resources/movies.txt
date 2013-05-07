@@ -1,0 +1,500 @@
+The Shawshank Redemption
+Crime
+The Godfather
+Crime
+The Godfather: Part II
+Crime
+Pulp Fiction
+Crime
+The Good, the Bad and the Ugly
+Adventure
+12 Angry Men
+Drama
+The Dark Knight
+Action
+Schindler's List
+Biography
+The Lord of the Rings: The Return of the King
+Action
+Fight Club
+Drama
+Star Wars: Episode V - The Empire Strikes Back
+Action
+The Lord of the Rings: The Fellowship of the Ring
+Action
+One Flew Over the Cuckoo's Nest
+Drama
+Inception
+Action
+Goodfellas
+Biography
+Star Wars
+Action
+Seven Samurai
+Action
+Forrest Gump
+Drama
+The Matrix
+Action
+The Lord of the Rings: The Two Towers
+Action
+City of God
+Crime
+Se7en
+Crime
+The Silence of the Lambs
+Crime
+Once Upon a Time in the West
+Adventure
+Casablanca
+Drama
+The Usual Suspects
+Crime
+Raiders of the Lost Ark
+Action
+Rear Window
+Mystery
+It's a Wonderful Life
+Drama
+Psycho
+Horror
+Léon: The Professional
+Crime
+Sunset Blvd.
+Drama
+American History X
+Crime
+Memento
+Mystery
+Apocalypse Now
+Drama
+Terminator 2: Judgment Day
+Action
+Saving Private Ryan
+Action
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb
+Comedy
+City Lights
+Comedy
+Alien
+Horror
+Spirited Away
+Animation
+North by Northwest
+Action
+Modern Times
+Comedy
+Django Unchained
+Adventure
+Citizen Kane
+Drama
+Back to the Future
+Adventure
+The Shining
+Horror
+The Pianist
+Biography
+The Dark Knight Rises
+Action
+Life Is Beautiful
+Comedy
+The Departed
+Crime
+M
+Crime
+Vertigo
+Mystery
+Paths of Glory
+Drama
+American Beauty
+Drama
+Taxi Driver
+Crime
+Double Indemnity
+Crime
+Aliens
+Action
+Toy Story 3
+Animation
+WALL·E
+Animation
+The Lives of Others
+Drama
+The Green Mile
+Crime
+The Intouchables
+Biography
+Gladiator
+Action
+A Clockwork Orange
+Crime
+The Great Dictator
+Comedy
+Amélie
+Comedy
+The Prestige
+Drama
+Lawrence of Arabia
+Adventure
+To Kill a Mockingbird
+Crime
+Reservoir Dogs
+Crime
+Das Boot
+Action
+Cinema Paradiso
+Drama
+The Third Man
+Film-Noir
+Requiem for a Dream
+Drama
+The Lion King
+Animation
+The Treasure of the Sierra Madre
+Action
+Eternal Sunshine of the Spotless Mind
+Drama
+Once Upon a Time in America
+Crime
+Star Wars: Episode VI - Return of the Jedi
+Action
+Full Metal Jacket
+Drama
+L.A. Confidential
+Crime
+Braveheart
+Action
+Chinatown
+Crime
+Oldeuboi
+Drama
+Singin' in the Rain
+Comedy
+Monty Python and the Holy Grail
+Adventure
+Some Like It Hot
+Comedy
+Bicycle Thieves
+Crime
+Metropolis
+Drama
+Amadeus
+Biography
+Rashomon
+Crime
+2001: A Space Odyssey
+Adventure
+All About Eve
+Drama
+The Sting
+Comedy
+Unforgiven
+Western
+Indiana Jones and the Last Crusade
+Action
+The Apartment
+Comedy
+Raging Bull
+Biography
+The Bridge on the River Kwai
+Adventure
+Witness for the Prosecution
+Drama
+Grave of the Fireflies
+Animation
+Die Hard
+Action
+Batman Begins
+Action
+Jodaeiye Nader az Simin
+Drama
+Yojimbo
+Action
+Inglourious Basterds
+Adventure
+Snatch.
+Crime
+For a Few Dollars More
+Western
+The Great Escape
+Adventure
+El laberinto del fauno
+Drama
+Downfall
+Biography
+Mr. Smith Goes to Washington
+Drama
+Up
+Animation
+Toy Story
+Animation
+On the Waterfront
+Crime
+The Elephant Man
+Biography
+The Seventh Seal
+Drama
+The General
+Action
+Heat
+Action
+The Maltese Falcon
+Crime
+Blade Runner
+Drama
+The Kid
+Comedy
+Rebecca
+Drama
+Gran Torino
+Drama
+Wild Strawberries
+Drama
+Scarface
+Crime
+Fargo
+Crime
+Ran
+Action
+The Big Lebowski
+Comedy
+Touch of Evil
+Crime
+The Deer Hunter
+Drama
+Cool Hand Luke
+Crime
+The Gold Rush
+Adventure
+Lock, Stock and Two Smoking Barrels
+Crime
+No Country for Old Men
+Crime
+It Happened One Night
+Comedy
+Sin City
+Crime
+Strangers on a Train
+Crime
+Casino
+Biography
+Jaws
+Adventure
+The Sixth Sense
+Drama
+Platoon
+Action
+The Thing
+Horror
+Butch Cassidy and the Sundance Kid
+Adventure
+Trainspotting
+Crime
+The Wizard of Oz
+Adventure
+High Noon
+Drama
+The Avengers
+Action
+Good Will Hunting
+Drama
+Hotel Rwanda
+Biography
+Kill Bill: Vol. 1
+Action
+Warrior
+Drama
+The Secret in Their Eyes
+Drama
+Annie Hall
+Comedy
+Gone with the Wind
+Drama
+The Grapes of Wrath
+Drama
+My Neighbor Totoro
+Animation
+Notorious
+Drama
+V for Vendetta
+Action
+Into the Wild
+Adventure
+Finding Nemo
+Animation
+Life of Brian
+Comedy
+Dial M for Murder
+Crime
+How to Train Your Dragon
+Animation
+The King's Speech
+Biography
+There Will Be Blood
+Drama
+The Big Sleep
+Crime
+The Night of the Hunter
+Drama
+The Terminator
+Action
+Ben-Hur
+Action
+Network
+Drama
+Million Dollar Baby
+Drama
+Stand by Me
+Adventure
+Groundhog Day
+Comedy
+Donnie Darko
+Drama
+Twelve Monkeys
+Mystery
+Dog Day Afternoon
+Crime
+Mary and Max
+Animation
+The 400 Blows
+Crime
+Amores Perros
+Drama
+Black Swan
+Drama
+The Bourne Ultimatum
+Action
+Persona
+Drama
+Gandhi
+Biography
+Howl's Moving Castle
+Animation
+The Killing
+Crime
+The Graduate
+Comedy
+A Beautiful Mind
+Biography
+The Princess Bride
+Adventure
+8½
+Drama
+The Hobbit: An Unexpected Journey
+Adventure
+Life of Pi
+Adventure
+The Hustler
+Drama
+Who's Afraid of Virginia Woolf?
+Drama
+La Strada
+Drama
+Slumdog Millionaire
+Drama
+Rocky
+Drama
+Anatomy of a Murder
+Crime
+The Manchurian Candidate
+Drama
+The Exorcist
+Horror
+The Wild Bunch
+Western
+The Man Who Shot Liberty Valance
+Drama
+Rope
+Crime
+Barry Lyndon
+Adventure
+Stalag 17
+Comedy
+The Artist
+Comedy
+Sleuth
+Mystery
+Stalker
+Adventure
+In the Name of the Father
+Biography
+Infernal Affairs
+Crime
+Roman Holiday
+Comedy
+The Truman Show
+Comedy
+Pirates of the Caribbean: The Curse of the Black Pearl
+Action
+Memories of Murder
+Crime
+Monsters, Inc.
+Animation
+District 9
+Action
+Per un pugno di dollari
+Western
+Harry Potter and the Deathly Hallows: Part 2
+Adventure
+Yip Man
+Action
+The Diving Bell and the Butterfly
+Biography
+Ratatouille
+Animation
+Star Trek
+Action
+A Streetcar Named Desire
+Drama
+Jurassic Park
+Adventure
+La Haine
+Drama
+Shutter Island
+Mystery
+All Quiet on the Western Front
+Drama
+3 Idiots
+Comedy
+Beauty and the Beast
+Animation
+Incendies
+Drama
+Rain Man
+Drama
+Rosemary's Baby
+Drama
+Nausicaä of the Valley of the Wind
+Animation
+Taare Zameen Par
+Drama
+Harvey
+Comedy
+Mystic River
+Crime
+Papillon
+Biography
+Manhattan
+Comedy
+The Perks of Being a Wallflower
+Drama
+Nosferatu
+Horror
+Spring, Summer, Fall, Winter... and Spring
+Drama
+The Help
+Drama
+Three Colors: Red
+Drama
+The Untouchables
+Crime
+The Wrestler
+Drama
+The Celebration
+Drama
+Battleship Potemkin
+Drama
+Big Fish
+Adventure
+In the Mood for Love
+Drama
