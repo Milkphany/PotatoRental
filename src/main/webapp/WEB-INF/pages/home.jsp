@@ -20,7 +20,7 @@
 
             <div class="image_carousel" >
                 <center>
-                <div id="foo2">
+                <%--<div id="foo2">
                     <img class="poster" src="/images/posters/dark.png"/>
                     <img class="poster" id="django" src="/images/posters/django.png"/>
                     <img class="poster" src="/images/posters/fightclub.png"/>
@@ -31,16 +31,19 @@
                     <img class="poster" src="/images/posters/pulpfiction.png" />
                     <img class="poster" src="/images/posters/seven.png" />
                     <img class="poster" src="/images/posters/shawshank.png" />
-                </div>
-                    
-                   
+                </div>--%>
+                    <div id="foo2" >
+                        <c:forEach var="movie" items="${popular}" >
+                            <img class="poster" src="/images/posters/${movie.id}.jpg" />
+                        </c:forEach>
+                    </div>
                     
                 </center>
             </div>
         </div>
         <h1>Popular movie list: Movies with ratings equal to 5, displaying 30</h1>
-        <c:forEach var="movies" items="${popular}" >
-            ${movies.name}</br>
+        <c:forEach var="movie" items="${popular}" >
+            ${movie.name}</br>
         </c:forEach>
     </div>
 </div>
