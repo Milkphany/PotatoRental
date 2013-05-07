@@ -8,10 +8,30 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html>
-<head>
-    <title>Road Block</title>
-</head>
-<body>
-The potato cats have attacked you, causing you to lose 50 hp :(
-</body>
+    <head>
+        <title>Road Block</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <jsp:include page="header.jsp" />
+
+
+
+            <div id ="pagebody">          
+
+                <div class="content">
+                    <span class="header1">404: PAGE NOT FOUND</span>
+                    
+                    <p>No potato heer.</p>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </body>
 </html>
