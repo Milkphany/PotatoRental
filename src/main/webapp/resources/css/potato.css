@@ -339,3 +339,19 @@ hr {
 }
 
 .outnow {color:red}
+
+.movielist {
+    text-align: center;
+}
+
+.movielist img {
+    padding: 9px;
+    margin: 2px;
+    height: 300px;
+    width: 211px;
+}
+
+.movielist img:hover {
+    opacity: 0.8;
+    cursor: pointer; 
+}
