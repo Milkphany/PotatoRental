@@ -45,7 +45,7 @@ public class MovieDaoImpl implements MovieDao {
     private List<Movie> addMoviesFromMap(List<Map<String, Object>> maps) {
         List<Movie> movies = new ArrayList<>();
 
-        for (Map map : maps) {
+        for (Map<String, Object> map : maps) {
             Movie movie = new Movie();
             movie.setDistrFee((Float) map.get("distrfee"));
             movie.setId((Integer) map.get("id"));
@@ -63,5 +63,20 @@ public class MovieDaoImpl implements MovieDao {
     @Override
     public Movie getMovie(Integer movieid) {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void insertMovie(Movie movie) {
+        String sql = "insert into movie (name, type, rating, distrfee, numcopies) values (?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, movie.getName(), movie.getType(),
+                movie.getRating(), movie.getDistrFee(), movie.getNumCopies());
+    }
+
+    @Override
+    public List<Movie> getPopularMovies(int numMovies) {
+        String sql = "select * from movie where rating = 5 limit ?";
+        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, numMovies);
+
+        return addMoviesFromMap(maps);
     }
 }

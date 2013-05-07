@@ -17,5 +17,14 @@ public interface MovieDao {
 
     public Movie getMovie(Integer movieid);
 
+    public void insertMovie(Movie movie);
+
+    /**
+     * Popular movies will be defined by movies that are rated 5 or higher
+     *
+     * @param numMovies number of movies to return
+     * @return list of movies that are popular
+     */
+    public List<Movie> getPopularMovies(int numMovies);
 
 }
