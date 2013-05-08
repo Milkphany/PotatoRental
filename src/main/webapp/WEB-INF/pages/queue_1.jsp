@@ -14,8 +14,18 @@
 <html>
     <head>
         <c:import url="head.jsp" />
-        
-  
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script>
+            $(function() {
+                $( "#sortable" ).sortable({
+                    placeholder: "ui-state-highlight"
+                });
+                $( "#sortable" ).disableSelection();
+            });
+        </script>
+
+
+
         <sec:authentication property="principal.username" var="userid" />
         <title>${userid}'s Queue</title>
     </head>

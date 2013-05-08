@@ -28,6 +28,7 @@
 <script type="text/javascript" language="javascript"
 src="/js/helper-plugins/jquery.ba-throttle-debounce.min.js"></script>
 <script type="text/javascript" src="/js/jquery.qtip.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript" language="javascript" src="/js/bodyready.js"></script>
 
 
