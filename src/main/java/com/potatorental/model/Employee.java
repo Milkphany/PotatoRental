@@ -24,6 +24,8 @@ public class Employee extends Person {
     @NumberFormat(style = NumberFormat.Style.CURRENCY)
     private Float hourlyRate;
 
+    private Boolean isManager;
+
     public Employee() {
         super();
     }
@@ -61,5 +63,13 @@ public class Employee extends Person {
 
     public void setHourlyRate(Float hourlyRate) {
         this.hourlyRate = hourlyRate;
+    }
+
+    public Boolean getIsManager() {
+        return isManager;
+    }
+
+    public void setIsManager(Boolean manager) {
+        isManager = manager;
     }
 }

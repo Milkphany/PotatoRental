@@ -7,68 +7,73 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html>
-    <head>
-        <c:import url="head.jsp" />
-        <title>Settings | ${user.email}</title>
-        <script>
-            function loadpg (url) {
-                
-                $('.accountmain').load(url);
-            }
-        </script>
-    </head>
-    <body>
-        <div id="wrap">
+<head>
+    <c:import url="head.jsp"/>
+    <title>Settings | ${user.email}</title>
+    <script>
+        function loadpg(url) {
 
-            <c:import url="header.jsp" />
-            <div id="moviepagebody">
+            $('.accountmain').load(url);
+        }
+    </script>
+</head>
+<body>
+<div id="wrap">
 
-                <div class="content" style="min-height:500px">
-                    <%--This page does not have to display all user details, just what they can do, editing user detail will be another page--%>
-                    <span class="header1">${message}</span>
-                    <hr>
-                    <table id="accountpage"><tr>
-                            <td>
-                                <div class="accountsidebar">
-                                    <a href="#">Main</a><br>
-                                    <sec:authorize access="hasRole('ROLE_USER')" >
-                                        <a href="<spring:url value="/account/rental" />">Rental</a><br/>
-                                        <a href="<spring:url value="/account/queue" />">Queue</a><br/>
-                                    </sec:authorize>
-                                    <%--Employee code here--%>
-                                    <sec:authorize access="hasRole('ROLE_STAFF')">
-                                        <a href="<spring:url value="/users" />">Search Users</a><br/>
-                                        <a href="<spring:url value="/record" />">Record Order</a><br/>
-                                        <a href="<spring:url value="/mailing" />">Mail</a><br/>
-                                        <a href="<spring:url value="/suggest" />">Suggest</a><br/>
+    <c:import url="header.jsp"/>
+    <div id="moviepagebody">
 
-                                    </sec:authorize>
-                                    <br/>
-                                    <a onclick="loadpg('/accountinfo')">Main</a><br/>
-                                    <a onclick="loadpg('/users')">Search Users</a><br/>
-                                </div>
-                            </td>
-                            <td>
-                                <div class ="accountmain">
-                                    <c:import url="/accountinfo"/>
-                                    
-                                </div></td>
-                        </tr></table>
+        <div class="content" style="min-height:500px">
+            <%--This page does not have to display all user details, just what they can do, editing user detail will be another page--%>
+            <span class="header1">${message}</span>
+            <hr>
+            <table id="accountpage">
+                <tr>
+                    <td>
+                        <div class="accountsidebar">
+                            <a href="#">Main</a><br>
+                            <sec:authorize access="hasRole('ROLE_USER')">
+                                <a href="<spring:url value="/account/rental" />">Rental</a><br/>
+                                <a href="<spring:url value="/account/queue" />">Queue</a><br/>
+                            </sec:authorize>
+                            <%--Employee code here--%>
+                            <sec:authorize access="hasRole('ROLE_STAFF')">
+                                <a href="<spring:url value="/users" />">Search Users</a><br/>
+                                <a href="<spring:url value="/record" />">Record Order</a><br/>
+                                <a href="<spring:url value="/mailing" />">Mail</a><br/>
+                                <a href="<spring:url value="/suggest" />">Suggest</a><br/>
+                            </sec:authorize>
+                            <br/>
+                            <%--Monika:
+                            For this section if you can send a ajax request, I can provide a response body to fill --%>
+                            <a href="#" onclick="loadpg('/accountinfo')">Main</a><br/>
+                            <a href="#" onclick="loadpg('/users')">Search Users</a><br/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="accountmain">
+                            <%@include file="accountinfo.jsp"%>
+                        </div>
+                    </td>
+                </tr>
+            </table>
 
-                    <%--Documentation on why spring url is used here:
-                    http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/spring.tld.html#spring.tld.url
+            <%--Documentation on why spring url is used here:
+            http://static.springsource.org/spring/docs/3.2.x/spring-framework-reference/html/spring.tld.html#spring.tld.url
 
 Long story short, it has scoping features
-                    --%>
+            --%>
 
 
-                </div></div></div>
+        </div>
+    </div>
+</div>
 
-    </body>
+</body>
 </html>

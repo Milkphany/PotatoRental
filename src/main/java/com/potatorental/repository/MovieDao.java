@@ -1,5 +1,6 @@
 package com.potatorental.repository;
 
+import com.potatorental.model.Actor;
 import com.potatorental.model.Movie;
 
 import java.util.List;
@@ -15,9 +16,13 @@ public interface MovieDao {
 
     public List<Movie> getNumMovies(int numMovies);
 
-    public Movie getMovie(Integer movieid);
+    public Movie getMovieById(Integer movieid);
+
+    public Movie getMovieByName(String name);
 
     public void insertMovie(Movie movie);
+
+    public List<Actor> getMovieActors();
 
     /**
      * Popular movies will be defined by movies that are rated 5 or higher

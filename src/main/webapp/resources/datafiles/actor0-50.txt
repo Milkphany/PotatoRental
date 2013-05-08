@@ -1,0 +1,900 @@
+('MOVIE', '0')
+The Shawshank Redemption
+ACTOR
+Tim Robbins:54
+END
+ACTOR
+Morgan Freeman:76
+END
+ACTOR
+Bob Gunton:67
+END
+ACTOR
+William Sadler:63
+END
+ACTOR
+Clancy Brown:54
+END
+END
+('MOVIE', '1')
+The Godfather
+ACTOR
+Marlon Brando:89
+END
+ACTOR
+Al Pacino:73
+END
+ACTOR
+James Caan:73
+END
+ACTOR
+Richard S. Castellano:79
+END
+ACTOR
+Robert Duvall:82
+END
+END
+('MOVIE', '2')
+The Godfather: Part II
+ACTOR
+Al Pacino:73
+END
+ACTOR
+Robert Duvall:82
+END
+ACTOR
+Diane Keaton:67
+END
+ACTOR
+Robert De Niro:69
+END
+ACTOR
+John Cazale:77
+END
+END
+('MOVIE', '3')
+Pulp Fiction
+ACTOR
+John Travolta:59
+END
+ACTOR
+Samuel L. Jackson:64
+END
+ACTOR
+Tim Roth:52
+END
+ACTOR
+Amanda Plummer:56
+END
+ACTOR
+Eric Stoltz:51
+END
+END
+('MOVIE', '4')
+The Good, the Bad and the Ugly
+ACTOR
+Eli Wallach:97
+END
+ACTOR
+Clint Eastwood:83
+END
+ACTOR
+Lee Van Cleef:88
+END
+ACTOR
+Aldo Giuffr:89
+END
+ACTOR
+Luigi Pistilli:83
+END
+END
+('MOVIE', '5')
+12 Angry Men
+ACTOR
+Martin Balsam:93
+END
+ACTOR
+John Fiedler:88
+END
+ACTOR
+Lee J. Cobb:101
+END
+ACTOR
+E.G. Marshall:99
+END
+ACTOR
+Jack Klugman:91
+END
+END
+('MOVIE', '6')
+The Dark Knight
+ACTOR
+Christian Bale:39
+END
+ACTOR
+Heath Ledger:34
+END
+ACTOR
+Aaron Eckhart:45
+END
+ACTOR
+Michael Caine:80
+END
+ACTOR
+Maggie Gyllenhaal:35
+END
+END
+('MOVIE', '7')
+Schindler's List
+ACTOR
+Liam Neeson:61
+END
+ACTOR
+Ben Kingsley:69
+END
+ACTOR
+Ralph Fiennes:50
+END
+ACTOR
+Caroline Goodall:53
+END
+ACTOR
+Jonathan Sagall:51
+END
+END
+('MOVIE', '8')
+The Lord of the Rings: The Return of the King
+ACTOR
+Noel Appleby:63
+END
+ACTOR
+Alexandra Astin:16
+END
+ACTOR
+Sean Astin:42
+END
+ACTOR
+David Aston:13
+END
+ACTOR
+John Bach:67
+END
+END
+('MOVIE', '9')
+Fight Club
+ACTOR
+Edward Norton:43
+END
+ACTOR
+Brad Pitt:49
+END
+ACTOR
+Helena Bonham Carter:47
+END
+ACTOR
+Meat Loaf:65
+END
+ACTOR
+Zach Grenier:59
+END
+END
+('MOVIE', '10')
+Star Wars: Episode V - The Empire Strikes Back
+ACTOR
+Mark Hamill:61
+END
+ACTOR
+Harrison Ford:70
+END
+ACTOR
+Carrie Fisher:56
+END
+ACTOR
+Billy Dee Williams:76
+END
+ACTOR
+Anthony Daniels:67
+END
+END
+('MOVIE', '11')
+The Lord of the Rings: The Fellowship of the Ring
+ACTOR
+Alan Howard:75
+END
+ACTOR
+Elijah Wood:32
+END
+ACTOR
+Noel Appleby:63
+END
+ACTOR
+Sean Astin:42
+END
+ACTOR
+Sala Baker:36
+END
+END
+('MOVIE', '12')
+One Flew Over the Cuckoo's Nest
+ACTOR
+Michael Berryman:64
+END
+ACTOR
+Peter Brocco:110
+END
+ACTOR
+Dean R. Brooks:96
+END
+ACTOR
+Alonzo Brown:13
+END
+ACTOR
+Scatman Crothers:103
+END
+END
+('MOVIE', '13')
+Inception
+ACTOR
+Leonardo DiCaprio:38
+END
+ACTOR
+Joseph Gordon-Levitt:32
+END
+ACTOR
+Ellen Page:26
+END
+ACTOR
+Tom Hardy:35
+END
+ACTOR
+Ken Watanabe:53
+END
+END
+('MOVIE', '14')
+Goodfellas
+ACTOR
+Robert De Niro:69
+END
+ACTOR
+Ray Liotta:58
+END
+ACTOR
+Joe Pesci:70
+END
+ACTOR
+Lorraine Bracco:58
+END
+ACTOR
+Paul Sorvino:74
+END
+END
+('MOVIE', '15')
+Star Wars
+ACTOR
+Mark Hamill:61
+END
+ACTOR
+Harrison Ford:70
+END
+ACTOR
+Carrie Fisher:56
+END
+ACTOR
+Peter Cushing:100
+END
+ACTOR
+Alec Guinness:99
+END
+END
+('MOVIE', '16')
+Seven Samurai
+ACTOR
+Toshir Mifune:93
+END
+ACTOR
+Takashi Shimura:108
+END
+ACTOR
+Keiko Tsushima:87
+END
+ACTOR
+Yukiko Shimazaki:82
+END
+ACTOR
+Kamatari Fujiwara:108
+END
+END
+('MOVIE', '17')
+Forrest Gump
+ACTOR
+Tom Hanks:56
+END
+ACTOR
+Rebecca Williams:13
+END
+ACTOR
+Sally Field:66
+END
+ACTOR
+Michael Conner Humphreys:28
+END
+ACTOR
+Harold G. Herthum:84
+END
+END
+('MOVIE', '18')
+The Matrix
+ACTOR
+Keanu Reeves:48
+END
+ACTOR
+Laurence Fishburne:51
+END
+ACTOR
+Carrie-Anne Moss:45
+END
+ACTOR
+Hugo Weaving:53
+END
+ACTOR
+Gloria Foster:79
+END
+END
+('MOVIE', '19')
+The Lord of the Rings: The Two Towers
+ACTOR
+Bruce Allpress:82
+END
+ACTOR
+Sean Astin:42
+END
+ACTOR
+John Bach:67
+END
+ACTOR
+Sala Baker:36
+END
+ACTOR
+Cate Blanchett:44
+END
+END
+('MOVIE', '20')
+City of God
+ACTOR
+Alexandre Rodrigues:30
+END
+ACTOR
+Leandro Firmino:34
+END
+ACTOR
+Phellipe Haagensen:29
+END
+ACTOR
+Douglas Silva:25
+END
+ACTOR
+Jonathan Haagensen:30
+END
+END
+('MOVIE', '21')
+Se7en
+ACTOR
+Brad Pitt:49
+END
+ACTOR
+Morgan Freeman:76
+END
+ACTOR
+Gwyneth Paltrow:40
+END
+ACTOR
+R. Lee Ermey:69
+END
+ACTOR
+Andrew Kevin Walker:48
+END
+END
+('MOVIE', '22')
+The Silence of the Lambs
+ACTOR
+Jodie Foster:50
+END
+ACTOR
+Lawrence A. Bonney:13
+END
+ACTOR
+Kasi Lemmons:52
+END
+ACTOR
+Lawrence T. Wrentz:59
+END
+ACTOR
+Scott Glenn:72
+END
+END
+('MOVIE', '23')
+Once Upon a Time in the West
+ACTOR
+Claudia Cardinale:75
+END
+ACTOR
+Henry Fonda:108
+END
+ACTOR
+Jason Robards:90
+END
+ACTOR
+Charles Bronson:91
+END
+ACTOR
+Gabriele Ferzetti:88
+END
+END
+('MOVIE', '24')
+Casablanca
+ACTOR
+Humphrey Bogart:113
+END
+ACTOR
+Ingrid Bergman:97
+END
+ACTOR
+Paul Henreid:105
+END
+ACTOR
+Claude Rains:123
+END
+ACTOR
+Conrad Veidt:120
+END
+END
+('MOVIE', '25')
+The Usual Suspects
+ACTOR
+Stephen Baldwin:47
+END
+ACTOR
+Gabriel Byrne:63
+END
+ACTOR
+Benicio Del Toro:46
+END
+ACTOR
+Kevin Pollak:55
+END
+ACTOR
+Kevin Spacey:53
+END
+END
+('MOVIE', '26')
+Raiders of the Lost Ark
+ACTOR
+Harrison Ford:70
+END
+ACTOR
+Karen Allen:61
+END
+ACTOR
+Paul Freeman:70
+END
+ACTOR
+Ronald Lacey:77
+END
+ACTOR
+John Rhys-Davies:69
+END
+END
+('MOVIE', '27')
+Rear Window
+ACTOR
+James Stewart:105
+END
+ACTOR
+Grace Kelly:83
+END
+ACTOR
+Wendell Corey:99
+END
+ACTOR
+Thelma Ritter:111
+END
+ACTOR
+Raymond Burr:96
+END
+END
+('MOVIE', '28')
+It's a Wonderful Life
+ACTOR
+James Stewart:105
+END
+ACTOR
+Donna Reed:92
+END
+ACTOR
+Lionel Barrymore:135
+END
+ACTOR
+Thomas Mitchell:120
+END
+ACTOR
+Henry Travers:139
+END
+END
+('MOVIE', '29')
+Psycho
+ACTOR
+Anthony Perkins:81
+END
+ACTOR
+Vera Miles:83
+END
+ACTOR
+John Gavin:82
+END
+ACTOR
+Janet Leigh:85
+END
+ACTOR
+Martin Balsam:93
+END
+END
+('MOVIE', '30')
+Lon: The Professional
+ACTOR
+Jean Reno:64
+END
+ACTOR
+Gary Oldman:55
+END
+ACTOR
+Natalie Portman:32
+END
+ACTOR
+Danny Aiello:80
+END
+ACTOR
+Peter Appel:53
+END
+END
+('MOVIE', '31')
+Sunset Blvd.
+ACTOR
+William Holden:95
+END
+ACTOR
+Gloria Swanson:114
+END
+ACTOR
+Erich von Stroheim:127
+END
+ACTOR
+Nancy Olson:84
+END
+ACTOR
+Fred Clark:99
+END
+END
+('MOVIE', '32')
+American History X
+ACTOR
+Edward Norton:43
+END
+ACTOR
+Edward Furlong:35
+END
+ACTOR
+Beverly D'Angelo:61
+END
+ACTOR
+Jennifer Lien:38
+END
+ACTOR
+Ethan Suplee:37
+END
+END
+('MOVIE', '33')
+Memento
+ACTOR
+Guy Pearce:45
+END
+ACTOR
+Carrie-Anne Moss:45
+END
+ACTOR
+Joe Pantoliano:61
+END
+ACTOR
+Mark Boone Junior:58
+END
+ACTOR
+Russ Fega:13
+END
+END
+('MOVIE', '34')
+Apocalypse Now
+ACTOR
+Marlon Brando:89
+END
+ACTOR
+Martin Sheen:72
+END
+ACTOR
+Robert Duvall:82
+END
+ACTOR
+Frederic Forrest:76
+END
+ACTOR
+Sam Bottoms:57
+END
+END
+('MOVIE', '35')
+Terminator 2: Judgment Day
+ACTOR
+Arnold Schwarzenegger:65
+END
+ACTOR
+Linda Hamilton:56
+END
+ACTOR
+Edward Furlong:35
+END
+ACTOR
+Robert Patrick:54
+END
+ACTOR
+Earl Boen:67
+END
+END
+('MOVIE', '36')
+Saving Private Ryan
+ACTOR
+Tom Hanks:56
+END
+ACTOR
+Tom Sizemore:51
+END
+ACTOR
+Edward Burns:45
+END
+ACTOR
+Barry Pepper:43
+END
+ACTOR
+Adam Goldberg:42
+END
+END
+('MOVIE', '37')
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb
+ACTOR
+Peter Sellers:87
+END
+ACTOR
+George C. Scott:85
+END
+ACTOR
+Sterling Hayden:97
+END
+ACTOR
+Keenan Wynn:96
+END
+ACTOR
+Slim Pickens:93
+END
+END
+('MOVIE', '38')
+City Lights
+ACTOR
+Virginia Cherrill:105
+END
+ACTOR
+Florence Lee:125
+END
+ACTOR
+Harry Myers:130
+END
+ACTOR
+Al Ernest Garcia:126
+END
+ACTOR
+Hank Mann:126
+END
+END
+('MOVIE', '39')
+Alien
+ACTOR
+Tom Skerritt:79
+END
+ACTOR
+Sigourney Weaver:63
+END
+ACTOR
+Veronica Cartwright:64
+END
+ACTOR
+Harry Dean Stanton:86
+END
+ACTOR
+John Hurt:73
+END
+END
+('MOVIE', '40')
+Spirited Away
+ACTOR
+Daveigh Chase:22
+END
+ACTOR
+Suzanne Pleshette:76
+END
+ACTOR
+Susan Egan:43
+END
+ACTOR
+David Ogden Stiers:70
+END
+ACTOR
+Lauren Holly:49
+END
+END
+('MOVIE', '41')
+North by Northwest
+ACTOR
+Cary Grant:109
+END
+ACTOR
+Eva Marie Saint:88
+END
+ACTOR
+James Mason:104
+END
+ACTOR
+Jessie Royce Landis:116
+END
+ACTOR
+Leo G. Carroll:126
+END
+END
+('MOVIE', '42')
+Modern Times
+ACTOR
+Charles Chaplin:124
+END
+ACTOR
+Paulette Goddard:103
+END
+ACTOR
+Henry Bergman:145
+END
+ACTOR
+Tiny Sandford:119
+END
+ACTOR
+Chester Conklin:127
+END
+END
+('MOVIE', '43')
+Django Unchained
+ACTOR
+Jamie Foxx:45
+END
+ACTOR
+Christoph Waltz:56
+END
+ACTOR
+Leonardo DiCaprio:38
+END
+ACTOR
+Kerry Washington:36
+END
+ACTOR
+Samuel L. Jackson:64
+END
+END
+('MOVIE', '44')
+Citizen Kane
+ACTOR
+Joseph Cotten:108
+END
+ACTOR
+Dorothy Comingore:99
+END
+ACTOR
+Agnes Moorehead:112
+END
+ACTOR
+Ruth Warrick:97
+END
+ACTOR
+Ray Collins:123
+END
+END
+('MOVIE', '45')
+Back to the Future
+ACTOR
+Michael J. Fox:52
+END
+ACTOR
+Christopher Lloyd:74
+END
+ACTOR
+Lea Thompson:52
+END
+ACTOR
+Crispin Glover:49
+END
+ACTOR
+Thomas F. Wilson:54
+END
+END
+('MOVIE', '46')
+The Shining
+ACTOR
+Jack Nicholson:76
+END
+ACTOR
+Shelley Duvall:63
+END
+ACTOR
+Danny Lloyd:40
+END
+ACTOR
+Scatman Crothers:103
+END
+ACTOR
+Barry Nelson:96
+END
+END
+('MOVIE', '47')
+The Pianist
+ACTOR
+Adrien Brody:40
+END
+ACTOR
+Emilia Fox:38
+END
+ACTOR
+Michal Zebrowski:41
+END
+ACTOR
+Ed Stoppard:38
+END
+ACTOR
+Maureen Lipman:67
+END
+END
+('MOVIE', '48')
+The Dark Knight Rises
+ACTOR
+Christian Bale:39
+END
+ACTOR
+Gary Oldman:55
+END
+ACTOR
+Tom Hardy:35
+END
+ACTOR
+Joseph Gordon-Levitt:32
+END
+ACTOR
+Anne Hathaway:30
+END
+END
+('MOVIE', '49')
+Life Is Beautiful
+ACTOR
+Roberto Benigni:60
+END
+ACTOR
+Nicoletta Braschi:53
+END
+ACTOR
+Giorgio Cantarini:21
+END
+ACTOR
+Giustino Durano:90
+END
+ACTOR
+Sergio Bini Bustric:13
+END
+END

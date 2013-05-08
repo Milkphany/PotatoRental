@@ -46,7 +46,7 @@ public class PersonDaoImpl implements PersonDao {
 
     private Person getPersonRole(Person person) {
         String customersql = "select rating from customer where id = ?";
-        String employeesql = "select id, startdate, hourlyrate from employee where ssn = ?";
+        String employeesql = "select id, startdate, hourlyrate, manager from employee where ssn = ?";
 
         try {
             return jdbcTemplate.queryForObject(customersql, new CustomerMapper(person), person.getSsn());
@@ -66,6 +66,7 @@ public class PersonDaoImpl implements PersonDao {
         @Override
         public Employee mapRow(ResultSet resultSet, int i) throws SQLException {
             Employee employee = new Employee(person);
+            employee.setIsManager(resultSet.getBoolean("manager"));
             employee.setHourlyRate(resultSet.getFloat("hourlyrate"));
             employee.setId(resultSet.getInt("id"));
             employee.setStartDate(resultSet.getDate("startdate"));

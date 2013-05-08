@@ -46,10 +46,17 @@ public class PersonDetailService implements UserDetailsService {
         String sql = "select count(*) from customer where id = ?";
 
         ArrayList<GrantedAuthority> list = new ArrayList<>();
-        if (jdbcTemplate.queryForInt(sql, person.getSsn()) != 0) {
+        if (jdbcTemplate.queryForObject(sql, Integer.class, person.getSsn()) != 0) {
             list.add(new UserGrantedAuthority("ROLE_USER"));
         } else {
-            list.add(new UserGrantedAuthority("ROLE_STAFF"));
+            String checkManage = "select count(*) from employee where ssn = ? and manager = true";
+
+            if (jdbcTemplate.queryForObject(checkManage, Integer.class, person.getSsn()) != 0) {
+                list.add(new UserGrantedAuthority("ROLE_MANAGER"));
+                list.add(new UserGrantedAuthority("ROLE_STAFF"));
+            } else {
+                list.add(new UserGrantedAuthority("ROLE_STAFF"));
+            }
         }
 
         return list;

@@ -1,6 +1,6 @@
 package com.potatorental.controller;
 
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +37,11 @@ public class LoginController {
 
     @RequestMapping(value = "loginsuccess", method = RequestMethod.GET)
     public String successLogin(RedirectAttributes redirectAttributes, Principal principal, HttpServletRequest request) {
-        redirectAttributes.addFlashAttribute("message", "Welcome back dear " + principal.getName());
+        SecurityContextHolderAwareRequestWrapper sc = new SecurityContextHolderAwareRequestWrapper(request, "ROLE_");
+        String role = sc.isUserInRole("USER") ? "customer" : sc.isUserInRole("STAFF") &&
+                sc.isUserInRole("MANAGER") ? "manager" : "employee";
+
+        redirectAttributes.addFlashAttribute("message", "Welcome back dear " + role + " " + principal.getName());
         return "redirect:/";
     }
 

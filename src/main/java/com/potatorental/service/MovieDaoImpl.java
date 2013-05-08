@@ -1,8 +1,10 @@
 package com.potatorental.service;
 
+import com.potatorental.model.Actor;
 import com.potatorental.model.Movie;
 import com.potatorental.repository.MovieDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -42,6 +44,38 @@ public class MovieDaoImpl implements MovieDao {
         return addMoviesFromMap(maps);
     }
 
+    @Override
+    public Movie getMovieById(Integer movieid) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public Movie getMovieByName(String name) {
+        String sql = "select * from movie where name = ?";
+        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Movie.class), name);
+    }
+
+    @Override
+    public void insertMovie(Movie movie) {
+        String sql = "insert into movie (name, type, rating, distrfee, numcopies) values (?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, movie.getName(), movie.getType(),
+                movie.getRating(), movie.getDistrFee(), movie.getNumCopies());
+    }
+
+    @Override
+    public List<Actor> getMovieActors() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public List<Movie> getPopularMovies(int numMovies) {
+        String sql = "select * from movie where rating = 5 limit ?";
+        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, numMovies);
+
+        return addMoviesFromMap(maps);
+    }
+
+
     private List<Movie> addMoviesFromMap(List<Map<String, Object>> maps) {
         List<Movie> movies = new ArrayList<>();
 
@@ -58,25 +92,5 @@ public class MovieDaoImpl implements MovieDao {
         }
 
         return movies;
-    }
-
-    @Override
-    public Movie getMovie(Integer movieid) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    @Override
-    public void insertMovie(Movie movie) {
-        String sql = "insert into movie (name, type, rating, distrfee, numcopies) values (?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, movie.getName(), movie.getType(),
-                movie.getRating(), movie.getDistrFee(), movie.getNumCopies());
-    }
-
-    @Override
-    public List<Movie> getPopularMovies(int numMovies) {
-        String sql = "select * from movie where rating = 5 limit ?";
-        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, numMovies);
-
-        return addMoviesFromMap(maps);
     }
 }
