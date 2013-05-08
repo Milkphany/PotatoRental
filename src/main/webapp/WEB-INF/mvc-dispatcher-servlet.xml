@@ -34,6 +34,7 @@
     <bean id="locationDao" class="com.potatorental.service.LocationDaoImpl" />
     <bean id="movieDao" class="com.potatorental.service.MovieDaoImpl" />
     <bean id="actorDao" class="com.potatorental.service.ActorDaoImpl" />
+    <bean id="accountDao" class="com.potatorental.service.AccountDaoImpl" />
 
     <bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />

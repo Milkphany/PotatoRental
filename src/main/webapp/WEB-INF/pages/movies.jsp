@@ -17,7 +17,7 @@
 <div class="movielist">
 
     <c:forEach var="movie" items="${movies}">
-
+        <a href="/movies/${movie.id}">
         <img class="toolmeow" id="${movie.id}"
              title="<div class='movtt'><div class='header1'>${movie.name}</div>
                         <br>${movie.type}<br>
@@ -28,7 +28,7 @@
                     and only Django can lead him to his bounty.</p>
                         <center><a href='#'>+QUEUE</a></center></div>"
              alt="${movie.name}" src="/images/posters/${movie.id}.jpg"/>
-
+            </a>
     </c:forEach>
 
 </div>

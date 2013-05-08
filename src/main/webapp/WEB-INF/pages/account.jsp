@@ -39,7 +39,7 @@
                         <div class="accountsidebar">
                             <a href="#">Main</a><br>
                             <sec:authorize access="hasRole('ROLE_USER')">
-                                <a href="<spring:url value="/account/rental" />">Rental</a><br/>
+                                <a href="<spring:url value="/account/rental" />">History</a><br/>
                                 <a href="<spring:url value="/account/queue" />">Queue</a><br/>
                             </sec:authorize>
                             <%--Employee code here--%>
