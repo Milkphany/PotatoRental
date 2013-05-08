@@ -49,16 +49,18 @@ public class AccountController {
     @RequestMapping(value = "queue", method = RequestMethod.GET)
     public ModelAndView getQueue(ModelMap modelMap, Principal principal) {
         Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
-
-        List<Movie> movies;
-        modelMap.addAttribute("moviequeue", movies = accountDao.getQueue(account));
+        modelMap.addAttribute("moviequeue", accountDao.getQueue(account));
 
         return new ModelAndView("queue", modelMap);
     }
 
     @RequestMapping(value = "rental", method = RequestMethod.GET)
-    public String getRental(ModelMap modelMap, Principal principal) {
-        return "rental";
+    public ModelAndView getRental(ModelMap modelMap, Principal principal) {
+        Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
+        List<Movie> list;
+        modelMap.addAttribute("rentalhistory", list = accountDao.getHistory(account));
+
+        return new ModelAndView("rental", modelMap);
     }
 
 }
