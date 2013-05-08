@@ -305,7 +305,8 @@ dd {
 }
 
 #sortable {
-    list-style-type: none; margin: 0; padding: 0; width: 30%;
+    list-style-type: none; margin: 0; padding: 0; width: 50%;
+    overflow:none;
 }
 
 #sortable li { 
@@ -420,4 +421,8 @@ hr {
 .accountmain {
     width: 640px;
     margin-right: 0
+}
+
+.toolteep{
+    text-align: center;
 }

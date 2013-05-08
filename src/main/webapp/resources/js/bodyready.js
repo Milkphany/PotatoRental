@@ -106,4 +106,13 @@ $(document).ready(function() {
                     position: 'top',
                     speed: 350
                 });
+                
+                 $('.toolteep').tooltipster({
+                    interactive: true,
+                    interactiveTolerance: 650,
+                    offsetX: -100,
+                    onlyOne: true,
+                    position: 'right'
+                    
+                });
             });

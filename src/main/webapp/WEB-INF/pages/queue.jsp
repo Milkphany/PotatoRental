@@ -40,13 +40,12 @@
                 <p>Drag and drop movie titles in the order that you'd like to receive them.</p>
 
                 <ul id="sortable">
-                    <li class="ui-state-default">Django<span class ="removelink"> remove?</span></li>
-                    <li class="ui-state-default">Meow<strong><span class ="removelink"> REMOVE?</span></strong></li>
-                    <li class="ui-state-default">Item 3<strong><span class ="removelink"> REMOVE?</span></strong></li>
-                    <li class="ui-state-default">Item 4<strong><span class ="removelink"> REMOVE?</span></strong></li>
-                    <li class="ui-state-default">Item 5<strong><span class ="removelink"> REMOVE?</span></strong></li>
-                    <li class="ui-state-default">Item 6<strong><span class="removelink"> REMOVE?</span></strong></li>
-                    <li class="ui-state-default">Item 7<strong><span class ="removelink"> REMOVE?</span></strong></li>
+                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">The Dark Knight</li>
+                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">The Shawshank Redemption</li>
+                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Amelie</li>
+                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Star Wars</li>
+                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Toy Story</li>
+                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Dr Strangelove or: How I learned to Stop worrying and love the bomb</li>
                 </ul>
 
             </div>
