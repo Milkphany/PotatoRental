@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 /**
@@ -24,6 +25,7 @@ import javax.validation.Valid;
  */
 @Controller
 @RequestMapping("/signup")
+@SessionAttributes("customer")
 public class SignUpController {
 
     private PersonDao personDao;
@@ -79,12 +81,12 @@ public class SignUpController {
 
     @RequestMapping(value = "signup_1", method = RequestMethod.POST)
     public String signupForm_1(@Valid @ModelAttribute("signupForm") Customer customer, BindingResult result,
-                               ModelMap modelMap, RedirectAttributes redirectAttributes) {
+                               HttpSession session, RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
             redirectAttributes.addAttribute("message", "There is an error");
             return "signup";
         }
-        redirectAttributes.addAttribute("customer", customer);
+        session.setAttribute("customer", customer);
         return "redirect:/signup/signup_2";
     }
 
@@ -95,7 +97,7 @@ public class SignUpController {
 
     @RequestMapping(value = "signup_2", method = RequestMethod.POST)
     public String signupForm_2(@Valid @ModelAttribute("locationForm") Location location, BindingResult result,
-                               ModelMap modelMap, RedirectAttributes redirectAttributes){
+                               HttpSession session, RedirectAttributes redirectAttributes){
         if (result.hasErrors()) {
             redirectAttributes.addAttribute("message", "There is an error in form data");
             return "signup";

@@ -57,7 +57,7 @@ $('body').ready(function() {
 $('body').ready(function(){
     $('.poster').click(function(){
         var link = this.id;
-        link =link+".jsp";
+        link = "/movies/" + link;
         //load(link);
         $(window.location).attr('href', link);
     });
