@@ -57,37 +57,7 @@
                             <td>
                                 <div class ="accountmain">
                                     <c:import url="/accountinfo"/>
-                                    <br>
-                                    Set in the South two years before the Civil War, Django Unchained 
-                                    stars Jamie Foxx as Django, a slave whose brutal history with his
-                                    former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
-                                    (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
-                                    and only Django can lead him to his bounty. Honing vital hunting skills, Django
-                                    remains focused on one goal: finding and rescuing Broomhilda (Kerry Washington),
-                                    the wife he lost to the slave trade long ago. Django and Schultz's search ultimately
-                                    leads them to Calvin Candie (Leonardo DiCaprio), the proprietor of "Candyland," an 
-                                    infamous plantation. Exploring the compound under false pretenses, Django and Schultz
-                                    arouse the suspicion of Stephen (Samuel L. Jackson), Candie's trusted house slave.
-                                    Set in the South two years before the Civil War, Django Unchained 
-                                    stars Jamie Foxx as Django, a slave whose brutal history with his
-                                    former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
-                                    (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
-                                    and only Django can lead him to his bounty. Honing vital hunting skills, Django
-                                    remains focused on one goal: finding and rescuing Broomhilda (Kerry Washington),
-                                    the wife he lost to the slave trade long ago. Django and Schultz's search ultimately
-                                    leads them to Calvin Candie (Leonardo DiCaprio), the proprietor of "Candyland," an 
-                                    infamous plantation. Exploring the compound under false pretenses, Django and Schultz
-                                    arouse the suspicion of Stephen (Samuel L. Jackson), Candie's trusted house slave.
-                                    Set in the South two years before the Civil War, Django Unchained 
-                                    stars Jamie Foxx as Django, a slave whose brutal history with his
-                                    former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
-                                    (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
-                                    and only Django can lead him to his bounty. Honing vital hunting skills, Django
-                                    remains focused on one goal: finding and rescuing Broomhilda (Kerry Washington),
-                                    the wife he lost to the slave trade long ago. Django and Schultz's search ultimately
-                                    leads them to Calvin Candie (Leonardo DiCaprio), the proprietor of "Candyland," an 
-                                    infamous plantation. Exploring the compound under false pretenses, Django and Schultz
-                                    arouse the suspicion of Stephen (Samuel L. Jackson), Candie's trusted house slave.
+                                    
                                 </div></td>
                         </tr></table>
 
