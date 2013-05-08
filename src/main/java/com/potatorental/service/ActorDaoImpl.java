@@ -9,9 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * User: Milky
@@ -54,13 +52,13 @@ public class ActorDaoImpl implements ActorDao{
     @Override
     public List<Actor> getAllActors() {
         String sql = "select * from actor";
-        return addActorsFromMap(jdbcTemplate.queryForList(sql));
+        return PotatoService.addActorsFromMap(jdbcTemplate.queryForList(sql));
     }
 
     @Override
     public List<Actor> getNumActors(int numActors) {
         String sql = "select * from actor limit ?";
-        return addActorsFromMap(jdbcTemplate.queryForList(sql, numActors));
+        return PotatoService.addActorsFromMap(jdbcTemplate.queryForList(sql, numActors));
     }
 
     @Override
@@ -74,20 +72,13 @@ public class ActorDaoImpl implements ActorDao{
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    private List<Actor> addActorsFromMap(List<Map<String, Object>> maps) {
-        List<Actor> actors = new ArrayList<>();
+    @Override
+    public List<Movie> getActorMovies(Actor actor) {
+        String sql = "select m.id, m.name, m.type, m.rating , m.distrfee, m.numcopies " +
+                "from movie m, actor a, appearedin x " +
+                "where a.id = ? and m.id = x.movieid and a.id = x.actorid";
 
-        for (Map<String, Object> map : maps) {
-            Actor actor = new Actor();
-            actor.setId((Integer) map.get("id"));
-            actor.setName((String) map.get("name"));
-            actor.setRating((Integer) map.get("rating"));
-            actor.setMf((String) map.get("mf"));
-
-            actors.add(actor);
-        }
-
-        return actors;
+        return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(sql, actor.getId()));
     }
 
 }

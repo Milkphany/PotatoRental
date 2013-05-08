@@ -22,7 +22,7 @@ public interface MovieDao {
 
     public void insertMovie(Movie movie);
 
-    public List<Actor> getMovieActors();
+    public List<Actor> getMovieActors(Movie movie);
 
     /**
      * Popular movies will be defined by movies that are rated 5 or higher

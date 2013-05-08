@@ -22,48 +22,22 @@
 
                 <hr>
                 <img class="movieposter" src="http://i.imgur.com/FOTCPbD.jpg" height="200"/>
-
                 <p><strong>Rating: </strong>${actor.rating}</p>
-
-                <p>
-                    <strong>Age: </strong>${actor.age}
-                </p>
-
-                <p>
-                    <strong>Gender:</strong>${actor.mf}
-                </p>
-
+                <p><strong>Age: </strong>${actor.age}</p>
+                <p><strong>Gender:</strong>${actor.mf}</p>
 
             </div>
-            <h2>Movies in stock starring Morgan Freeman:</h2>
+            <h2>Movies starring ${actor.name}:</h2>
 
-            <div class="cast">
-                <img height="50" src="http://i.imgur.com/vmJboMa.jpg"/>
-                <a href="#">The Shawshank Redemption</a>
-            </div>
-
-            <div class="cast">
-                <img height="50" src="http://i.imgur.com/vmJboMa.jpg"/>
-                <a href="#">The Shawshank Redemption</a>
-            </div>
-            <div class="cast">
-                <img height="50" src="http://i.imgur.com/vmJboMa.jpg"/>
-                <a href="#">The Shawshank Redemption</a>
-            </div>
-            <div class="cast">
-                <img height="50" src="http://i.imgur.com/vmJboMa.jpg"/>
-                <a href="#">The Shawshank Redemption</a>
-            </div>
+            <c:forEach var="movie" items="${actormovies}">
+                <div class="cast">
+                    <img height="90" src="/images/posters/${movie.id}.jpg"/>
+                    <a href="/movies/${movie.id}">${movie.name}</a>
+                </div>
+            </c:forEach>
         </div>
-
     </div>
-
-
 </div>
-
-
 </div>
-
-
 </body>
 </html>

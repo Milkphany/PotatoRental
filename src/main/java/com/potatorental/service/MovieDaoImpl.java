@@ -31,22 +31,19 @@ public class MovieDaoImpl implements MovieDao {
     @Override
     public List<Movie> getNumMovies(int numMovies) {
         String sql = "select * from movie limit ?";
-        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, numMovies);
-
-        return addMoviesFromMap(maps);
+        return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(sql, numMovies));
     }
 
     @Override
     public List<Movie> getAllMovies() {
         String sql = "select * from movie";
-        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql);
-
-        return addMoviesFromMap(maps);
+        return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(sql));
     }
 
     @Override
     public Movie getMovieById(Integer movieid) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        String sql = "select * from movie where id = ?";
+        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Movie.class), movieid);
     }
 
     @Override
@@ -63,34 +60,17 @@ public class MovieDaoImpl implements MovieDao {
     }
 
     @Override
-    public List<Actor> getMovieActors() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public List<Actor> getMovieActors(Movie movie) {
+        String sql = "select a.id, a.name, a.mf, a.rating " +
+                "from movie m, actor a, appearedin x " +
+                "where m.id = ? and m.id = x.movieid and a.id = x.actorid";
+
+        return PotatoService.addActorsFromMap(jdbcTemplate.queryForList(sql, movie.getId()));
     }
 
     @Override
     public List<Movie> getPopularMovies(int numMovies) {
         String sql = "select * from movie where rating = 5 limit ?";
-        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, numMovies);
-
-        return addMoviesFromMap(maps);
-    }
-
-
-    private List<Movie> addMoviesFromMap(List<Map<String, Object>> maps) {
-        List<Movie> movies = new ArrayList<>();
-
-        for (Map<String, Object> map : maps) {
-            Movie movie = new Movie();
-            movie.setDistrFee((Float) map.get("distrfee"));
-            movie.setId((Integer) map.get("id"));
-            movie.setName((String) map.get("name"));
-            movie.setNumCopies((Integer) map.get("numcopies"));
-            movie.setRating((Integer) map.get("rating"));
-            movie.setType((String) map.get("type"));
-
-            movies.add(movie);
-        }
-
-        return movies;
+        return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(sql, numMovies));
     }
 }

@@ -396,10 +396,10 @@ hr {
 .cast {
     padding:5px;
     width: 840px;
-    min-height: 60px;
+    min-height: 100px;
     background-color: #eee;
     margin: 4px;
-    line-height: 60px;
+    line-height: 100px;
 }
 
 .cast img {

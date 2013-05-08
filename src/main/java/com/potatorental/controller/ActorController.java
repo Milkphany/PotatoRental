@@ -43,9 +43,13 @@ public class ActorController {
     }
 
     @RequestMapping(value = "{actorid}", method = RequestMethod.GET)
-    public ModelAndView getActor(@PathVariable int actorid) {
+    public ModelAndView getActor(@PathVariable int actorid, ModelMap modelMap) {
         Actor actor = actorDao.getActorById(actorid);
-        return new ModelAndView("actor", "actor", actor);
+        List<Movie> movies = actorDao.getActorMovies(actor);
+
+        modelMap.addAttribute(actor);
+        modelMap.addAttribute("actormovies", movies);
+        return new ModelAndView("actor", modelMap);
     }
 
    /* @RequestMapping(value = "insert", method = RequestMethod.GET)

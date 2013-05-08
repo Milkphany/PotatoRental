@@ -23,4 +23,6 @@ public interface ActorDao {
     public Actor getActorById(int actorid);
 
     public void updateActor(Actor actor);
+
+    public List<Movie> getActorMovies(Actor actor);
 }
