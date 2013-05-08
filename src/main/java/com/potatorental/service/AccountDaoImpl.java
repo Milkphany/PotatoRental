@@ -50,7 +50,7 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public List<Movie> getHistory(Account account) {
-        String sql = "select m.name, m.id, p.datetime, p.returndate, p.id " +
+        String sql = "select m.name, m.id " +
                 "from rental r, purchase p, movie m " +
                 "where m.id = r.movieid and p.id = r.purchid and r.accountid = ?";
         return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(sql, account.getId()));
