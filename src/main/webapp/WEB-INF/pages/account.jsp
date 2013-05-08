@@ -14,7 +14,7 @@
 <!doctype html>
 <html>
     <head>
-        <c:import url="head.jsp" />
+        <jsp:include page="head.jsp" />
         <title>Settings | ${user.email}</title>
         <script>
             function loadpg (url) {
@@ -26,7 +26,7 @@
     <body>
         <div id="wrap">
 
-            <c:import url="header.jsp" />
+            <jsp:include page="header.jsp" />
             <div id="moviepagebody">
 
                 <div class="content" style="min-height:500px">
@@ -56,7 +56,8 @@
                             </td>
                             <td>
                                 <div class ="accountmain">
-                                    <c:import url="/accountinfo"/>
+                                    <%--<jsp:include page="accountinfo.jsp" />--%>
+                                    <%--<c:import url="/accountinfo"/>--%>
                                     <br>
                                     Set in the South two years before the Civil War, Django Unchained 
                                     stars Jamie Foxx as Django, a slave whose brutal history with his
