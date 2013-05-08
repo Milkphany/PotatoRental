@@ -34,15 +34,12 @@ $('body').ready(function() {
 
 
 $('body').ready(function() {
-    $('#foo2').carouFredSel({
-       
-            
+    $('#foo2').carouFredSel({    
         scroll: 2,
         auto: false,
         prev: '#prev2',
         next: '#next2',
         mousewheel: false
-       
     });
     
     $('#foo3').carouFredSel({     
@@ -50,8 +47,21 @@ $('body').ready(function() {
         auto: false,
         prev: '#prev3',
         next: '#next3',
+        mousewheel: false     
+    });
+    
+    $('#foopop').carouFredSel({    
+        scroll: 2,
+        auto: {
+            duration        :   7500,
+            easing          :   "linear",
+            timeoutDuration :   0,
+            pauseOnHover    :   "immediate"
+            
+        },
+        prev: '#prevp',
+        next: '#nextp',
         mousewheel: false
-        
         
     });
 });

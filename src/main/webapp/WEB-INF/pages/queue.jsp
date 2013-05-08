@@ -14,14 +14,13 @@
 <html>
     <head>
         <c:import url="head.jsp" />
-        
   
         <sec:authentication property="principal.username" var="userid" />
         <title>${userid}'s Queue</title>
     </head>
     <body>           
         <c:import url="header.jsp" />
-
+        <div id="moviepagebody">
     <div class="content">
         <span class="header1">Manage Your Queue</span><br/>
         <hr>
@@ -43,7 +42,7 @@
             </c:forEach>
         </ul>
 
-    </div>
+    </div></div>
 
 
 </div>

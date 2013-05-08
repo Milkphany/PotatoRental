@@ -426,3 +426,9 @@ hr {
 .toolteep{
     text-align: center;
 }
+
+.actorimage {
+    position:relative;
+}
+
+.actorimage a {position: absolute; top: 0px}

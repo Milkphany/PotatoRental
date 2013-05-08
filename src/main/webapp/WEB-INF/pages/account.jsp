@@ -37,14 +37,14 @@
                 <tr>
                     <td>
                         <div class="accountsidebar">
-                            <a href="#">Main</a><br>
+                            <a href="#" onclick="loadpg('/accountinfo')">Main</a><br/>
                             <sec:authorize access="hasRole('ROLE_USER')">
                                 <a href="<spring:url value="/account/rental" />">History</a><br/>
                                 <a href="<spring:url value="/account/queue" />">Queue</a><br/>
                             </sec:authorize>
                             <%--Employee code here--%>
                             <sec:authorize access="hasRole('ROLE_STAFF')">
-                                <a href="<spring:url value="/users" />">Search Users</a><br/>
+                                <a href="#" onclick="loadpg('/users')">Search Users</a><br/>
                                 <a href="<spring:url value="/record" />">Record Order</a><br/>
                                 <a href="<spring:url value="/mailing" />">Mail</a><br/>
                                 <a href="<spring:url value="/suggest" />">Suggest</a><br/>
@@ -52,8 +52,9 @@
                             <br/>
                             <%--Monika:
                             For this section if you can send a ajax request, I can provide a response body to fill --%>
-                            <a href="#" onclick="loadpg('/accountinfo')">Main</a><br/>
-                            <a href="#" onclick="loadpg('/users')">Search Users</a><br/>
+                            
+                            
+                            
                         </div>
                     </td>
                     <td>

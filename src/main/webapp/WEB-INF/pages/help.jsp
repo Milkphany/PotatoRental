@@ -101,7 +101,10 @@
                         <dt><a href="#">How do I return an order?</a></dt>
                         <dd>To return your order, simply visit your <a href="#">order history</a> 
                             and click the return link next to the movies you'd like to send back to us.</dd>
-                        <a href="#">How can I report a problem with my rental?</a><br/>
+                        
+                        <dt><a href="#">Where can I learn more about the PotatoCat project / access documentation?</a></dt>
+                        <dd>Extensive documentation for this project can be found <a href="/documentation">here</a>.</dd>
+                        
                         <a href="#"></a><br/>
                         <a href="#"></a><br/>
 

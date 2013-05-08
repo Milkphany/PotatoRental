@@ -36,7 +36,7 @@
                     <img class="poster" src="/images/posters/seven.png" />
                     <img class="poster" src="/images/posters/shawshank.png" />
                 </div>--%>
-                <div id="foo2">
+                <div id="foopop">
                     <c:forEach var="movie" items="${popular}">
                         <img class="poster toolmeow" src="/images/posters/${movie.id}.jpg"
                              id="${movie.id}"
@@ -55,10 +55,7 @@
             </center>
         </div>
     </div>
-    <h1>Popular movie list: Movies with ratings equal to 5, displaying 30</h1>
-    <c:forEach var="movie" items="${popular}">
-        ${movie.name}</br>
-    </c:forEach>
+    
 </div>
 
 </body>

@@ -65,4 +65,9 @@ public class HomeController {
     public String getActor() {
         return "actor";
     }
+    
+    @RequestMapping(value = "documentation", method = RequestMethod.GET)
+    public String getDocumentation() {
+        return "documentation";
+    }
 }

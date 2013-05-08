@@ -52,7 +52,7 @@
                     <a href="/actors/${movieactors[0].id}.jpg">${movieactors[0].name}</a>,
                     <a href="/actors/${movieactors[1].id}.jpg">${movieactors[1].name}</a>,
                     <a href="/actors/${movieactors[2].id}.jpg">${movieactors[2].name}</a> |
-                    <a href="#">See full cast</a>
+                    <a href="#cast">See full cast</a>
                 </p>
 
                 <p>
@@ -63,7 +63,7 @@
                     <button id="submitbutton" type="submit">+QUEUE</button>
                 </form>
             </div>
-            <h2>Cast</h2>
+            <h2><a style="color:inherit" name="cast">Cast</a></h2>
 
             <c:forEach var="actor" items="${movieactors}">
                 <div class="cast">
