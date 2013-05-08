@@ -335,6 +335,10 @@ dd {
     font-weight: 300;
 }
 
+.message {
+    font-style: italic
+}
+
 hr {
     margin-bottom: 15px;
      margin-top: 15px;
@@ -380,4 +384,25 @@ hr {
 .red {
     color:red;
     font-weight: bold;
+}
+
+.mainmovie {display:block;
+           min-height: 500px;}
+
+.cast {
+    padding:5px;
+    width: 840px;
+    min-height: 60px;
+    background-color: #eee;
+    margin: 4px;
+    line-height: 60px;
+}
+
+.cast img {
+    float:left;
+    margin: 5px;
+}
+
+.cast a {
+    margin-left: 15px
 }

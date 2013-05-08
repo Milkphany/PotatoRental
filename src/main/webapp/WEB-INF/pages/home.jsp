@@ -10,8 +10,11 @@
 <body>
 <div id="">
     <jsp:include page="header.jsp"/>
-    <div id="">
-        ${message}
+    
+        <div id="wrap">
+            <div class="header2 message">
+            ${message}</div>
+        </div>
 
         <div class="">
             <center> <span class="header2"><a id="prev2" class="prev" href="#">&lt;</a>
@@ -46,6 +49,6 @@
             ${movie.name}</br>
         </c:forEach>
     </div>
-</div>
+
 </body>
 </html>

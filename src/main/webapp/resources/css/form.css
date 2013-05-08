@@ -83,6 +83,8 @@ form input:focus, #name:focus, #zip:focus {
     margin:2px;
 } 
 
+#submitbutton:hover {background-color:#125f94}
+
 .form-signup button {
     font-family: "Lato", sans-serif;
     font-size: 12pt;
