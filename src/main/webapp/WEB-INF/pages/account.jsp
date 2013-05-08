@@ -14,7 +14,7 @@
 <!doctype html>
 <html>
     <head>
-        <jsp:include page="head.jsp" />
+        <c:import url="head.jsp" />
         <title>Settings | ${user.email}</title>
         <script>
             function loadpg (url) {
@@ -26,7 +26,7 @@
     <body>
         <div id="wrap">
 
-            <jsp:include page="header.jsp" />
+            <c:import url="header.jsp" />
             <div id="moviepagebody">
 
                 <div class="content" style="min-height:500px">
@@ -56,39 +56,8 @@
                             </td>
                             <td>
                                 <div class ="accountmain">
-                                    <%--<jsp:include page="accountinfo.jsp" />--%>
-                                    <%--<c:import url="/accountinfo"/>--%>
-                                    <br>
-                                    Set in the South two years before the Civil War, Django Unchained 
-                                    stars Jamie Foxx as Django, a slave whose brutal history with his
-                                    former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
-                                    (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
-                                    and only Django can lead him to his bounty. Honing vital hunting skills, Django
-                                    remains focused on one goal: finding and rescuing Broomhilda (Kerry Washington),
-                                    the wife he lost to the slave trade long ago. Django and Schultz's search ultimately
-                                    leads them to Calvin Candie (Leonardo DiCaprio), the proprietor of "Candyland," an 
-                                    infamous plantation. Exploring the compound under false pretenses, Django and Schultz
-                                    arouse the suspicion of Stephen (Samuel L. Jackson), Candie's trusted house slave.
-                                    Set in the South two years before the Civil War, Django Unchained 
-                                    stars Jamie Foxx as Django, a slave whose brutal history with his
-                                    former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
-                                    (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
-                                    and only Django can lead him to his bounty. Honing vital hunting skills, Django
-                                    remains focused on one goal: finding and rescuing Broomhilda (Kerry Washington),
-                                    the wife he lost to the slave trade long ago. Django and Schultz's search ultimately
-                                    leads them to Calvin Candie (Leonardo DiCaprio), the proprietor of "Candyland," an 
-                                    infamous plantation. Exploring the compound under false pretenses, Django and Schultz
-                                    arouse the suspicion of Stephen (Samuel L. Jackson), Candie's trusted house slave.
-                                    Set in the South two years before the Civil War, Django Unchained 
-                                    stars Jamie Foxx as Django, a slave whose brutal history with his
-                                    former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
-                                    (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
-                                    and only Django can lead him to his bounty. Honing vital hunting skills, Django
-                                    remains focused on one goal: finding and rescuing Broomhilda (Kerry Washington),
-                                    the wife he lost to the slave trade long ago. Django and Schultz's search ultimately
-                                    leads them to Calvin Candie (Leonardo DiCaprio), the proprietor of "Candyland," an 
-                                    infamous plantation. Exploring the compound under false pretenses, Django and Schultz
-                                    arouse the suspicion of Stephen (Samuel L. Jackson), Candie's trusted house slave.
+                                    <c:import url="/accountinfo"/>
+                                    
                                 </div></td>
                         </tr></table>
 

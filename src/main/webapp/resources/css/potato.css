@@ -389,6 +389,9 @@ hr {
 .mainmovie {display:block;
            min-height: 500px;}
 
+.mainactor {display:block;
+           min-height: 250px;}
+
 .cast {
     padding:5px;
     width: 840px;

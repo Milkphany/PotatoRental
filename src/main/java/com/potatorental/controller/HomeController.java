@@ -60,4 +60,9 @@ public class HomeController {
     public String getAccountinfo() {
         return "accountinfo";
     }
+    
+    @RequestMapping(value = "actor", method = RequestMethod.GET)
+    public String getActor() {
+        return "actor";
+    }
 }
