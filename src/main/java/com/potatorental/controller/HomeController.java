@@ -55,4 +55,9 @@ public class HomeController {
     public String getPopular() {
         return "popular";
     }
+    
+    @RequestMapping(value = "accountinfo", method = RequestMethod.GET)
+    public String getAccountinfo() {
+        return "accountinfo";
+    }
 }

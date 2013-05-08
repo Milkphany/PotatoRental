@@ -406,3 +406,15 @@ hr {
 .cast a {
     margin-left: 15px
 }
+
+.accountsidebar {
+    width: 200px;
+    min-height:100%;
+    display:table-cell;
+    float:left;
+}
+
+.accountmain {
+    width: 640px;
+    margin-right: 0
+}
