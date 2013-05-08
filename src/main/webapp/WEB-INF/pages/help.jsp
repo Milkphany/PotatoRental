@@ -34,7 +34,7 @@
                         
                         </dd>
                         <dt><a href="#">What is the selection like?</a></dt>
-                        <dd>We have thousands of movies in stock, including new releases, classics, kids' movies, and foreign films. 
+                        <dd>We carry hundreds of titles and have thousands of DVDs in stock, including new releases, classics, kids' movies, and foreign films. 
                             Click <a href="/movies">here</a> to browse our entire collection.</dd>
                         <dt><a href="#">How much does this service cost?</a><br/></dt>
                         <dd>

@@ -50,4 +50,9 @@ public class HomeController {
     public String getGenres() {
         return "genres";
     }
+    
+    @RequestMapping(value = "popular", method = RequestMethod.GET)
+    public String getPopular() {
+        return "popular";
+    }
 }

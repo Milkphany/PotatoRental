@@ -21,9 +21,6 @@
 
 <script type="text/javascript" src="/js/jquery.tooltipster.min.js"></script>
 
-
-
-
 <!-- optionally include helper plugins -->
 <script type="text/javascript" language="javascript" src="/js/helper-plugins/jquery.mousewheel.min.js"></script>
 <script type="text/javascript" language="javascript" src="/js/helper-plugins/jquery.touchSwipe.min.js"></script>

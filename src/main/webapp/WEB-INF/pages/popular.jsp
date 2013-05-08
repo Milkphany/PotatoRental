@@ -9,18 +9,15 @@
 <html>
     <head>
         <jsp:include page="head.jsp" />
-        <title>Movies</title>
+        <title>PotatoCat: Popular Movies</title>
 
     </head>
     <body>
         <jsp:include page="header.jsp" />  
 
-
-
-
         <div class="movielist">
-
-            <c:forEach var="movies" items="${movies}" >
+    
+            <c:forEach var="movies" items="${popular}" >
                 
                 <img class="toolmeow" id ="${movies.id}"  
                      title="<div class='movtt'><div class='header1'>${movies.name}</div>

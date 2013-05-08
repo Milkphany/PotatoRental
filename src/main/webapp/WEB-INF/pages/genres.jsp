@@ -10,36 +10,6 @@
     <head>
         <jsp:include page="head.jsp" />
         <title>Movies</title>
-        <script type="text/javascript" src="/js/jquery.tooltipster.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('.toolmeow').tooltipster({
-                    animation: 'fade',
-                    arrow: true,
-                    arrowColor: '',
-                    content: '',
-                    delay: 200,
-                    fixedWidth: 300,
-                    maxWidth: 300,
-                    functionBefore: function(origin, continueTooltip) {
-                        continueTooltip();
-                    },
-                    functionReady: function(origin, tooltip) {},
-                    functionAfter: function(origin) {},
-                    icon: '(?)',
-                    iconDesktop: false,
-                    iconTouch: false,
-                    iconTheme: '.tooltipster-icon',
-                    interactive: true,
-                    interactiveTolerance: 650,
-                    offsetX: 0,
-                    offsetY: -40,
-                    onlyOne: true,
-                    position: 'top',
-                    speed: 350
-                });
-            });
-        </script>
 
     </head>
     <body>
