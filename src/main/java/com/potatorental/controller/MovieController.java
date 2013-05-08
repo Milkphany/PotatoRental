@@ -49,8 +49,8 @@ public class MovieController {
 
         return new ModelAndView("movies", modelMap);
     }
-
-    /*@RequestMapping(value = "insert", method = RequestMethod.GET)
+/*
+    @RequestMapping(value = "insert", method = RequestMethod.GET)
     public ModelAndView insertMovies(ModelMap modelMap) {
         BufferedReader reader = null;
         List<Movie> movies = new ArrayList<>();

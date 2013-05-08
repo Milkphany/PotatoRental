@@ -58,7 +58,7 @@ It's a Wonderful Life
 Drama
 Psycho
 Horror
-Léon: The Professional
+Lon: The Professional
 Crime
 Sunset Blvd.
 Drama
@@ -116,21 +116,21 @@ Aliens
 Action
 Toy Story 3
 Animation
-WALL·E
+WALLE
 Animation
 The Lives of Others
 Drama
-The Green Mile
-Crime
 The Intouchables
 Biography
+The Green Mile
+Crime
 Gladiator
 Action
 A Clockwork Orange
 Crime
 The Great Dictator
 Comedy
-Amélie
+Amlie
 Comedy
 The Prestige
 Drama
@@ -182,6 +182,8 @@ Amadeus
 Biography
 Rashomon
 Crime
+Princess Mononoke
+Animation
 2001: A Space Odyssey
 Adventure
 All About Eve
@@ -234,9 +236,9 @@ The Elephant Man
 Biography
 The Seventh Seal
 Drama
-The General
-Action
 Heat
+Action
+The General
 Action
 The Maltese Falcon
 Crime
@@ -278,10 +280,10 @@ Strangers on a Train
 Crime
 Casino
 Biography
-Jaws
-Adventure
 The Sixth Sense
 Drama
+Jaws
+Adventure
 Platoon
 Action
 The Thing
@@ -348,6 +350,8 @@ Stand by Me
 Adventure
 Groundhog Day
 Comedy
+The Best Years of Our Lives
+Drama
 Donnie Darko
 Drama
 Twelve Monkeys
@@ -378,7 +382,7 @@ A Beautiful Mind
 Biography
 The Princess Bride
 Adventure
-8½
+8
 Drama
 The Hobbit: An Unexpected Journey
 Adventure
@@ -422,12 +426,12 @@ Infernal Affairs
 Crime
 Roman Holiday
 Comedy
+Memories of Murder
+Crime
 The Truman Show
 Comedy
 Pirates of the Caribbean: The Curse of the Black Pearl
 Action
-Memories of Murder
-Crime
 Monsters, Inc.
 Animation
 District 9
@@ -450,24 +454,24 @@ Jurassic Park
 Adventure
 La Haine
 Drama
+3 Idiots
+Comedy
 Shutter Island
 Mystery
 All Quiet on the Western Front
 Drama
-3 Idiots
-Comedy
 Beauty and the Beast
 Animation
 Incendies
 Drama
 Rain Man
 Drama
-Rosemary's Baby
-Drama
-Nausicaä of the Valley of the Wind
-Animation
 Taare Zameen Par
 Drama
+Rosemary's Baby
+Drama
+Nausica of the Valley of the Wind
+Animation
 Harvey
 Comedy
 Mystic River
@@ -482,9 +486,9 @@ Nosferatu
 Horror
 Spring, Summer, Fall, Winter... and Spring
 Drama
-The Help
-Drama
 Three Colors: Red
+Drama
+The Help
 Drama
 The Untouchables
 Crime
@@ -492,9 +496,5 @@ The Wrestler
 Drama
 The Celebration
 Drama
-Battleship Potemkin
-Drama
 Big Fish
 Adventure
-In the Mood for Love
-Drama
