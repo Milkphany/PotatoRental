@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -27,6 +29,8 @@ public class SignUpController {
     private PersonDao personDao;
     private LocationDao locationDao;
 
+    private Customer customer;
+
     @Autowired
     public SignUpController(PersonDao personDao, LocationDao locationDao) {
         this.personDao = personDao;
@@ -35,7 +39,14 @@ public class SignUpController {
 
     @ModelAttribute("signupForm")
     public Customer newCustomer() {
-        return new Customer();
+        if (customer != null)
+            return customer;
+        return (customer = new Customer());
+    }
+
+    @ModelAttribute("locationForm")
+    public Location newLocation() {
+        return new Location();
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -43,7 +54,7 @@ public class SignUpController {
         return "signup";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+/*    @RequestMapping(method = RequestMethod.POST)
     public String signUp(@Valid @ModelAttribute("signupForm") Customer customer, BindingResult bindingResult,
                          Model model, RedirectAttributes redirectAttrs, SessionStatus sessionStatus,
                          @RequestParam("state") String state, @RequestParam("city") String city) {
@@ -52,7 +63,7 @@ public class SignUpController {
             return null;
         }
 
-        /*Need to validate zipcode, haven't done that*/
+        *//*Need to validate zipcode, haven't done that*//*
         try {
             personDao.insertCustomer(customer, new Location(customer.getZipCode(), state, city));
         } catch (DataIntegrityViolationException e) {
@@ -61,10 +72,38 @@ public class SignUpController {
         }
 
         sessionStatus.setComplete();
-        /* TODO need to authenticate user so that they will automatically login after signup*/
+        *//* TODO need to authenticate user so that they will automatically login after signup*//*
         authenticateUser();
         return "redirect:/users/" + customer.getEmail();
+    }*/
+
+    @RequestMapping(value = "signup_1", method = RequestMethod.POST)
+    public String signupForm_1(@Valid @ModelAttribute("signupForm") Customer customer, BindingResult result,
+                               ModelMap modelMap, RedirectAttributes redirectAttributes) {
+        if (result.hasErrors()) {
+            redirectAttributes.addAttribute("message", "There is an error");
+            return "signup";
+        }
+        redirectAttributes.addAttribute("customer", customer);
+        return "redirect:/signup/signup_2";
     }
+
+    @RequestMapping(value = "signup_2", method = RequestMethod.GET)
+    public String getSignUp_2() {
+        return "signup_2";
+    }
+
+    @RequestMapping(value = "signup_2", method = RequestMethod.POST)
+    public String signupForm_2(@Valid @ModelAttribute("locationForm") Location location, BindingResult result,
+                               ModelMap modelMap, RedirectAttributes redirectAttributes){
+        if (result.hasErrors()) {
+            redirectAttributes.addAttribute("message", "There is an error in form data");
+            return "signup";
+        }
+
+        return "redirect:/users/";
+    }
+
 
     private void authenticateUser() {
 

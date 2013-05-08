@@ -12,49 +12,48 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <c:import url="head.jsp" />
-        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-        <script>
-            $(function() {
-                $( "#sortable" ).sortable({
-                    placeholder: "ui-state-highlight"
-                });
-                $( "#sortable" ).disableSelection();
+<head>
+    <c:import url="head.jsp"/>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#sortable").sortable({
+                placeholder: "ui-state-highlight"
             });
-        </script>
+            $("#sortable").disableSelection();
+        });
+    </script>
 
 
+    <sec:authentication property="principal.username" var="userid"/>
+    <title>${userid}'s Queue</title>
+</head>
+<body>
+<c:import url="header.jsp"/>
 
-        <sec:authentication property="principal.username" var="userid" />
-        <title>${userid}'s Queue</title>
-    </head>
-    <body>           
-        <c:import url="header.jsp" />
+<div id="moviepagebody">
 
-        <div id ="moviepagebody">
+    <div class="content">
+        <span class="header1">Manage Your Queue</span><br/>
+        <hr>
+        <p>Drag and drop movie titles in the order that you'd like to receive them.</p>
 
-            <div class="content">
-                <span class="header1">Manage Your Queue</span><br/>
-                <hr>
-                <p>Drag and drop movie titles in the order that you'd like to receive them.</p>
+        <ul id="sortable">
+            <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">The Dark Knight</li>
+            <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">The Shawshank Redemption</li>
+            <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Amelie</li>
+            <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Star Wars</li>
+            <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Toy Story</li>
+            <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Dr Strangelove or: How I learned to
+                Stop worrying and love the bomb
+            </li>
+        </ul>
 
-                <ul id="sortable">
-                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">The Dark Knight</li>
-                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">The Shawshank Redemption</li>
-                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Amelie</li>
-                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Star Wars</li>
-                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Toy Story</li>
-                    <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">Dr Strangelove or: How I learned to Stop worrying and love the bomb</li>
-                </ul>
-
-            </div>
-
-
-        </div>
+    </div>
 
 
+</div>
 
 
-    </body>
+</body>
 </html>
