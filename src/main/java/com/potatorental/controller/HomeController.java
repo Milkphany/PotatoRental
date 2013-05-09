@@ -73,6 +73,11 @@ public class HomeController {
         return "tables";
     }
 
+    @RequestMapping (value= "salereport", method = RequestMethod.GET)
+    public String getSalereport(){
+        return "salereport";
+    }
+    
 /*    @RequestMapping(value = "allactors")
     public String allActors() {
         *//*String path = "C:\\Users\\Milky\\IdeaProjects\\PotatoRental\\src\\main\\webapp\\resources\\images\\actors";*//*

@@ -48,10 +48,15 @@
                                 <a href="<spring:url value="/account/mailing" />">Mail</a><br/>
                                 <a href="<spring:url value="/suggest" />">Suggest</a><br/>
                             </sec:authorize>
-                            <sec:authorize access="hasRole('ROLE_ADMIN')">
-                                <a href="/movies/movielist">Movie List</a>
-                                <a href="#">Get Movie Rental</a>
+                            <sec:authorize access="hasRole('ROLE_MANAGER')">
+                                <a href="<spring:url value="/salereport" />">Sales Report</a><br>
                             </sec:authorize>
+                            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                                <a href="/movies/movielist">Movie List</a><br/>
+                                <a href="#">Get Movie Rental</a><br/>
+                                
+                            </sec:authorize>
+                               
                             <br/>
                             <%--Monika:
                             For this section if you can send a ajax request, I can provide a response body to fill --%>
