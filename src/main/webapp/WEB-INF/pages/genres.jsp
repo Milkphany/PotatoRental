@@ -140,5 +140,101 @@
         </div></div>
     <br/>
     
+    <center> <span class="header2"><a id="prev5" class="prev" href="#">&lt;</a>
+             Crime<a id="next5" class="next" href="#">&gt;</a></span></center>
+    <hr>
+
+    <div class="image_carousel" >
+        <div id="foo5" >
+            <c:forEach var="movie" items="${movies}" >
+                <c:if test="${movie.type == 'Crime'}">
+                    <img class="poster toolmeow" src="/images/posters/${movie.id}.jpg"
+                         id="${movie.id}"
+                         title="<div class='movtt'><div class='header1'>${movie.name}</div>
+                         <br>${movie.type}<br>
+                         <p>Set in the South two years before the Civil War, Django Unchained 
+                         stars Jamie Foxx as Django, a slave whose brutal history with his
+                         former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
+                         (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
+                         and only Django can lead him to his bounty.</p>
+                         </div>" 
+                         />
+                </c:if>
+            </c:forEach>
+        </div></div>
+    <br/>
+    
+    <center> <span class="header2"><a id="prev6" class="prev" href="#">&lt;</a>
+            Drama <a id="next6" class="next" href="#">&gt;</a></span></center>
+    <hr>
+
+    <div class="image_carousel" >
+        <div id="foo6" >
+            <c:forEach var="movie" items="${movies}" >
+                <c:if test="${movie.type == 'Drama'}">
+                    <img class="poster toolmeow" src="/images/posters/${movie.id}.jpg"
+                         id="${movie.id}"
+                         title="<div class='movtt'><div class='header1'>${movie.name}</div>
+                         <br>${movie.type}<br>
+                         <p>Set in the South two years before the Civil War, Django Unchained 
+                         stars Jamie Foxx as Django, a slave whose brutal history with his
+                         former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
+                         (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
+                         and only Django can lead him to his bounty.</p>
+                         </div>" 
+                         />
+                </c:if>
+            </c:forEach>
+        </div></div>
+    <br/>
+    
+    <center> <span class="header2"><a id="prev7" class="prev" href="#">&lt;</a>
+            Film-Noir <a id="next7" class="next" href="#">&gt;</a></span></center>
+    <hr>
+
+    <div class="image_carousel" >
+        <div id="foo7" >
+            <c:forEach var="movie" items="${movies}" >
+                <c:if test="${movie.type == 'Film-Noir'}">
+                    <img class="poster toolmeow" src="/images/posters/${movie.id}.jpg"
+                         id="${movie.id}"
+                         title="<div class='movtt'><div class='header1'>${movie.name}</div>
+                         <br>${movie.type}<br>
+                         <p>Set in the South two years before the Civil War, Django Unchained 
+                         stars Jamie Foxx as Django, a slave whose brutal history with his
+                         former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
+                         (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
+                         and only Django can lead him to his bounty.</p>
+                         </div>" 
+                         />
+                </c:if>
+            </c:forEach>
+        </div></div>
+    <br/>
+    
+    <center> <span class="header2"><a id="prev8" class="prev" href="#">&lt;</a>
+            Mystery <a id="next8" class="next" href="#">&gt;</a></span></center>
+    <hr>
+
+    <div class="image_carousel" >
+        <div id="foo8" >
+            <c:forEach var="movie" items="${movies}" >
+                <c:if test="${movie.type == 'Mystery'}">
+                    <img class="poster toolmeow" src="/images/posters/${movie.id}.jpg"
+                         id="${movie.id}"
+                         title="<div class='movtt'><div class='header1'>${movie.name}</div>
+                         <br>${movie.type}<br>
+                         <p>Set in the South two years before the Civil War, Django Unchained 
+                         stars Jamie Foxx as Django, a slave whose brutal history with his
+                         former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
+                         (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
+                         and only Django can lead him to his bounty.</p>
+                         </div>" 
+                         />
+                </c:if>
+            </c:forEach>
+        </div></div>
+    <div id="padheader"></div>
+    
 </body>
 </html>
