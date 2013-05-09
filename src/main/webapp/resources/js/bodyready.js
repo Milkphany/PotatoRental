@@ -34,6 +34,22 @@ $('body').ready(function() {
 
 
 $('body').ready(function() {
+    $('#foo0').carouFredSel({    
+        scroll: 2,
+        auto: false,
+        prev: '#prev0',
+        next: '#next0',
+        mousewheel: false
+    });
+    
+    $('#foo1').carouFredSel({    
+        scroll: 2,
+        auto: false,
+        prev: '#prev1',
+        next: '#next1',
+        mousewheel: false
+    });
+    
     $('#foo2').carouFredSel({    
         scroll: 2,
         auto: false,
@@ -48,6 +64,46 @@ $('body').ready(function() {
         prev: '#prev3',
         next: '#next3',
         mousewheel: false     
+    });
+    
+    $('#foo4').carouFredSel({    
+        scroll: 2,
+        auto: false,
+        prev: '#prev4',
+        next: '#next4',
+        mousewheel: false
+    });
+    
+    $('#foo5').carouFredSel({    
+        scroll: 2,
+        auto: false,
+        prev: '#prev5',
+        next: '#next5',
+        mousewheel: false
+    });
+    
+    $('#foo6').carouFredSel({    
+        scroll: 2,
+        auto: false,
+        prev: '#prev6',
+        next: '#next6',
+        mousewheel: false
+    });
+    
+    $('#foo7').carouFredSel({    
+        scroll: 2,
+        auto: false,
+        prev: '#prev7',
+        next: '#next7',
+        mousewheel: false
+    });
+    
+    $('#foo8').carouFredSel({    
+        scroll: 2,
+        auto: false,
+        prev: '#prev8',
+        next: '#next8',
+        mousewheel: false
     });
     
     $('#foopop').carouFredSel({    
