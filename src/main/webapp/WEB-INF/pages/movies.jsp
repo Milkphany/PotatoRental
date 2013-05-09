@@ -26,7 +26,7 @@
                     former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
                     (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
                     and only Django can lead him to his bounty.</p>
-                        <center><a href='#'>+QUEUE</a></center></div>"
+                       </div>"
              alt="${movie.name}" src="/images/posters/${movie.id}.jpg"/>
             </a>
     </c:forEach>

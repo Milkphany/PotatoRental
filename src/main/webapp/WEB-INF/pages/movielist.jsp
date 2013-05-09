@@ -6,7 +6,7 @@
         <th>Rating</th>
         
         </tr>
-    <c:forEach items="${movies}" var="movie">
+        <c:forEach items="${movies}" var="movie">
         
         <tr style="color:black; font-size:11pt">
             <td><a href="/movies/${movie.id}">${movie.name}</a></td>
