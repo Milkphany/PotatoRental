@@ -67,7 +67,7 @@
 </p></dd>
 
 <dt><a href="#">Viewing Movie Suggestions</a></dt>
-<dd></dd>
+<dd>To view our recommendations for you, hover over <strong>Browse</strong> in the navigation bar, then click <strong>Recommendations</strong>.</dd>
 
 <h2>User Guide: Customer Representatives</h2>
 <dt><a href="#">Recording an Order</a></dt>
@@ -97,7 +97,6 @@
 
 <h2>User Guide: Managers</h2>
 <dt><a href="#">Adding, Editing, and Deleting Movies</a></dt>
-
 <dd>
     <p>
         To edit a movie, visit the movie page and click <strong>Edit</strong> in the upper right hand corner of the page.
@@ -116,12 +115,9 @@
 <dd><p>To view a listing of all movies, you can visit the Movies A-Z page. You can access this page by hovering over <strong>Browse</strong> in the navigation bar and then clicking <strong>A-Z</strong>.</p></dd>
 
 <dt><a href="#">Viewing Movie Rentals</a></dt>
-<dd></dd>
+<dd>Click <strong>Sales</strong> in the navigation bar to see all orders.</dd>
 
 <dt><a href="#">Viewing Customer Activity</a></dt>
-<dd></dd>
-
-<dt><a href="#">Viewing Customer Representative Activity</a></dt>
 <dd></dd>
 
 <dt><a href="#">Viewing Most Popular Movies</a></dt>
