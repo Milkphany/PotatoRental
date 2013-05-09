@@ -39,7 +39,7 @@
 <div id="subheader">
     
     <a href='/popular'>Popular</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href='#'>A - Z</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='/movielist'>A - Z</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href='/genres'>Genres</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href='#'>Recommendations</a>
 

@@ -20,8 +20,11 @@
             <div class="content">
                 <span class="header1">Actors</span>
                 <hr>
-                <table id="orderhistory">
-
+                <table id="planlist">
+                    <tr>
+                        <th>Name</th>
+                        <th>Rating</th>
+                    </tr>
                     <c:forEach var="actor" items="${actors}" >
                         <tr>
                             <td>
