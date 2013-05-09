@@ -76,4 +76,9 @@ public class HomeController {
         return "tables";
     }
     
+    @RequestMapping(value = "movielist", method = RequestMethod.GET)
+    public String getMovielist() {
+        return "movielist";
+    }
+    
 }

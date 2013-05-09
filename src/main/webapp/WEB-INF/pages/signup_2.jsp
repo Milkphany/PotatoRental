@@ -84,10 +84,11 @@
                 </form:select>
                 <form:input path="zipCode" cssErrorClass="error" type="text" id="name" placeholder="Zip Code"/>
                 <select name="account">
+                    
                     <option value="lim">Limited</option>
-                    <option value="one">One</option>
-                    <option value="two">Two</option>
-                    <option value="three">Three</option>
+                    <option value="one">Unlimited 1</option>
+                    <option value="two">Unlimited 2</option>
+                    <option value="three">Unlimited 3</option>
                 </select>
                 <button type="submit">Sign Up</button>
             </form:form>

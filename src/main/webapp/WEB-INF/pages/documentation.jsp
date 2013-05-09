@@ -121,13 +121,13 @@
 
                     <dt><a href="#">Relational Model</a></dt>
 
-
-
                     <dd><jsp:include page="tables.jsp"/></dd>
 
+                    <dt><a href="#">Integrity Constraints</a></dt>
+                    <dd></dd>
+                    
                     <dt><a href="#">Functional Dependencies</a></dt>
                     <dd>
-
                     </dd>
 
                     <dt><a href="#">Transactions: Customers</a></dt>
