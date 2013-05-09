@@ -21,4 +21,6 @@ public interface PersonDao {
     public void insertCustomer(Customer customer, Location Location);
 
     public boolean updateCustomer(Customer customer);
+
+    public boolean isEmailExist(String email);
 }

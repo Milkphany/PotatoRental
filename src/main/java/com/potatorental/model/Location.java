@@ -1,5 +1,9 @@
 package com.potatorental.model;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 /**
  * User: Milky
  * Date: 5/6/13
@@ -7,7 +11,10 @@ package com.potatorental.model;
  */
 public class Location {
 
-    private int zipCode;
+    @NotNull
+    @Min(10000)
+    @Max(999999)
+    private Integer zipCode;
 
     private String city;
     private String state;
@@ -22,11 +29,11 @@ public class Location {
         this.city = city;
     }
 
-    public int getZipCode() {
+    public Integer getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(Integer zipCode) {
         this.zipCode = zipCode;
     }
 

@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/account")
-@SessionAttributes({"user"})
+@SessionAttributes("user")
 public class AccountController {
 
     private final PersonDao personDao;
@@ -57,10 +57,7 @@ public class AccountController {
     @RequestMapping(value = "rental", method = RequestMethod.GET)
     public ModelAndView getRental(ModelMap modelMap, Principal principal) {
         Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
-        List<Movie> list;
-        modelMap.addAttribute("rentalhistory", list = accountDao.getHistory(account));
-
+        modelMap.addAttribute("rentalhistory", accountDao.getHistory(account));
         return new ModelAndView("rental", modelMap);
     }
-
 }

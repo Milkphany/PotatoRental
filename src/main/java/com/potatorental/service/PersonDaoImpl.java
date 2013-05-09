@@ -100,7 +100,7 @@ public class PersonDaoImpl implements PersonDao {
         locationDao.insertLocation(location);
         jdbcTemplate.update(personsql, customer.getSsn(), customer.getLastName(), customer.getFirstName(),
                 customer.getAddress(), customer.getZipCode(), customer.getTelephone(), customer.getEmail(), customer.getPass());
-        jdbcTemplate.update(customersql, customer.getSsn(), customer.getRating());
+        jdbcTemplate.update(customersql, customer.getSsn(), 1);
     }
 
     @Override
@@ -113,5 +113,11 @@ public class PersonDaoImpl implements PersonDao {
 
         return jdbcTemplate.update(sql, customer.getLastName(), customer.getFirstName(), customer.getAddress(),
                 customer.getZipCode(), customer.getTelephone(), customer.getRating(), customer.getSsn()) == 1;
+    }
+
+    @Override
+    public boolean isEmailExist(String email) {
+        String sql = "select count(*) from person where email = ?";
+        return jdbcTemplate.queryForObject(sql, Integer.class, email) == 0 ? false : true;
     }
 }

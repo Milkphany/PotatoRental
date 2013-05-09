@@ -33,6 +33,7 @@
                 <form:input path="firstName" cssErrorClass="error" id="name" type="text" autofocus="autofocus" placeholder="First Name"/>&nbsp;
                 <form:input path="lastName" cssErrorClass="error" id="name" type="text" placeholder="Last Name" />
                 <form:input path="email" cssErrorClass="error" type="email" placeholder="Email Address" />
+                <form:input path="telephone" csserrorclass="error" type="text" placeholder="Telephone" />
                 <form:input path="ssn" cssErrorClass="error" type="text" placeholder="Social Security Number"/>
                 <form:password path="pass" cssErrorClass="error" placeholder="Password"/>
                 <form:password path="pass" cssErrorClass="error" placeholder="Confirm Password"/>

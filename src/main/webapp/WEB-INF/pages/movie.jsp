@@ -59,9 +59,11 @@
                     <strong>Genre:</strong> <a href="#">Adventure</a>
                 </p>
 
-                <form action="">
-                    <button id="submitbutton" type="submit">+QUEUE</button>
-                </form>
+                <sec:authorize access="hasRole('ROLE_USER')" >
+                    <form action="">
+                        <button id="submitbutton" type="submit">+QUEUE</button>
+                    </form>
+                </sec:authorize>
             </div>
             <h2><a style="color:inherit" name="cast">Cast</a></h2>
 

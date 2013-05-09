@@ -24,5 +24,5 @@ public interface AccountDao {
 
     public List<Movie> getHistory(Account account);
 
-    public void createAccount(Customer customer, Account account);
+    public void insertAccount(Customer customer, AccountType accountType);
 }

@@ -10,6 +10,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -57,7 +60,8 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
-    public void createAccount(Customer customer, Account account) {
-        //To change body of implemented methods use File | Settings | File Templates.
+    public void insertAccount(Customer customer, AccountType accountType) {
+        String sql = "insert into account (dateopened, type, customer) values (?, ?, ?)";
+        jdbcTemplate.update(sql, new Date(), accountType.name(), customer.getSsn());
     }
 }
