@@ -81,4 +81,9 @@ public class HomeController {
         return "movielist";
     }
     
+    @RequestMapping(value = "search", method = RequestMethod.GET)
+    public String getSearch() {
+        return "search";
+    }
+    
 }

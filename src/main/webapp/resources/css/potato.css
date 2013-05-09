@@ -441,7 +441,7 @@ width: 100%}
 
 .grey {color:grey; font-style:italic}
 
-.filmography {
+.filmography, .filmresults {
     display:block;
     margin-left: auto;
     margin-right: auto;
@@ -459,6 +459,16 @@ width: 100%}
     
 }
 
-.filmography div:last-child {
+.filmresults div {
+    float:left;
+    padding: 7px;
+    
+    max-width: 200px;
+    
+    min-height: 330px;
+    
+}
+
+.filmography div:last-child{
     float:none;
 }
