@@ -112,10 +112,10 @@ public class MovieController {
 
     @RequestMapping(value = "recommendation", method = RequestMethod.GET)
     public String getRecomendations(ModelMap modelMap, Principal principal) {
-        if (modelMap.get("movies") != null)
+        if (principal == null)
             return "recommendations";
 
-        modelMap.addAttribute("movies", accountDao.personalRecommendation(
+        modelMap.addAttribute("recommendations", accountDao.personalRecommendation(
                 personsDao.getPersonByEmail(principal.getName()).getSsn()));
         return "recommendations";
     }

@@ -41,7 +41,7 @@
     <a href='/movies/popular'>Popular</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href='/movies/movielist'>A - Z</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href='/movies/genres'>Genres</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href='#'>Recommendations</a>
+    <a href='/movies/recommendation'>Recommendations</a>
 
 </div>
 
