@@ -44,7 +44,7 @@
                             </sec:authorize>
                             <%--Employee code here--%>
                             <sec:authorize access="hasRole('ROLE_STAFF')">
-                                <a href="#" onclick="loadpg('/users')">Search Users</a><br/>
+                                <a href="#" onclick="loadpg('/users/search')">Search Users</a><br/>
                                 <a href="<spring:url value="/record" />">Record Order</a><br/>
                                 <a href="<spring:url value="/mailing" />">Mail</a><br/>
                                 <a href="<spring:url value="/suggest" />">Suggest</a><br/>

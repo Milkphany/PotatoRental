@@ -32,6 +32,13 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView allUsers(ModelMap modelMap) {
+        List<Customer> customers = personsDao.getAllCustomers();
+        modelMap.addAttribute("users", customers);
+        return new ModelAndView("usersall", modelMap);
+    }
+
+    @RequestMapping(value = "search", method = RequestMethod.GET)
     public String searchUsers() {
         return "usersearch";
     }

@@ -1,6 +1,9 @@
 package com.potatorental.service;
 
-import com.potatorental.model.*;
+import com.potatorental.model.Customer;
+import com.potatorental.model.Employee;
+import com.potatorental.model.Location;
+import com.potatorental.model.Person;
 import com.potatorental.repository.AccountDao;
 import com.potatorental.repository.LocationDao;
 import com.potatorental.repository.PersonsDao;
@@ -14,6 +17,7 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 
 /**
  * User: Milky
@@ -45,6 +49,30 @@ public class PersonsDaoImpl implements PersonsDao {
         String sql = "select * from employee where ssn = ?";
         Person person = getPersonByEmail(email);
         return jdbcTemplate.queryForObject(sql, new EmployeeMapper(person), person.getSsn());
+    }
+
+    @Override
+    public List<Customer> getAllCustomers() {
+        String sql = "select * from person, customer where ssn = id";
+
+        return jdbcTemplate.query(sql, new RowMapper<Customer>() {
+            @Override
+            public Customer mapRow(ResultSet resultSet, int i) throws SQLException {
+                Customer customer = new Customer();
+
+                customer.setRating(resultSet.getInt("rating"));
+                customer.setEmail(resultSet.getString("email"));
+                customer.setAddress(resultSet.getString("address"));
+                customer.setZipCode(resultSet.getInt("zipcode"));
+                customer.setFirstName(resultSet.getString("firstname"));
+                customer.setLastName(resultSet.getString("lastname"));
+                customer.setSsn(resultSet.getInt("ssn"));
+                customer.setTelephone(resultSet.getBigDecimal("telephone"));
+
+                return customer;
+            }
+        });
+
     }
 
     @Override

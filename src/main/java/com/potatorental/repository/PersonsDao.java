@@ -25,4 +25,6 @@ public interface PersonsDao {
     public void recordOrder(int employeeid, int accountid, int movieid);
 
     public Employee getEmployeeByEmail(String email);
+
+    public List<Customer> getAllCustomers();
 }
