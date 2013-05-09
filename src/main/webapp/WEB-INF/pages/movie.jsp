@@ -63,7 +63,7 @@
                     <c:choose>
                         <c:when test="${hasMovie}" >
                             <form action="/account/queue/remove/${movie.id}">
-                                <button ic="removebutton" type="submit">Remove</button>
+                                <button id="removebutton" type="submit">Remove</button>
                             </form>
                         </c:when>
                         <c:otherwise>

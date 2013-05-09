@@ -231,3 +231,5 @@ elect:active {
 }
 
 #submitbutton {padding:10px}
+
+#removebutton:hover {background-color: #ff0000}
