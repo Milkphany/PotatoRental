@@ -130,13 +130,71 @@
 <dt><a href="#">E-R Diagram</a></dt>
 <dd><img src="/images/ER.png"/></dd>
 
-<dt><a href="#">Relational Model</a></dt>
 
+
+<dt><a href="#">Relational Model</a></dt>
 
 <dd>
     <jsp:include page="tables.jsp"/>
 </dd>
 
+<dt><a href="#">Integrity Constraints</a></dt>
+<dd><div id="code">
+        <p><strong>Account</strong><br>
+            Primary Key: id
+        </p>
+        
+        <p><strong>Actor</strong><br>
+            Primary Key: id
+        </p>
+        
+        <p><strong>AppearedIn</strong><br>
+            Foreign Key: actorid references Actor (id)<br>
+            Foreign Key: movieid references Movie (id)
+        </p>
+        
+        <p><strong>Customer</strong><br>
+            Primary Key: id<br>
+            Foreign Key: ssn references Person (ssn)
+        </p>
+
+        <p><strong>Employee</strong><br>
+            Primary Key: id<br>
+            Foreign Key: manager references Employee (id)<br>
+            Foreign Key: ssn references Person (ssn)
+        </p>
+        
+        <p><strong>Location</strong><br>
+            Primary Key: zipcode
+        </p>
+        
+        <p><strong>Movie</strong><br>
+            Primary Key: id
+        </p>
+        
+        <p><strong>MovieQ</strong><br>
+            Foreign Key: accountid references Account (id)<br>
+            Foreign Key: movieid references Movie (id)
+        </p>
+        
+        <p><strong>Person</strong><br>
+            Primary Key: ssn
+        </p>
+        
+        <p><strong>Purchase</strong><br>
+            Primary Key: id
+        </p>
+        
+        <p><strong>Rental</strong><br>
+            Foreign Key: accountid references Account (id)<br>
+            Foreign Key: employid references Employee (id)<br>
+            Foreign Key: movieid references Movie (id)<br>
+            Foreign Key: purchid references Purchase (id)
+        </p>
+
+    </div>
+    
+</dd>
 <dt><a href="#">Functional Dependencies</a></dt>
 <dd>
 
