@@ -33,7 +33,7 @@
             <p>
             </p>
         </div>
-        <img id="potatocat" src="/images/potatocat2.png" width="350"/>
+        <center><img id="potatocat" src="/images/potatocat2.png" width="350"/></center>
     </div>
 </div>
 </body>

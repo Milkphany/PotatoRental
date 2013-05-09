@@ -18,7 +18,6 @@
     <title>Settings | ${user.email}</title>
     <script>
         function loadpg(url) {
-
             $('.accountmain').load(url);
         }
     </script>
@@ -31,20 +30,20 @@
 
         <div class="content" style="min-height:500px">
             <%--This page does not have to display all user details, just what they can do, editing user detail will be another page--%>
-            <span class="header1">${message}</span>
+            <span class="header1">Account Settings</span>
             <hr>
             <table id="accountpage">
                 <tr>
                     <td>
                         <div class="accountsidebar">
-                            <a href="#" onclick="loadpg('/accountinfo')">Main</a><br/>
+                           
                             <sec:authorize access="hasRole('ROLE_USER')">
                                 <a href="<spring:url value="/account/rental" />">History</a><br/>
                                 <a href="<spring:url value="/account/queue" />">Queue</a><br/>
                             </sec:authorize>
                             <%--Employee code here--%>
                             <sec:authorize access="hasRole('ROLE_STAFF')">
-                                <a href="#" onclick="loadpg('/users/search')">Search Users</a><br/>
+                                
                                 <a href="<spring:url value="/sales/" />">Record Order</a><br/>
                                 <a href="<spring:url value="/account/mailing" />">Mail</a><br/>
                                 <a href="<spring:url value="/suggest" />">Suggest</a><br/>

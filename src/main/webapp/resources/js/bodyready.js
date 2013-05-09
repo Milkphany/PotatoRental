@@ -120,6 +120,22 @@ $('body').ready(function() {
         mousewheel: false
         
     });
+    
+    $('#foorec').carouFredSel({    
+        scroll: 2,
+        auto: {
+            duration        :   7500,
+            easing          :   "linear",
+            timeoutDuration :   0,
+            pauseOnHover    :   "immediate"
+            
+        },
+        prev: '#prevp',
+        next: '#nextp',
+        mousewheel: false
+        
+    });
+    
 });
 
 $('body').ready(function(){
