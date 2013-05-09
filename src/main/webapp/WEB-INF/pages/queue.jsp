@@ -12,15 +12,18 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <c:import url="head.jsp" />
-  
-        <sec:authentication property="principal.username" var="userid" />
-        <title>${userid}'s Queue</title>
-    </head>
-    <body>           
-        <c:import url="header.jsp" />
-        <div id="moviepagebody">
+<head>
+    <c:import url="head.jsp"/>
+
+    <sec:authentication property="principal.username" var="userid"/>
+    <title>${userid}'s Queue</title>
+</head>
+<body>
+<c:import url="header.jsp"/>
+<div id="moviepagebody">
+    <c:if test="${not empty message}" >
+        <div class="errorblock">${message}</div>
+    </c:if>
     <div class="content">
         <span class="header1">Manage Your Queue</span><br/>
         <hr>
@@ -32,7 +35,8 @@
             </c:forEach>
         </ul>
 
-    </div></div>
+    </div>
+</div>
 
 
 </div>

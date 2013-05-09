@@ -46,7 +46,7 @@
 
             <p>Movies delivered right to your door for as low as $10/month.
                 <br/>
-                <a href="help">Find out more</a></p>
+                <a href="/help">Find out more</a></p>
         </div>
     </div>
 </div>

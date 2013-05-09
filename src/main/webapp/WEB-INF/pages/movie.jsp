@@ -60,7 +60,7 @@
                 </p>
 
                 <sec:authorize access="hasRole('ROLE_USER')" >
-                    <form action="">
+                    <form action="/account/queue/${movie.id}">
                         <button id="submitbutton" type="submit">+QUEUE</button>
                     </form>
                 </sec:authorize>
