@@ -73,9 +73,9 @@ public class HomeController {
         return "tables";
     }
 
-    @RequestMapping(value = "allactors")
+/*    @RequestMapping(value = "allactors")
     public String allActors() {
-        /*String path = "C:\\Users\\Milky\\IdeaProjects\\PotatoRental\\src\\main\\webapp\\resources\\images\\actors";*/
+        *//*String path = "C:\\Users\\Milky\\IdeaProjects\\PotatoRental\\src\\main\\webapp\\resources\\images\\actors";*//*
         String path = "C:\\Users\\Milky\\IdeaProjects\\PotatoRental\\src\\main\\webapp\\resources\\images\\actors\\";
         File files = new File(path);
         File allFiles[] = files.listFiles();
@@ -91,5 +91,5 @@ public class HomeController {
         }
 
         return "actors";
-    }
+    }*/
 }

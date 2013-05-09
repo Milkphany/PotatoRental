@@ -77,7 +77,7 @@
                     <h2><a style="color:inherit" name="cast">Cast</a></h2>
                     <c:forEach var="actor" items="${movieactors}">
                         <div class="cast">
-                            <img height="50" src="/images/actors/${actor.id}.jpg" />
+                            <img height="80" src="/images/actors/${actor.id}.jpg" />
                             <a href="/actors/${actor.id}">${actor.name}</a></br>
                         </div>
                     </c:forEach>
