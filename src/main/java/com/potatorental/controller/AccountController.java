@@ -1,10 +1,12 @@
 package com.potatorental.controller;
 
 import com.potatorental.model.Account;
+import com.potatorental.model.Customer;
+import com.potatorental.model.History;
+import com.potatorental.model.Movie;
 import com.potatorental.repository.AccountDao;
 import com.potatorental.repository.MovieDao;
 import com.potatorental.repository.PersonsDao;
-import com.potatorental.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,6 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * User: Milky
@@ -86,7 +92,13 @@ public class AccountController {
     @RequestMapping(value = "rental", method = RequestMethod.GET)
     public ModelAndView getRental(ModelMap modelMap, Principal principal) {
         Account account = accountDao.getAccount((Customer) personsDao.getPersonByEmail(principal.getName()));
-        modelMap.addAttribute("rentalhistory", accountDao.getHistory(account));
+        Map<History, Movie> rentalhistory = new LinkedHashMap<>();
+
+        List<History> historyList = accountDao.getHistory(account);
+        for (History history : historyList)
+            rentalhistory.put(history, movieDao.getMovieById(history.getMovieid()));
+
+        modelMap.addAttribute("rentalhistory", rentalhistory);
         return new ModelAndView("rental", modelMap);
     }
 }

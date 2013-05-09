@@ -1,9 +1,12 @@
 package com.potatorental.service;
 
 import com.potatorental.model.Actor;
+import com.potatorental.model.History;
 import com.potatorental.model.Movie;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -46,5 +49,20 @@ public class PotatoService {
         }
 
         return actors;
+    }
+
+    public static List<History> addHistoryFromMap(List<Map<String, Object>> maps) {
+        List<History> historys = new ArrayList<>();
+        for (Map<String, Object> map : maps) {
+            History history = new History();
+
+            history.setDateTime((Timestamp) map.get("datetime"));
+            history.setId((Integer) map.get("id"));
+            history.setReturndate((Date) map.get("returndate"));
+            history.setMovieid((Integer) map.get("movieid"));
+
+            historys.add(history);
+        }
+        return historys;
     }
 }

@@ -3,6 +3,7 @@ package com.potatorental.repository;
 import com.potatorental.model.Account;
 import com.potatorental.model.Account.AccountType;
 import com.potatorental.model.Customer;
+import com.potatorental.model.History;
 import com.potatorental.model.Movie;
 
 import java.util.List;
@@ -24,7 +25,9 @@ public interface AccountDao {
 
     public List<Movie> getQueue(Account account);
 
-    public List<Movie> getHistory(Account account);
+    /*public List<Movie> getHistory(Account account);*/
+
+    public List<History> getHistory(Account account);
 
     public boolean isMovieQueued(Account account, int movieid);
 

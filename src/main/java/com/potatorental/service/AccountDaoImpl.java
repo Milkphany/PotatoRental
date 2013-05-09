@@ -3,6 +3,7 @@ package com.potatorental.service;
 import com.potatorental.model.Account;
 import com.potatorental.model.Account.AccountType;
 import com.potatorental.model.Customer;
+import com.potatorental.model.History;
 import com.potatorental.model.Movie;
 import com.potatorental.repository.AccountDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,17 +51,27 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
+    public List<History> getHistory(Account account) {
+        String sql = "SELECT p.id, datetime, returndate, m.id as movieid from movie m, rental r, purchase p " +
+                "WHERE m.id = r.movieid  and accountid = ? and p.id = r.purchid order by datetime desc";
+
+        return PotatoService.addHistoryFromMap(jdbcTemplate.queryForList(sql, account.getId()));
+    }
+
+    @Override
     public List<Movie> getQueue(Customer customer) {
         return getQueue(getAccount(customer));
     }
 
-    @Override
+    /*@Override
     public List<Movie> getHistory(Account account) {
         String sql = "select m.name, m.id " +
                 "from rental r, purchase p, movie m " +
                 "where m.id = r.movieid and p.id = r.purchid and r.accountid = ?";
         return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(sql, account.getId()));
-    }
+    }*/
+
+
 
     @Override
     public boolean isMovieQueued(Account account, int movieid) {
