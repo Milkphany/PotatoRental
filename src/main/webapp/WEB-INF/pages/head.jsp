@@ -6,6 +6,8 @@
 <link rel="stylesheet" type="text/css" href="/css/form.css"/>
 <link rel="stylesheet" type="text/css" href="/css/tooltipster.css"/>
 
+<link href="/images/favicon.ico" rel="shortcut icon"/>
+
 <link rel="stylesheet" type="text/css" href="star-rating/jquery.rating.css"/>
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:700italic,400,700' rel='stylesheet' type='text/css'>
