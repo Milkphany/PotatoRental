@@ -25,4 +25,6 @@ public interface AccountDao {
     public List<Movie> getHistory(Account account);
 
     public void insertAccount(Customer customer, AccountType accountType);
+
+    public boolean addToQueue(Account account, Movie movie);
 }

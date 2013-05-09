@@ -64,4 +64,24 @@ public class AccountDaoImpl implements AccountDao {
         String sql = "insert into account (dateopened, type, customer) values (?, ?, ?)";
         jdbcTemplate.update(sql, new Date(), accountType.name(), customer.getSsn());
     }
+
+    @Override
+    public boolean addToQueue(Account account, Movie movie) {
+        String checkNum = "select numcopies from movie where id = ?";
+        String checkDup = "select count(*) from movieq where accountid = ? and movieid = ?";
+
+        if (jdbcTemplate.queryForObject(checkNum, Integer.class, movie.getId()) < 0)
+            return false;
+
+        if (jdbcTemplate.queryForObject(checkDup, Integer.class, account.getId(), movie.getId()) > 0)
+            return false;
+
+        String remove = "update movie set numcopies = numcopies - 1";
+        jdbcTemplate.update(remove);
+
+        String insert = "insert into movieq values(?, ?)";
+        jdbcTemplate.update(insert, account.getId(), movie.getId());
+
+        return true;
+    }
 }
