@@ -4,23 +4,20 @@ import com.potatorental.model.Customer;
 import com.potatorental.model.Location;
 import com.potatorental.model.Person;
 
-import javax.sql.DataSource;
-import java.util.List;
-
 /**
  * User: Milky
- * Date: 5/2/13
- * Time: 1:17 PM
+ * Date: 5/9/13
+ * Time: 12:46 AM
  */
 public interface PersonDao {
 
-    public Person getPersonByEmail(String email);
-
-    public Location getLocationByZipCode(Integer zipCode);
-
-    public void insertCustomer(Customer customer, Location Location);
+    public void insertCustomer(Customer customer, Location location);
 
     public boolean updateCustomer(Customer customer);
 
     public boolean isEmailExist(String email);
+
+    public Person getPersonByEmail(String email);
+
+    public Location getLocationByZipCode(Integer zipCode);
 }

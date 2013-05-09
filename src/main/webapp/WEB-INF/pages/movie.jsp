@@ -60,13 +60,12 @@
                 </p>
 
                 <sec:authorize access="hasRole('ROLE_USER')" >
-                    <form action="">
+                    <form action="/account/queue/add/${movie.id}">
                         <button id="submitbutton" type="submit">+QUEUE</button>
                     </form>
                 </sec:authorize>
             </div>
             <h2><a style="color:inherit" name="cast">Cast</a></h2>
-
             <c:forEach var="actor" items="${movieactors}">
                 <div class="cast">
                     <img height="50" src="/images/actors/${actor.id}.jpg" />

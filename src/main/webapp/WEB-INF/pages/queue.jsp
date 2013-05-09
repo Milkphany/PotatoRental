@@ -12,15 +12,18 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <c:import url="head.jsp" />
-  
-        <sec:authentication property="principal.username" var="userid" />
-        <title>${userid}'s Queue</title>
-    </head>
-    <body>           
-        <c:import url="header.jsp" />
-        <div id="moviepagebody">
+<head>
+    <c:import url="head.jsp"/>
+
+    <sec:authentication property="principal.username" var="userid"/>
+    <title>${userid}'s Queue</title>
+</head>
+<body>
+<c:import url="header.jsp"/>
+<div id="moviepagebody">
+    <c:if test="${not empty message}" >
+        <div class="errorblock">${message}</div>
+    </c:if>
     <div class="content">
         <span class="header1">Manage Your Queue</span><br/>
         <hr>
@@ -28,15 +31,11 @@
 
         <ul id="sortable">
             <c:forEach var="movie" items="${moviequeue}">
-                <li class="ui-state-default toolteep" title="<a href='#'>Remove?</a>">${movie.name}</li>
+                <li class="ui-state-default toolteep" title="<a href='/account/queue/remove/${movie.id}'>Remove?</a>">${movie.name}</li>
             </c:forEach>
         </ul>
-
-    </div></div>
-
-
+    </div>
 </div>
-
-
+</div>
 </body>
 </html>

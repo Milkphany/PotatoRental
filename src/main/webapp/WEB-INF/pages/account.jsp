@@ -49,9 +49,6 @@
                                 <a href="<spring:url value="/mailing" />">Mail</a><br/>
                                 <a href="<spring:url value="/suggest" />">Suggest</a><br/>
                             </sec:authorize>
-                            <sec:authorize access="hasRole('ROLE_MANAGER')">
-                                <a href="#" onclick="loadpg('/movielist')">View All Movies</a><br/>
-                            </sec:authorize>
                             <br/>
                             <%--Monika:
                             For this section if you can send a ajax request, I can provide a response body to fill --%>
