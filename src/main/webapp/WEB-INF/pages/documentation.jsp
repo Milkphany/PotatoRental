@@ -368,10 +368,16 @@
 <dd></dd>
 
 <dt><a href="#">UI Implementation</a></dt>
-<dd></dd>
+<dd><p>The database is connected to the ui using jdbc through c3p0 driver manager.
+    After some reasearch, it seemed oracle databases were going out of date and the default drivers for jdbc was not sufficient.
+To display data from the database, the DAO programming pattern was used to easily manipulate the data. Various frameworks were used
+    to assist with mapping displaying and showing the data. Framework such as spring mvc were used to control the webflow.
+</p></dd>
 
-<dt><a href="#"></a></dt>
-<dd></dd>
+<dt><a href="#">Inserting Into Database</a></dt>
+<dd>To help with testing and maniuplating data, we wrote a python web scrapper to retrieve the top 250 list from imdb.
+    All the data were then thus added to the database. Images are stored locally as database queries for binary data is inefficient.
+    We think having a good deal of data to work will enlighten it</dd>
 
 <dt><a href="#"></a></dt>
 <dd></dd>

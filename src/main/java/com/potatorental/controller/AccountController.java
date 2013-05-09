@@ -106,4 +106,8 @@ public class AccountController {
         return "mailing";
     }
 
+    @RequestMapping(value = "rentalsbyname", method = RequestMethod.GET)
+    public String getRentalsByName(String s) {
+        return "";
+    }
 }

@@ -5,12 +5,14 @@ import com.potatorental.model.Employee;
 import com.potatorental.model.Movie;
 import com.potatorental.model.Purchase;
 import com.potatorental.repository.ManagerDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -25,6 +27,7 @@ public class ManagerDaoImpl implements ManagerDao {
 
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public ManagerDaoImpl(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
@@ -48,12 +51,18 @@ public class ManagerDaoImpl implements ManagerDao {
                 "WHERE A.Id = R.AccountId AND P.Id = R.PurchId " +
                 "AND M.Id = R.MovieId AND M.Name = ?";
 
-        /*Map<Integer, Purchase> maps = new LinkedHashMap<>();
+        Map<Integer, Purchase> maps = new LinkedHashMap<>();
         for (Map map : jdbcTemplate.queryForList(sql, name)) {
-            map.get("")
-        }*/
+            Integer customerSsn = (Integer) map.get("customer");
+            Purchase purchase = new Purchase();
+            purchase.setId((Integer)map.get("purchid"));
+            purchase.setDateTime((Timestamp) map.get("datetime"));
+            purchase.setReturndate((Date) map.get("returndate"));
 
-        return null;
+            maps.put(customerSsn, purchase);
+        }
+
+        return maps;
     }
 
     @Override

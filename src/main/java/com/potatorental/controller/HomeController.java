@@ -2,10 +2,7 @@ package com.potatorental.controller;
 
 import com.potatorental.model.Movie;
 import com.potatorental.model.Person;
-import com.potatorental.repository.AccountDao;
-import com.potatorental.repository.ActorDao;
-import com.potatorental.repository.MovieDao;
-import com.potatorental.repository.PersonsDao;
+import com.potatorental.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.context.SecurityContext;
@@ -22,7 +19,10 @@ import org.springframework.web.servlet.ModelAndView;
 import java.io.BufferedReader;
 import java.io.File;
 import java.security.Principal;
+import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -34,13 +34,15 @@ public class HomeController {
     private final AccountDao accountDao;
     private final PersonsDao personsDao;
     private final ActorDao actorDao;
+    private final ManagerDao managerDao;
 
     @Autowired
-    public HomeController(MovieDao movieDao, AccountDao accountDao, PersonsDao personsDao, ActorDao actorDao) {
+    public HomeController(MovieDao movieDao, AccountDao accountDao, PersonsDao personsDao, ActorDao actorDao, ManagerDao managerDao) {
         this.movieDao = movieDao;
         this.accountDao = accountDao;
         this.personsDao = personsDao;
         this.actorDao = actorDao;
+        this.managerDao = managerDao;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -74,7 +76,12 @@ public class HomeController {
     }
 
     @RequestMapping (value= "salereport", method = RequestMethod.GET)
-    public String getSalereport(){
+    public String getSalereport(ModelMap modelMap){
+        Map<Date, Float> sales = new LinkedHashMap<>();
+        Date date = new Date();
+        Float sale = managerDao.getSalesReport(date);
+        modelMap.addAttribute("sales", sales.put(date, sale));
+
         return "salereport";
     }
     
