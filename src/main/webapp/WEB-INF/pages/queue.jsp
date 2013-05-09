@@ -31,7 +31,9 @@
 
         <ul id="sortable">
             <c:forEach var="movie" items="${moviequeue}">
-                <li class="ui-state-default toolteep" title="<a href='/account/queue/remove/${movie.id}'>Remove?</a>">${movie.name}</li>
+                <li class="ui-state-default toolteep" title="<a href='/account/queue/remove/${movie.id}'>Remove?</a>">
+                    ${movie.name}
+                </li>
             </c:forEach>
         </ul>
     </div>
