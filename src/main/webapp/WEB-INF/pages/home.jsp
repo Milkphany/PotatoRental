@@ -18,8 +18,8 @@
     </div>
 
     <div class="">
-        <center> <span class="header2"><a id="prev2" class="prev" href="#">&lt;</a>
-                        Popular Movies <a id="next2" class="next" href="#">&gt;</a></span></center>
+        <center> <span class="header2">
+                        Popular Movies </center>
         <hr>
 
         <div class="image_carousel">
