@@ -57,7 +57,7 @@
 
 <dt><a href="#">Viewing Available Movies</a></dt>
 <dd>
-    -particular type, particular keywords, actors
+    <p>Hover over <strong>Browse</strong> in the navigation bar, then select a subcategory from the dropdown menu to browse our selection.</p>
 </dd>
 
 <dt><a href="#">Viewing Best-Selling Movies</a></dt>
