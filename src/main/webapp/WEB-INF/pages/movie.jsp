@@ -22,7 +22,7 @@
                     <div class="mainmovie">
                         <span class="header1">${movie.name}</span>
                         <sec:authorize access="hasRole('ROLE_MANAGER')">
-                            <a style="float:right" href="#">Edit</a>
+                            <a style="float:right" href="/movies/${movie.id}/edit">Edit</a>
                         </sec:authorize>
 
                         <hr>
@@ -56,7 +56,7 @@
                         </p>
 
                         <p>
-                            <strong>Genre:</strong> <a href="#">Adventure</a>
+                            <strong>Genre:</strong> <a href="#">${movie.type}</a>
                         </p>
 
                         <sec:authorize access="hasRole('ROLE_USER')" >

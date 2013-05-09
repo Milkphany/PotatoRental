@@ -27,4 +27,8 @@ public interface PersonsDao {
     public Employee getEmployeeByEmail(String email);
 
     public List<Customer> getAllCustomers();
+
+    public List<Employee> getAllEmployees();
+
+    public void updateEmployee(Employee employee);
 }

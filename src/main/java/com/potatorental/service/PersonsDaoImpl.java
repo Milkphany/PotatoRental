@@ -75,6 +75,41 @@ public class PersonsDaoImpl implements PersonsDao {
     }
 
     @Override
+    public List<Employee> getAllEmployees() {
+        String sql = "select * from person p, employee e where p.ssn = e.ssn";
+        return jdbcTemplate.query(sql, new RowMapper<Employee>() {
+            @Override
+            public Employee mapRow(ResultSet resultSet, int i) throws SQLException {
+                Employee employee = new Employee();
+
+                employee.setId(resultSet.getInt("id"));
+                employee.setHourlyRate(resultSet.getFloat("hourlyrate"));
+                employee.setIsManager(resultSet.getBoolean("manager"));
+                employee.setStartDate(resultSet.getDate("startdate"));
+                employee.setEmail(resultSet.getString("email"));
+                employee.setAddress(resultSet.getString("address"));
+                employee.setZipCode(resultSet.getInt("zipcode"));
+                employee.setFirstName(resultSet.getString("firstname"));
+                employee.setLastName(resultSet.getString("lastname"));
+                employee.setSsn(resultSet.getInt("ssn"));
+                employee.setTelephone(resultSet.getBigDecimal("telephone"));
+
+                return employee;            }
+        });
+    }
+
+    @Override
+    public void updateEmployee(Employee e) {
+        String sql = "update employee e, person p set p.ssn = ?, " +
+                "p.lastname = ?, p.firstname = ?, p.telephone = ?, " +
+                "p.email = ?, p.pass = ?, e.hourlyrate = ? where " +
+                "p.ssn = e.ssn and e.id = ?";
+
+        jdbcTemplate.update(sql, e.getSsn(), e.getLastName(), e.getFirstName(), e.getTelephone(), e.getEmail(),
+                e.getPass(), e.getHourlyRate(), e.getId());
+    }
+
+    @Override
     public Location getLocationByZipCode(Integer zipCode) {
         String sql = "select * from location where zipcode = ?";
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Location.class), zipCode);

@@ -33,6 +33,7 @@
             <p>
             </p>
         </div>
+        <img id="potatocat" src="/images/potatocat2.png" width="350"/>
     </div>
 </div>
 </body>

@@ -58,6 +58,12 @@ public class MovieDaoImpl implements MovieDao {
     }
 
     @Override
+    public void updateMovie(Movie movie) {
+        String sql = "update movie set name = ?, type = ? where id = ?";
+        jdbcTemplate.update(sql, movie.getName(), movie.getType(), movie.getId());
+    }
+
+    @Override
     public List<Actor> getMovieActors(Movie movie) {
         String sql = "select a.id, a.name, a.mf, a.rating " +
                 "from movie m, actor a, appearedin x " +

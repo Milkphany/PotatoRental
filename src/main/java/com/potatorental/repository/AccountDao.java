@@ -44,4 +44,6 @@ public interface AccountDao {
 
     public List<Movie> recommendForPerson(int ssn);
 
+    public List<Movie> personalRecommendation(int ssn);
+
 }

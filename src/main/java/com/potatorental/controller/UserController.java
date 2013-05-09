@@ -60,15 +60,17 @@ public class UserController {
     }
 
     @RequestMapping(value = "{userid:.*}", method = RequestMethod.POST)
-    public String updateuser(@PathVariable String userid, ModelMap modelMap,
+    public String updateUser(@PathVariable String userid, ModelMap modelMap,
                              @RequestParam(value = "delete", required = false) String delete,
-                             @ModelAttribute("customer") Customer customer,
+                             @ModelAttribute("editForm") Customer customer,
                              RedirectAttributes redirectAttributes) {
 
         if (delete != null) {
             redirectAttributes.addFlashAttribute("message", "Customer " + userid + " deleted");
             return "redirect:/users/";
         }
+        personsDao.updateCustomer(customer);
+        redirectAttributes.addFlashAttribute("message", "Success update");
         return "redirect:/users/{userid}";
     }
 
