@@ -15,6 +15,9 @@
 <body>
 <jsp:include page="header.jsp"/>
 <div class="movielist">
+    <c:if test="${not empty message}">
+        ${message}
+    </c:if>
 
     <c:forEach var="movie" items="${movies}">
         <a href="/movies/${movie.id}">

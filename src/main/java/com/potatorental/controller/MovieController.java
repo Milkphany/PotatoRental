@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -125,6 +126,30 @@ public class MovieController {
         return "search";
     }
 
+    @ModelAttribute("addMovie")
+    public Movie getMovieInfo() {
+        return new Movie();
+    }
+
+    @RequestMapping(value = "addMovie", method = RequestMethod.GET)
+    public String getMovieForm() {
+        return "movieaddform";
+    }
+
+    @RequestMapping(value = "addMovie", method = RequestMethod.POST)
+    public String setMovieForm(@ModelAttribute Movie addMovie, BindingResult bindingResult,
+                               RedirectAttributes redirectAttributes, ModelMap modelMap) {
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("message", "Error with the form");
+            return "redirect:/movies/addMovie";
+        }
+
+        movieDao.insertMovie(addMovie);
+        redirectAttributes.addFlashAttribute("messages", "You have successfully added a movie");
+
+        return "redirect:/movies";
+    }
 
 
 /*

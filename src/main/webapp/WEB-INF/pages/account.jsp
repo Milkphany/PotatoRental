@@ -49,6 +49,7 @@
                                 <a href="<spring:url value="/suggest" />">Suggest</a><br/>
                             </sec:authorize>
                             <sec:authorize access="hasRole('ROLE_MANAGER')">
+                                <a href="<spring:url value="/movies/addMovie" />">Add Movie</a><br>
                                 <a href="<spring:url value="/salereport" />">Sales Report</a><br>
                             </sec:authorize>
                             <sec:authorize access="hasRole('ROLE_ADMIN')">
