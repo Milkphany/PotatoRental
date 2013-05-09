@@ -30,6 +30,7 @@
         <a class="headermenu" href="/actors">Actors</a>
         <sec:authorize access="hasRole('ROLE_USER')"><a class="headermenu" href="/account/queue">Queue</a></sec:authorize>
         <sec:authorize access="hasRole('ROLE_STAFF')"><a class="headermenu" href="/users"/>Customers</sec:authorize>
+        <sec:authorize access="hasRole('ROLE_STAFF')"><a class="headermenu" href="/sales"/>Sales</sec:authorize>
         <sec:authorize access="hasRole('ROLE_MANAGER')"><a class="headermenu" href="/employees"/>Employees</sec:authorize>
         <sec:authorize access="isAuthenticated()"><a class="headermenu" href="/account">Settings</a></sec:authorize>
     </div>

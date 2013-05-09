@@ -17,10 +17,11 @@
         <intercept-url pattern="/login" access="isAnonymous()" />
         <intercept-url pattern="/account/queue/**" access="hasRole('ROLE_USER')" />
         <intercept-url pattern="/account/**" access="isAuthenticated()" />
+        <intercept-url pattern="/sales/**" access="hasRole('ROLE_STAFF')" />
         <!--Uncomment this for security-->
         <!--<intercept-url pattern="/users/**" access="hasAnyRole('ROLE_MANAGER', 'ROLE_STAFF')" />-->
-        <intercept-url pattern="/manager/**" access="hasRole('ROLE_MANAGER')" />
-        <intercept-url pattern="/staff/**" access="hasRole('ROLE_STAFF')" />
+        <intercept-url pattern="/managers/**" access="hasRole('ROLE_MANAGER')" />
+        <intercept-url pattern="/staffs/**" access="hasRole('ROLE_STAFF')" />
 
         <!--TODO uncomment this and find a page for access denied-->
         <!--<access-denied-handler error-page="/" />-->

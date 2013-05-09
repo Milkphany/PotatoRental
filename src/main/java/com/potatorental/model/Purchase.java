@@ -10,7 +10,7 @@ import java.util.Date;
  * Date: 5/9/13
  * Time: 2:58 AM
  */
-public class History {
+public class Purchase {
 
     private Timestamp dateTime;
     private Date returndate;

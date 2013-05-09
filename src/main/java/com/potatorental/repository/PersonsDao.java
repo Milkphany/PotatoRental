@@ -3,6 +3,10 @@ package com.potatorental.repository;
 import com.potatorental.model.Customer;
 import com.potatorental.model.Location;
 import com.potatorental.model.Person;
+import com.potatorental.model.Purchase;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * User: Milky
@@ -11,13 +15,15 @@ import com.potatorental.model.Person;
  */
 public interface PersonsDao {
 
-        public void insertCustomer(Customer customer, Location location);
+    public void insertCustomer(Customer customer, Location location);
 
-        public boolean updateCustomer(Customer customer);
+    public boolean updateCustomer(Customer customer);
 
-        public boolean isEmailExist(String email);
+    public boolean isEmailExist(String email);
 
-        public Person getPersonByEmail(String email);
+    public Person getPersonByEmail(String email);
 
-        public Location getLocationByZipCode(Integer zipCode);
+    public Location getLocationByZipCode(Integer zipCode);
+
+    public void recordOrder();
 }

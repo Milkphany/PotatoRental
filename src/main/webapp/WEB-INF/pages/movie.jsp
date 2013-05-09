@@ -49,9 +49,9 @@
                 arouse the suspicion of Stephen (Samuel L. Jackson), Candie's trusted house slave.
                 <p>
                     <strong>Starring:</strong>
-                    <a href="/actors/${movieactors[0].id}.jpg">${movieactors[0].name}</a>,
-                    <a href="/actors/${movieactors[1].id}.jpg">${movieactors[1].name}</a>,
-                    <a href="/actors/${movieactors[2].id}.jpg">${movieactors[2].name}</a> |
+                    <a href="/actors/${movieactors[0].id}">${movieactors[0].name}</a>,
+                    <a href="/actors/${movieactors[1].id}">${movieactors[1].name}</a>,
+                    <a href="/actors/${movieactors[2].id}">${movieactors[2].name}</a> |
                     <a href="#cast">See full cast</a>
                 </p>
 

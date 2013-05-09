@@ -44,6 +44,13 @@ public class PersonsDaoImpl implements PersonsDao {
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Location.class), zipCode);
     }
 
+
+
+    @Override
+    public void recordOrder() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
     private Person getPersonRole(Person person) {
         String customersql = "select rating from customer where id = ?";
         String employeesql = "select id, startdate, hourlyrate, manager from employee where ssn = ?";
