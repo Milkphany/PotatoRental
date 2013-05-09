@@ -70,6 +70,8 @@ public class MovieController {
             Account account = accountDao.getAccount((Customer) personsDao.getPersonByEmail(principal.getName()));
             if (accountDao.isMovieQueued(account, movieid))
                 modelMap.addAttribute("hasMovie", true);
+            else
+                modelMap.addAttribute("hasMovie", false);
         }
 
         return new ModelAndView("movie", modelMap);
