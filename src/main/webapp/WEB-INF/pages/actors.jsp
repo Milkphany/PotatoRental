@@ -23,6 +23,7 @@
                 <table id="planlist">
                     <tr>
                         <th>#</th>
+                        
                         <th>Name</th>
                         <th>Rating</th>
                     </tr>
