@@ -122,7 +122,6 @@ public class SignUpController {
         return "redirect:/";
     }
 
-
     private void authenticateUser() {
 
     }
