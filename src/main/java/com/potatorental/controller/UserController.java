@@ -1,7 +1,7 @@
 package com.potatorental.controller;
 
 import com.potatorental.model.Customer;
-import com.potatorental.repository.PersonDao;
+import com.potatorental.repository.PersonsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,11 +19,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
 
     @Autowired
-    private PersonDao personDao;
+    private PersonsDao personsDao;
 
     @Autowired
-    public UserController(PersonDao personDao) {
-        this.personDao = personDao;
+    public UserController(PersonsDao personsDao) {
+        this.personsDao = personsDao;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -38,7 +38,7 @@ public class UserController {
 
     @RequestMapping(value = "{userid:.*}", method = RequestMethod.GET)
     public ModelAndView getUser(@PathVariable String userid, ModelMap modelMap) {
-        Customer customer = (Customer) personDao.getPersonByEmail(userid);
+        Customer customer = (Customer) personsDao.getPersonByEmail(userid);
         modelMap.addAttribute("customer", customer);
 
         return new ModelAndView("useraccount", modelMap);
@@ -46,7 +46,7 @@ public class UserController {
 
     @RequestMapping(value = "{userid:.*}", method = RequestMethod.POST)
     public String updateuser(@PathVariable String userid, ModelMap modelMap, @ModelAttribute("customer") Customer customer) {
-        personDao.updateCustomer(customer);
+        personsDao.updateCustomer(customer);
 
         return "redirect:/users/{userid}";
     }

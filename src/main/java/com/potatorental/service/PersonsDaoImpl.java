@@ -5,7 +5,7 @@ import com.potatorental.model.Employee;
 import com.potatorental.model.Location;
 import com.potatorental.model.Person;
 import com.potatorental.repository.LocationDao;
-import com.potatorental.repository.PersonDao;
+import com.potatorental.repository.PersonsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -21,13 +21,13 @@ import java.sql.SQLException;
  * Date: 5/4/13
  * Time: 7:58 PM
  */
-public class PersonDaoImpl implements PersonDao {
+public class PersonsDaoImpl implements PersonsDao {
 
     private JdbcTemplate jdbcTemplate;
     private LocationDao locationDao;
 
     @Autowired
-    public PersonDaoImpl(DataSource dataSource, LocationDao locationDao) {
+    public PersonsDaoImpl(DataSource dataSource, LocationDao locationDao) {
         jdbcTemplate = new JdbcTemplate(dataSource);
         this.locationDao = locationDao;
     }

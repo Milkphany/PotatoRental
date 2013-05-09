@@ -5,7 +5,7 @@ import com.potatorental.model.Customer;
 import com.potatorental.model.Location;
 import com.potatorental.repository.AccountDao;
 import com.potatorental.repository.LocationDao;
-import com.potatorental.repository.PersonDao;
+import com.potatorental.repository.PersonsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,15 +27,15 @@ import javax.validation.Valid;
 @SessionAttributes("customer")
 public class SignUpController {
 
-    private PersonDao personDao;
+    private PersonsDao personsDao;
     private LocationDao locationDao;
     private AccountDao accountDao;
 
     private Customer customer;
 
     @Autowired
-    public SignUpController(PersonDao personDao, LocationDao locationDao, AccountDao accountDao) {
-        this.personDao = personDao;
+    public SignUpController(PersonsDao personsDao, LocationDao locationDao, AccountDao accountDao) {
+        this.personsDao = personsDao;
         this.locationDao = locationDao;
         this.accountDao = accountDao;
     }
@@ -68,7 +68,7 @@ public class SignUpController {
 
         *//*Need to validate zipcode, haven't done that*//*
         try {
-            personDao.insertCustomer(customer, new Location(customer.getZipCode(), state, city));
+            personsDao.insertCustomer(customer, new Location(customer.getZipCode(), state, city));
         } catch (DataIntegrityViolationException e) {
             model.addAttribute("message", "email has already been used");
             return null;
@@ -87,7 +87,7 @@ public class SignUpController {
             redirectAttributes.addFlashAttribute("message", "There is an error");
             return "signup";
         }
-        if (personDao.isEmailExist(customer.getEmail())) {
+        if (personsDao.isEmailExist(customer.getEmail())) {
             redirectAttributes.addFlashAttribute("message", "Email is take");
             return "signup";
         }
@@ -114,7 +114,7 @@ public class SignUpController {
         customer.setAddress(address);
         customer.setZipCode(location.getZipCode());
 
-        personDao.insertCustomer(customer, location);
+        personsDao.insertCustomer(customer, location);
         accountDao.insertAccount(customer, AccountType.valueOf(account));
 
         session.invalidate();

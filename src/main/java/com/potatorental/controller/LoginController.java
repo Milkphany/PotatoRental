@@ -1,8 +1,7 @@
 package com.potatorental.controller;
 
-import com.potatorental.model.Customer;
 import com.potatorental.repository.AccountDao;
-import com.potatorental.repository.PersonDao;
+import com.potatorental.repository.PersonsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
@@ -30,12 +29,12 @@ import java.security.Principal;
 public class LoginController {
 
     private AccountDao accountDao;
-    private PersonDao personDao;
+    private PersonsDao personsDao;
 
     @Autowired
-    public LoginController(AccountDao accountDao, PersonDao personDao) {
+    public LoginController(AccountDao accountDao, PersonsDao personsDao) {
         this.accountDao = accountDao;
-        this.personDao = personDao;
+        this.personsDao = personsDao;
     }
 
     @RequestMapping(value = "login", method = RequestMethod.GET)

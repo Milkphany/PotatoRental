@@ -1,12 +1,10 @@
 package com.potatorental.controller;
 
 import com.potatorental.model.Account;
-import com.potatorental.model.Movie;
 import com.potatorental.repository.AccountDao;
 import com.potatorental.repository.MovieDao;
-import com.potatorental.repository.PersonDao;
+import com.potatorental.repository.PersonsDao;
 import com.potatorental.model.Customer;
-import com.potatorental.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,9 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpSession;
 import java.security.Principal;
-import java.util.List;
 
 /**
  * User: Milky
@@ -31,13 +27,13 @@ import java.util.List;
 @SessionAttributes("user")
 public class AccountController {
 
-    private final PersonDao personDao;
+    private final PersonsDao personsDao;
     private final AccountDao accountDao;
     private final MovieDao movieDao;
 
     @Autowired
-    public AccountController(PersonDao personDao, AccountDao accountDao, MovieDao movieDao) {
-        this.personDao = personDao;
+    public AccountController(PersonsDao personsDao, AccountDao accountDao, MovieDao movieDao) {
+        this.personsDao = personsDao;
         this.accountDao = accountDao;
         this.movieDao = movieDao;
     }
@@ -47,14 +43,14 @@ public class AccountController {
         modelMap.addAttribute("message", "This is going to be " + principal.getName() + "'s profile setting");
 
         if (modelMap.get("user") == null)
-            modelMap.addAttribute("user", personDao.getPersonByEmail(principal.getName()));
+            modelMap.addAttribute("user", personsDao.getPersonByEmail(principal.getName()));
 
         return "account";
     }
 
     @RequestMapping(value = "queue", method = RequestMethod.GET)
     public ModelAndView getQueue(ModelMap modelMap, Principal principal) {
-        Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
+        Account account = accountDao.getAccount((Customer) personsDao.getPersonByEmail(principal.getName()));
         modelMap.addAttribute("moviequeue", accountDao.getQueue(account));
 
         return new ModelAndView("queue", modelMap);
@@ -63,7 +59,7 @@ public class AccountController {
     @RequestMapping(value = "queue/add/{movieid}", method = RequestMethod.GET)
     public String addToQueue(@PathVariable String movieid, Principal principal,
                              RedirectAttributes redirectAttributes) {
-        Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
+        Account account = accountDao.getAccount((Customer) personsDao.getPersonByEmail(principal.getName()));
 
         try {
             if (!accountDao.addToQueue(account, Integer.parseInt(movieid)))
@@ -78,7 +74,7 @@ public class AccountController {
     @RequestMapping(value = "queue/remove/{movieid}", method = RequestMethod.GET)
     public String removeFromQueue(@PathVariable String movieid, Principal principal,
                                   RedirectAttributes redirectAttributes) {
-        Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
+        Account account = accountDao.getAccount((Customer) personsDao.getPersonByEmail(principal.getName()));
         try {
             accountDao.removeFromQueue(account, Integer.parseInt(movieid));
         } catch (NumberFormatException e) {
@@ -89,7 +85,7 @@ public class AccountController {
 
     @RequestMapping(value = "rental", method = RequestMethod.GET)
     public ModelAndView getRental(ModelMap modelMap, Principal principal) {
-        Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
+        Account account = accountDao.getAccount((Customer) personsDao.getPersonByEmail(principal.getName()));
         modelMap.addAttribute("rentalhistory", accountDao.getHistory(account));
         return new ModelAndView("rental", modelMap);
     }

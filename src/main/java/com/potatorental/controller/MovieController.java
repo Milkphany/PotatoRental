@@ -6,7 +6,7 @@ import com.potatorental.model.Customer;
 import com.potatorental.model.Movie;
 import com.potatorental.repository.AccountDao;
 import com.potatorental.repository.MovieDao;
-import com.potatorental.repository.PersonDao;
+import com.potatorental.repository.PersonsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
@@ -33,13 +33,13 @@ public class MovieController {
 
     private MovieDao movieDao;
     private AccountDao accountDao;
-    private PersonDao personDao;
+    private PersonsDao personsDao;
 
     @Autowired
-    public MovieController(MovieDao movieDao, AccountDao accountDao, PersonDao personDao) {
+    public MovieController(MovieDao movieDao, AccountDao accountDao, PersonsDao personsDao) {
         this.movieDao = movieDao;
         this.accountDao = accountDao;
-        this.personDao = personDao;
+        this.personsDao = personsDao;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -67,7 +67,7 @@ public class MovieController {
 
         SecurityContextHolderAwareRequestWrapper sc = new SecurityContextHolderAwareRequestWrapper(request, "ROLE_");
         if (sc.isUserInRole("USER")) {
-            Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
+            Account account = accountDao.getAccount((Customer) personsDao.getPersonByEmail(principal.getName()));
             if (accountDao.isMovieQueued(account, movieid))
                 modelMap.addAttribute("hasMovie", true);
         }
