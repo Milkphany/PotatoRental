@@ -397,10 +397,10 @@ width: 100%}
 .cast {
     padding:5px;
     width: 840px;
-    min-height: 100px;
+    min-height: 80px;
     background-color: #eee;
     margin: 4px;
-    line-height: 100px;
+    line-height: 90px;
 }
 
 .cast img {

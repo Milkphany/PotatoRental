@@ -21,7 +21,7 @@
                         </sec:authorize>
 
                         <hr>
-                        <img class="movieposter" src="http://i.imgur.com/FOTCPbD.jpg" height="420"/>
+                        <img class="movieposter" src="/images/actors/${actor.id}.jpg" height="420"/>
                         <p><strong>Rating: </strong>${actor.rating}</p>
                         <p><strong>Age: </strong>${actor.age}</p>
                         <p><strong>Gender:</strong>${actor.mf}</p>
