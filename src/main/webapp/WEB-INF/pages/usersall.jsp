@@ -16,6 +16,9 @@
 <body>
 <jsp:include page="header.jsp" />
 <div id="moviepagebody">
+    <c:if test="${not empty message}" >
+        <div class="error">${message}}</div>
+    </c:if>
     <div class="content">
         <span class="header1">Users</span>
         <hr>

@@ -41,4 +41,7 @@ public interface AccountDao {
     public boolean addToQueue(Account account, int movieid);
 
     public void removeFromQueue(Account account, int movieid);
+
+    public List<Movie> recommendForPerson(int ssn);
+
 }

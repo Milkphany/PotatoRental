@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -53,13 +55,20 @@ public class UserController {
         Customer customer = (Customer) personsDao.getPersonByEmail(userid);
         modelMap.addAttribute("customer", customer);
 
+        modelMap.addAttribute("suggestion", accountDao.recommendForPerson(customer.getSsn()));
         return new ModelAndView("useraccount", modelMap);
     }
 
     @RequestMapping(value = "{userid:.*}", method = RequestMethod.POST)
-    public String updateuser(@PathVariable String userid, ModelMap modelMap, @ModelAttribute("customer") Customer customer) {
-        personsDao.updateCustomer(customer);
+    public String updateuser(@PathVariable String userid, ModelMap modelMap,
+                             @RequestParam(value = "delete", required = false) String delete,
+                             @ModelAttribute("customer") Customer customer,
+                             RedirectAttributes redirectAttributes) {
 
+        if (delete != null) {
+            redirectAttributes.addFlashAttribute("message", "Customer " + userid + " deleted");
+            return "redirect:/users/";
+        }
         return "redirect:/users/{userid}";
     }
 

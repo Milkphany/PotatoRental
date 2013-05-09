@@ -9,33 +9,37 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <jsp:include page="head.jsp" />
-        <title>All Movies</title>
-    </head>
-    <body>
-        <jsp:include page="header.jsp" />
+<head>
+    <jsp:include page="head.jsp"/>
+    <title>All Movies</title>
+</head>
+<body>
+<jsp:include page="header.jsp"/>
 
-        <div id="moviepagebody"><div class="content">
-                <span class="header1">All Movies</span>
-                <hr>
-                <table id="planlist">
-                    <tr >
-                        <th id="oderhistory">Name</th>
-                        <th id="oderhistory">Genre</th>
-                        <th>Rating</th>
+<div id="moviepagebody">
+    <div class="content">
+        <span class="header1">All Movies</span>
+        <hr>
+        <table id="planlist">
+            <tr>
+                <th id="orderhistory">#</th>
+                <th id="orderhistory">Name</th>
+                <th id="orderhistory">Genre</th>
+                <th>Rating</th>
 
-                    </tr>
-                    <c:forEach var="movies" items="${movies}">
-                        <tr >
-                            <td>
-                                <a href="/movies/${movies.id}">${movies.name}</a>
-                            </td>
-                            <td>${movies.type}</td>
-                            <td>${movies.rating}</td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </div></div>
+            </tr>
+            <c:forEach var="movie" items="${movies}" varStatus="stat">
+                <tr>
+                    <td>${stat.count}</td>
+                    <td>
+                        <a href="/movies/${movie.id}">${movie.name}</a>
+                    </td>
+                    <td>${movie.type}</td>
+                    <td>${movie.rating}</td>
+                </tr>
+            </c:forEach>
+        </table>
+    </div>
+</div>
 </body>
 </html>

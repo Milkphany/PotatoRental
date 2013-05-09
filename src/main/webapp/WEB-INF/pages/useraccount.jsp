@@ -32,8 +32,33 @@
                 <form:input path="ssn" cssErrorClass="error" type="text" value="${customer.ssn}"/>
                 <form:password path="pass" cssErrorClass="error" value="${customer.pass}"/>
 
-                <button type="submit">Submit</button>
+                <form:button type="submit">Submit</form:button>
+                <form:button type="submit" name="delete">DELETE</form:button>
             </form:form>
+        </div>
+    </div>
+    <div id="moviepagebody">
+        <div class="content">
+            <span class="header1">Suggestion</span>
+            <hr>
+            <table id="planlist">
+                <tr>
+                    <th id="orderhistory">#</th>
+                    <th id="orderhistory">Name</th>
+                    <th id="orderhistory">Genre</th>
+                    <th>Rating</th>
+                </tr>
+                <c:forEach var="movie" items="${suggestion}" varStatus="status">
+                    <tr>
+                        <td>${status.count}</td>
+                        <td>
+                            <a href="/movies/${movie.id}">${movie.name}</a>
+                        </td>
+                        <td>${movie.type}</td>
+                        <td>${movie.rating}</td>
+                    </tr>
+                </c:forEach>
+            </table>
         </div>
     </div>
 </div>

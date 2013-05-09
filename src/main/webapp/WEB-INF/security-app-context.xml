@@ -16,6 +16,7 @@
         <intercept-url pattern="/signup" access="isAnonymous()" />
         <intercept-url pattern="/login" access="isAnonymous()" />
         <intercept-url pattern="/account/queue/**" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/account/mailing/**" access="hasRole('ROLE_STAFF')" />
         <intercept-url pattern="/account/**" access="isAuthenticated()" />
         <intercept-url pattern="/sales/**" access="hasRole('ROLE_STAFF')" />
         <!--Uncomment this for security-->

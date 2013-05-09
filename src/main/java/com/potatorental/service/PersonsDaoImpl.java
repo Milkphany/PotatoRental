@@ -72,7 +72,6 @@ public class PersonsDaoImpl implements PersonsDao {
                 return customer;
             }
         });
-
     }
 
     @Override

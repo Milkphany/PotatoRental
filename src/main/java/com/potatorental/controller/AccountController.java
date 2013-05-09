@@ -100,4 +100,10 @@ public class AccountController {
         modelMap.addAttribute("rentalhistory", rentalhistory);
         return new ModelAndView("rental", modelMap);
     }
+
+    @RequestMapping(value = "mailing", method = RequestMethod.GET)
+    public String getMailingForm() {
+        return "mailing";
+    }
+
 }

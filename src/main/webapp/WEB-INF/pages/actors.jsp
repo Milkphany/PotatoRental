@@ -22,11 +22,13 @@
                 <hr>
                 <table id="planlist">
                     <tr>
+                        <th>#</th>
                         <th>Name</th>
                         <th>Rating</th>
                     </tr>
-                    <c:forEach var="actor" items="${actors}" >
+                    <c:forEach var="actor" items="${actors}" varStatus="stat">
                         <tr>
+                            <td>${stat.count}</td>
                             <td>
                                 <a href="/actors/${actor.id}">${actor.name}</a>
                             </td>
