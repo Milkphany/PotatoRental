@@ -73,11 +73,7 @@
                         </dd>
                         
                         <h2>Account</h2>
-                        <dt><a href="#">How do I change my password?</a></dt>
-                        <dd>Meow first.</dd>
                         
-                        <dt><a href="#">How do I update my account information?</a><br/></dt>
-                        <dd>ANSWER HERE</dd>
                         
                         <dt><a href="#">What is the queue and how does it work?</a></dt>
                         <dd>The queue allows you to keep track of movies you would like to rent in the future. 
@@ -92,7 +88,7 @@
                         Click <a href="#">here</a> to read more about the plans we offer.</dd>
                         <dt><a href="#">Can I downgrade/upgrade my account?</a></dt>
                         <dd>Yes! You can make changes to your account by going into your <a href="#">account settings</a>.</dd>
-                        <a href="#">How do I cancel my account?</a><br/>
+                        
 
                         <h2>Orders</h2>
                         <dt><a href="#">How can I view my order history?</a></dt>
@@ -102,8 +98,8 @@
                         <dd>To return your order, simply visit your <a href="#">order history</a> 
                             and click the return link next to the movies you'd like to send back to us.</dd>
                         
-                        <dt><a href="#">Where can I learn more about the PotatoCat project / access documentation?</a></dt>
-                        <dd>Extensive documentation for this project can be found <a href="/documentation">here</a>.</dd>
+                        <h2>Etc</h2>
+                        <a href="/documentation">User Guide/Documentation</a>
                         
                         <a href="#"></a><br/>
                         <a href="#"></a><br/>

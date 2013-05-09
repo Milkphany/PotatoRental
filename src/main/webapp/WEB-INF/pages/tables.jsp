@@ -79,7 +79,7 @@
         </tr>
     </table>
 </p>
-
+<hr>
 <p>
     <strong>Actor</strong>
 
@@ -192,7 +192,7 @@
 </table>
 
 </p>
-
+<hr>
 <p><strong>AppearedIn</strong><br>
 <table border=1>
     <tr>
@@ -255,7 +255,7 @@
     </tr>
 </table>
 </p>
-
+<hr>
 
 <p><strong>Customer</strong><br/>
 <table border=1>
@@ -320,7 +320,7 @@
 </table>
 </p>
 
-
+<hr>
 <p><strong>Employee</strong><br/>
 <table border=1>
     <tr>
@@ -405,7 +405,7 @@
     </tr>
 </table>
 </p>
-
+<hr>
 <p><strong>Location</strong><br/>
 <table border=1>
     <tr>
@@ -489,7 +489,7 @@
     </tr>
 </table>
 </p>
-
+<hr>
 <p><strong>Movie</strong><br/>
 <table border=1>
     <tr>
@@ -620,7 +620,7 @@
         <td class='normal' valign='top'>14</td>
     </tr></table>
 </p>
-
+<hr>
 <p><strong>MovieQ</strong><br/>
 <table border=1>
     <tr>
@@ -693,7 +693,7 @@
     </tr>
 </table>
 </p>
-
+<hr>
 <p><strong>MovieRating</strong><br/>
 <table border=1>
     <tr>
@@ -777,7 +777,7 @@
     </tr>
 </table>
 </p>
-
+<hr>
 <p><strong>Person</strong><br/>
 <table border=1>
     <tr>
@@ -952,7 +952,7 @@
     </tr>
 </table>
 </p>
-
+<hr>
 <p><strong>Purchase</strong><br/>
 <table border=1>
     <tr>
@@ -1054,7 +1054,7 @@
     </tr>
 </table>
 </p>
-
+<hr>
 <p><strong>Rental</strong><br/>
 <table border=1>
     <tr>
