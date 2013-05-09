@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: milky
@@ -29,11 +30,11 @@
                             <th>Titles Rented</th>
                             <th>Status</th>
                         </tr>
-                        <c:forEach var="movie" items="${rentalhistory}">
+                        <c:forEach var="history" items="${rentalhistory}">
                             <tr>
-                                <td>date placeholder</td>
-                                <td><a href="/movies/${movie.id}">${movie.name}</a></td>
-                                <td>RETURNED</td>
+                                <td><fmt:formatDate value="${history.key.dateTime}" pattern="yyyy-MM-dd" /></td>
+                                <td><a href="/movies/${history.value.id}">${history.value.name}</a></td>
+                                <td><fmt:formatDate value="${history.key.returndate}" pattern="yyyy-MM-dd" /></td>
                             </tr>
                         </c:forEach>
                     </table>
