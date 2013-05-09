@@ -10,8 +10,6 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -66,22 +64,28 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
-    public boolean addToQueue(Account account, Movie movie) {
+    public boolean addToQueue(Account account, int movieid) {
         String checkNum = "select numcopies from movie where id = ?";
         String checkDup = "select count(*) from movieq where accountid = ? and movieid = ?";
 
-        if (jdbcTemplate.queryForObject(checkNum, Integer.class, movie.getId()) < 0)
+        if (jdbcTemplate.queryForObject(checkNum, Integer.class, movieid) < 0)
             return false;
 
-        if (jdbcTemplate.queryForObject(checkDup, Integer.class, account.getId(), movie.getId()) > 0)
+        if (jdbcTemplate.queryForObject(checkDup, Integer.class, account.getId(), movieid) > 0)
             return false;
 
         String remove = "update movie set numcopies = numcopies - 1";
         jdbcTemplate.update(remove);
 
         String insert = "insert into movieq values(?, ?)";
-        jdbcTemplate.update(insert, account.getId(), movie.getId());
+        jdbcTemplate.update(insert, account.getId(), movieid);
 
         return true;
+    }
+
+    @Override
+    public void removeFromQueue(Account account, int movieid) {
+        String remove = "delete from movieq where accountid = ? and movieid = ?";
+        jdbcTemplate.update(remove, account.getId(), movieid);
     }
 }

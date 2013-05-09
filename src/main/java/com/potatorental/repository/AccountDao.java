@@ -26,5 +26,7 @@ public interface AccountDao {
 
     public void insertAccount(Customer customer, AccountType accountType);
 
-    public boolean addToQueue(Account account, Movie movie);
+    public boolean addToQueue(Account account, int movieid);
+
+    public void removeFromQueue(Account account, int movieid);
 }

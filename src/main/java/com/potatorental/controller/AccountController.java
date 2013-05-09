@@ -59,14 +59,27 @@ public class AccountController {
         return new ModelAndView("queue", modelMap);
     }
 
-    @RequestMapping(value = "queue/{movieid}", method = RequestMethod.GET)
+    @RequestMapping(value = "queue/add/{movieid}", method = RequestMethod.GET)
     public String addToQueue(@PathVariable String movieid, Principal principal, RedirectAttributes redirectAttributes) {
         Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
+
         try {
-            if (!accountDao.addToQueue(account, movieDao.getMovieById(Integer.parseInt(movieid))))
+            if (!accountDao.addToQueue(account, Integer.parseInt(movieid)))
                 redirectAttributes.addFlashAttribute("message", "Was not able to add to queue due to duplicates");
-        } catch(NumberFormatException e ) {
-            redirectAttributes.addFlashAttribute("message", "Not a valid movie id");
+        } catch (NumberFormatException e) {
+            redirectAttributes.addFlashAttribute("message", "Not a valid movieid");
+        }
+
+        return "redirect:/account/queue";
+    }
+
+    @RequestMapping(value = "queue/remove/{movieid}", method = RequestMethod.GET)
+    public String removeFromQueue(@PathVariable String movieid, Principal principal, RedirectAttributes redirectAttributes) {
+        Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
+        try {
+            accountDao.removeFromQueue(account, Integer.parseInt(movieid));
+        } catch (NumberFormatException e) {
+            redirectAttributes.addFlashAttribute("message", "Not a valid movieid");
         }
         return "redirect:/account/queue";
     }
