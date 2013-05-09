@@ -1,12 +1,16 @@
 package com.potatorental.controller;
 
 import com.potatorental.model.Customer;
+import com.potatorental.model.Movie;
+import com.potatorental.repository.AccountDao;
 import com.potatorental.repository.PersonsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * User: Milky
@@ -18,12 +22,13 @@ import org.springframework.web.servlet.ModelAndView;
 @SessionAttributes("customer")
 public class UserController {
 
-    @Autowired
     private PersonsDao personsDao;
+    private AccountDao accountDao;
 
     @Autowired
-    public UserController(PersonsDao personsDao) {
+    public UserController(PersonsDao personsDao, AccountDao accountDao) {
         this.personsDao = personsDao;
+        this.accountDao = accountDao;
     }
 
     @RequestMapping(method = RequestMethod.GET)

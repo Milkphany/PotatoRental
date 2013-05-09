@@ -30,7 +30,7 @@
         <constructor-arg ref="dataSource" />
     </bean>
 
-    <bean id="personDao" class="com.potatorental.service.PersonsDaoImpl" />
+    <bean id="personsDao" class="com.potatorental.service.PersonsDaoImpl" />
     <bean id="locationDao" class="com.potatorental.service.LocationDaoImpl" />
     <bean id="movieDao" class="com.potatorental.service.MovieDaoImpl" />
     <bean id="actorDao" class="com.potatorental.service.ActorDaoImpl" />

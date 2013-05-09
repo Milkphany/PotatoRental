@@ -3,6 +3,7 @@ package com.potatorental.controller;
 import com.potatorental.model.Account;
 import com.potatorental.model.Customer;
 import com.potatorental.model.Movie;
+import com.potatorental.model.Rental;
 import com.potatorental.repository.AccountDao;
 import com.potatorental.repository.PersonsDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,10 +42,15 @@ public class SaleController {
         return "sales";
     }
 
-    @RequestMapping(value = "order")
-    public String makeOrder(@RequestParam("accountid") String accountid, @RequestParam("movieid") String movieid, ModelMap modelMap) {
+    @RequestMapping(value = "order", params = {"movieid", "accountid"})
+    public String makeOrder(@RequestParam("accountid") String accountid, @RequestParam("movieid") String movieid,
+                            ModelMap modelMap, Principal principal) {
+        int employeeid = personsDao.getEmployeeByEmail(principal.getName()).getId();
+        Customer personByEmail = (Customer) personsDao.getPersonByEmail(accountid);
 
+        modelMap.addAttribute("accountid", accountid);
+        personsDao.recordOrder(employeeid, accountDao.getAccount(personByEmail).getId(), Integer.parseInt(movieid));
 
-        return "sales";
+        return "redirect:/users/{accountid}";
     }
 }

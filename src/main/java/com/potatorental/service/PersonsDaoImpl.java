@@ -1,9 +1,7 @@
 package com.potatorental.service;
 
-import com.potatorental.model.Customer;
-import com.potatorental.model.Employee;
-import com.potatorental.model.Location;
-import com.potatorental.model.Person;
+import com.potatorental.model.*;
+import com.potatorental.repository.AccountDao;
 import com.potatorental.repository.LocationDao;
 import com.potatorental.repository.PersonsDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +13,7 @@ import org.springframework.jdbc.core.RowMapper;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  * User: Milky
@@ -24,10 +23,13 @@ import java.sql.SQLException;
 public class PersonsDaoImpl implements PersonsDao {
 
     private JdbcTemplate jdbcTemplate;
-    private LocationDao locationDao;
+
+    private final LocationDao locationDao;
+    private final AccountDao accountDao;
 
     @Autowired
-    public PersonsDaoImpl(DataSource dataSource, LocationDao locationDao) {
+    public PersonsDaoImpl(DataSource dataSource, LocationDao locationDao, AccountDao accountDao) {
+        this.accountDao = accountDao;
         jdbcTemplate = new JdbcTemplate(dataSource);
         this.locationDao = locationDao;
     }
@@ -39,16 +41,28 @@ public class PersonsDaoImpl implements PersonsDao {
     }
 
     @Override
+    public Employee getEmployeeByEmail(String email) {
+        String sql = "select * from employee where ssn = ?";
+        Person person = getPersonByEmail(email);
+        return jdbcTemplate.queryForObject(sql, new EmployeeMapper(person), person.getSsn());
+    }
+
+    @Override
     public Location getLocationByZipCode(Integer zipCode) {
         String sql = "select * from location where zipcode = ?";
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Location.class), zipCode);
     }
 
-
-
     @Override
-    public void recordOrder() {
-        //To change body of implemented methods use File | Settings | File Templates.
+    public void recordOrder(int employeeid, int accountid, int movieid) {
+        String buy = "insert into purchase (datetime) values (?)";
+        int t = jdbcTemplate.update(buy, new Date());
+
+        String rent = "insert into rental values(?, ?, ?, LAST_INSERT_ID())";
+        jdbcTemplate.update(rent, accountid, employeeid, movieid);
+
+        String remove = "delete from movieq where accountid = ? and movieid = ?";
+        jdbcTemplate.update(remove, accountid, movieid);
     }
 
     private Person getPersonRole(Person person) {

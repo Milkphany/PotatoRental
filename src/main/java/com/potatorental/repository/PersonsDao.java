@@ -1,9 +1,6 @@
 package com.potatorental.repository;
 
-import com.potatorental.model.Customer;
-import com.potatorental.model.Location;
-import com.potatorental.model.Person;
-import com.potatorental.model.Purchase;
+import com.potatorental.model.*;
 
 import java.util.List;
 import java.util.Map;
@@ -25,5 +22,7 @@ public interface PersonsDao {
 
     public Location getLocationByZipCode(Integer zipCode);
 
-    public void recordOrder();
+    public void recordOrder(int employeeid, int accountid, int movieid);
+
+    public Employee getEmployeeByEmail(String email);
 }
