@@ -65,7 +65,7 @@ public class AccountDaoImpl implements AccountDao {
     @Override
     public boolean isMovieQueued(Account account, int movieid) {
         String sql = "select exists(select 1 from movieq where accountid = ? and movieid = ?)";
-        return jdbcTemplate.queryForObject(sql, Boolean.class);
+        return jdbcTemplate.queryForObject(sql, Boolean.class, account.getId(), movieid);
     }
 
     @Override
