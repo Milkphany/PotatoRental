@@ -81,4 +81,11 @@ public class ActorDaoImpl implements ActorDao{
         return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(sql, actor.getId()));
     }
 
+    @Override
+    public Integer getActorId(String name) {
+        String sql = "select id from actor where name = ?";
+
+        return jdbcTemplate.queryForObject(sql, Integer.class, name);
+    }
+
 }
