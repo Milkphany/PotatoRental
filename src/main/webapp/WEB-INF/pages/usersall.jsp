@@ -22,11 +22,18 @@
     <div class="content">
         <span class="header1">Users</span>
         <hr>
-        <table>
+        <table id="planlist">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Telephone #</th>
+                <th>Zipcode</th>
+                <th>Rating</th>
+            </tr>
             <c:forEach var="user" items="${users}">
                 <tr>
-                    <td><a href="/users/${user.email}">${user.firstName}</a></td>
-                    <td>${user.lastName}</td>
+                    <td><a href="/users/${user.email}">${user.lastName}, ${user.firstName}</a></td>
+                    
                     <td>${user.email}</td>
                     <td>${user.telephone}</td>
                     <td>${user.zipCode}</td>

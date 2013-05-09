@@ -49,31 +49,32 @@
                                 <td><span class="header1"><a href="/movies/${movie.id}">${movie.name}</a></span>
                                     <br>
                                     <p>
-                                    <strong>${movie.type}</strong>
-                                    <br>
-                                    <strong>Rating: </strong> ${movie.rating}
-                                    <br>
-                                    <strong>Starring:</strong>
-                                    <a href="/actors/${movieactors[0].id}">${movieactors[0].name}</a>,
-                                    <a href="/actors/${movieactors[1].id}">${movieactors[1].name}</a>,
-                                    <a href="/actors/${movieactors[2].id}">${movieactors[2].name}</a> |
-                                    <a href="/movies/${movie.id}#cast">See full cast</a>
-                                    <br></p>
-                            <sec:authorize access="hasRole('ROLE_USER')" >
-                                <c:choose>
-                                    <c:when test="${hasMovie}" >
-                                        <form action="/account/queue/remove/${movie.id}">
-                                            <button id="removebutton" type="submit">Remove</button>
-                                        </form>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <form action="/account/queue/add/${movie.id}">
-                                            <button id="submitbutton" type="submit">Add to Queue</button>
-                                        </form>
-                                    </c:otherwise>
-                                </c:choose>
-                            </sec:authorize>
-                            </td>
+                                        <strong>${movie.type}</strong>
+                                        <br>
+                                        <strong>Rating: </strong> ${movie.rating}
+                                        <br>
+                                        <strong>Starring:</strong>
+                                        <a href="/actors/${movieactors[0].id}">${movieactors[0].name}</a>,
+                                        <a href="/actors/${movieactors[1].id}">${movieactors[1].name}</a>,
+                                        <a href="/actors/${movieactors[2].id}">${movieactors[2].name}</a> |
+                                        <a href="/movies/${movie.id}#cast">See full cast</a>
+                                        <br>
+                                    </p>
+                                    <sec:authorize access="hasRole('ROLE_USER')" >
+                                        <c:choose>
+                                            <c:when test="${hasMovie}" >
+                                                <form action="/account/queue/remove/${movie.id}">
+                                                    <button id="removebutton" type="submit">Remove</button>
+                                                </form>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <form action="/account/queue/add/${movie.id}">
+                                                    <button id="submitbutton" type="submit">Add to Queue</button>
+                                                </form>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </sec:authorize>
+                                </td>
                             </tr>
                         </c:forEach>
                     </table>
