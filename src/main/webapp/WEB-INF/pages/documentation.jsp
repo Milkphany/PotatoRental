@@ -105,7 +105,9 @@
 </dd>
 
 <dt><a href="#">Adding, Editing, and Deleting Employee Information</a></dt>
-<dd></dd>
+<dd><p>To edit or delete employee information, click <strong>Employees</strong> in the navigation bar.
+    This will produce a list of all PotatoCat employees and their information.<br>
+    Click the name of the user you wish to edit. You can modify and submit the form to edit, or press the <strong>Delete</strong> button to delete.</p></dd>
 
 <dt><a href="#">Obtaining Sales Reports</a></dt>
 <dd></dd>
