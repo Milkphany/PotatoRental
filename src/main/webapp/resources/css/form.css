@@ -81,7 +81,20 @@ form input:focus, #name:focus, #zip:focus {
     color: #fff;
     background: #00caa6;     
     margin:2px;
-} 
+}
+
+#removebutton {
+    font-family: "Lato", sans-serif;
+    font-size: 12pt;
+    overflow: visible;
+    border: 0;
+    cursor: pointer;
+    height: 50px;
+    width: 220px;
+    color: #fff;
+    background: #ff5511;
+    margin:2px;
+}
 
 #submitbutton:hover {background-color:#125f94}
 

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.List;
 
@@ -60,7 +61,8 @@ public class AccountController {
     }
 
     @RequestMapping(value = "queue/add/{movieid}", method = RequestMethod.GET)
-    public String addToQueue(@PathVariable String movieid, Principal principal, RedirectAttributes redirectAttributes) {
+    public String addToQueue(@PathVariable String movieid, Principal principal,
+                             RedirectAttributes redirectAttributes) {
         Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
 
         try {
@@ -74,7 +76,8 @@ public class AccountController {
     }
 
     @RequestMapping(value = "queue/remove/{movieid}", method = RequestMethod.GET)
-    public String removeFromQueue(@PathVariable String movieid, Principal principal, RedirectAttributes redirectAttributes) {
+    public String removeFromQueue(@PathVariable String movieid, Principal principal,
+                                  RedirectAttributes redirectAttributes) {
         Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
         try {
             accountDao.removeFromQueue(account, Integer.parseInt(movieid));

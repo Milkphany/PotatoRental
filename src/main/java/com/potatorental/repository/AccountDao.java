@@ -20,9 +20,13 @@ public interface AccountDao {
 
     public Account getAccount(Customer customer);
 
+    public List<Movie> getQueue(Customer customer);
+
     public List<Movie> getQueue(Account account);
 
     public List<Movie> getHistory(Account account);
+
+    public boolean isMovieQueued(Account account, int movieid);
 
     public void insertAccount(Customer customer, AccountType accountType);
 

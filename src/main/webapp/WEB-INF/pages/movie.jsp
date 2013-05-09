@@ -60,9 +60,18 @@
                 </p>
 
                 <sec:authorize access="hasRole('ROLE_USER')" >
-                    <form action="/account/queue/add/${movie.id}">
-                        <button id="submitbutton" type="submit">+QUEUE</button>
-                    </form>
+                    <c:choose>
+                        <c:when test="${hasMovie}" >
+                            <form action="/account/queue/remove/${movie.id}">
+                                <button ic="removebutton" type="submit">Remove</button>
+                            </form>
+                        </c:when>
+                        <c:otherwise>
+                            <form action="/account/queue/add/${movie.id}">
+                                <button id="submitbutton" type="submit">Add to Queue</button>
+                            </form>
+                        </c:otherwise>
+                    </c:choose>
                 </sec:authorize>
             </div>
             <h2><a style="color:inherit" name="cast">Cast</a></h2>

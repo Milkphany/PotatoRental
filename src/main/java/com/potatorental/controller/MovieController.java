@@ -1,22 +1,25 @@
 package com.potatorental.controller;
 
+import com.potatorental.model.Account;
 import com.potatorental.model.Actor;
+import com.potatorental.model.Customer;
 import com.potatorental.model.Movie;
-import com.potatorental.repository.ActorDao;
+import com.potatorental.repository.AccountDao;
 import com.potatorental.repository.MovieDao;
+import com.potatorental.repository.PersonDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 import java.util.List;
-import java.util.Random;
 
 /**
  * User: milky
@@ -28,11 +31,15 @@ import java.util.Random;
 @SessionAttributes("movies")
 public class MovieController {
 
-    public MovieDao movieDao;
+    private MovieDao movieDao;
+    private AccountDao accountDao;
+    private PersonDao personDao;
 
     @Autowired
-    public MovieController(MovieDao movieDao) {
+    public MovieController(MovieDao movieDao, AccountDao accountDao, PersonDao personDao) {
         this.movieDao = movieDao;
+        this.accountDao = accountDao;
+        this.personDao = personDao;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -50,12 +57,20 @@ public class MovieController {
     }
 
     @RequestMapping(value = "{movieid}", method = RequestMethod.GET)
-    public ModelAndView getMovie(@PathVariable int movieid, ModelMap modelMap) {
+    public ModelAndView getMovie(@PathVariable int movieid, ModelMap modelMap,
+                                 HttpServletRequest request, Principal principal) {
         Movie movie = movieDao.getMovieById(movieid);
         List<Actor> actors = movieDao.getMovieActors(movie);
 
         modelMap.addAttribute("movie", movie);
         modelMap.addAttribute("movieactors", actors);
+
+        SecurityContextHolderAwareRequestWrapper sc = new SecurityContextHolderAwareRequestWrapper(request, "ROLE_");
+        if (sc.isUserInRole("USER")) {
+            Account account = accountDao.getAccount((Customer) personDao.getPersonByEmail(principal.getName()));
+            if (accountDao.isMovieQueued(account, movieid))
+                modelMap.addAttribute("hasMovie", true);
+        }
 
         return new ModelAndView("movie", modelMap);
     }

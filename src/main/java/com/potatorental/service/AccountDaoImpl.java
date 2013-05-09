@@ -50,11 +50,22 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
+    public List<Movie> getQueue(Customer customer) {
+        return getQueue(getAccount(customer));
+    }
+
+    @Override
     public List<Movie> getHistory(Account account) {
         String sql = "select m.name, m.id " +
                 "from rental r, purchase p, movie m " +
                 "where m.id = r.movieid and p.id = r.purchid and r.accountid = ?";
         return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(sql, account.getId()));
+    }
+
+    @Override
+    public boolean isMovieQueued(Account account, int movieid) {
+        String sql = "select exists(select 1 from movieq where accountid = ? and movieid = ?)";
+        return jdbcTemplate.queryForObject(sql, Boolean.class);
     }
 
     @Override
@@ -68,7 +79,7 @@ public class AccountDaoImpl implements AccountDao {
         String checkNum = "select numcopies from movie where id = ?";
         String checkDup = "select count(*) from movieq where accountid = ? and movieid = ?";
 
-        if (jdbcTemplate.queryForObject(checkNum, Integer.class, movieid) < 0)
+        if (jdbcTemplate.queryForObject(checkNum, Integer.class, movieid) < 1)
             return false;
 
         if (jdbcTemplate.queryForObject(checkDup, Integer.class, account.getId(), movieid) > 0)
@@ -86,6 +97,9 @@ public class AccountDaoImpl implements AccountDao {
     @Override
     public void removeFromQueue(Account account, int movieid) {
         String remove = "delete from movieq where accountid = ? and movieid = ?";
+        String addone = "update movie set numcopies = numcopies + 1";
+
         jdbcTemplate.update(remove, account.getId(), movieid);
+        jdbcTemplate.update(addone);
     }
 }
