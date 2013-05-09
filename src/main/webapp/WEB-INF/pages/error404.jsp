@@ -18,7 +18,7 @@
     <div id="pagebody">
         <div class="content">
             <span class="header1">404: PAGE NOT FOUND</span>
-            <p>No potato heer.</p>
+            <p>This isn't the page you're looking for.</p>
         </div>
 
     </div>
