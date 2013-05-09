@@ -31,26 +31,21 @@
         <sec:authorize access="hasRole('ROLE_USER')"><a class="headermenu" href="/account/queue">Queue</a></sec:authorize>
         <sec:authorize access="hasRole('ROLE_STAFF')"><a class="headermenu" href="/users"/>Customers</sec:authorize>
         <sec:authorize access="hasRole('ROLE_STAFF')"><a class="headermenu" href="/sales"/>Sales</sec:authorize>
-        <sec:authorize access="hasRole('ROLE_MANAGER')"><a class="headermenu" href="/employees"/>Employees</sec:authorize>
+        <sec:authorize access="hasRole('ROLE_MANAGER')"><a class="headermenu" href="/staffs"/>Employees</sec:authorize>
         <sec:authorize access="isAuthenticated()"><a class="headermenu" href="/account">Settings</a></sec:authorize>
     </div>
 </div>
 
 <div id="subheader">
     
-    <a href='/popular'>Popular</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href='/movielist'>A - Z</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href='/genres'>Genres</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='/movies/popular'>Popular</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='/movies/movielist'>A - Z</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='/movies/genres'>Genres</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href='#'>Recommendations</a>
 
 </div>
 
 <div id="login">
-    <%--<form class="form-login" action="checkLogin" method="post">
-        <input type="text" placeholder="Email Address">
-        <input type="password" placeholder="Password">
-        <button type="submit">Submit</button>
-    </form>--%>
     <form:form modelAttribute="loginForm" cssClass="form-login" method="post" action="loginCheck">
         <input type="text" name="username" placeholder="Email Address"/>
         <input type="text" name="password" placeholder="Password"/>

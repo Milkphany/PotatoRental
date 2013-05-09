@@ -11,11 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
@@ -28,7 +26,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/movies")
-@SessionAttributes("movies")
+@SessionAttributes({"movies", "movieactors"})
 public class MovieController {
 
     private MovieDao movieDao;
@@ -40,6 +38,11 @@ public class MovieController {
         this.movieDao = movieDao;
         this.accountDao = accountDao;
         this.personsDao = personsDao;
+    }
+
+    @ModelAttribute("movieId")
+    public Movie newMovie() {
+        return new Movie();
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -65,17 +68,65 @@ public class MovieController {
         modelMap.addAttribute("movie", movie);
         modelMap.addAttribute("movieactors", actors);
 
-        SecurityContextHolderAwareRequestWrapper sc = new SecurityContextHolderAwareRequestWrapper(request, "ROLE_");
-        if (sc.isUserInRole("USER")) {
-            Account account = accountDao.getAccount((Customer) personsDao.getPersonByEmail(principal.getName()));
-            if (accountDao.isMovieQueued(account, movieid))
-                modelMap.addAttribute("hasMovie", true);
-            else
-                modelMap.addAttribute("hasMovie", false);
-        }
-
         return new ModelAndView("movie", modelMap);
     }
+
+    @RequestMapping(value = "{movieid}/edit", method = RequestMethod.GET)
+    public String getMovieForm(@PathVariable Integer movieid) {
+        return "movieform";
+    }
+
+    @RequestMapping(value = "{movieid}/done", method = RequestMethod.POST)
+    public String submitMovieForm(@ModelAttribute Movie movie, HttpServletRequest request,
+                                  @PathVariable Integer movieid, RedirectAttributes redirectAttributes) {
+        movie.setId(movieid);
+        movieDao.updateMovie(movie);
+        return "redirect:/movies/{movieid}";
+    }
+
+
+    @RequestMapping(value = "genres", method = RequestMethod.GET)
+    public String getGenres(ModelMap modelMap) {
+        if (modelMap.get("movies") != null)
+            return "genres";
+
+        modelMap.addAttribute("movies", movieDao.getAllMovies());
+        return "genres";
+    }
+
+    @RequestMapping(value = "popular", method = RequestMethod.GET)
+    public String getPopular(ModelMap modelMap) {
+
+        modelMap.addAttribute("popular", movieDao.getPopularMovies(50));
+        return "popular";
+    }
+
+    @RequestMapping(value = "movielist", method = RequestMethod.GET)
+    public String getMovielist(ModelMap modelMap) {
+        if (modelMap.get("movies") != null)
+            return "movielist";
+
+        modelMap.addAttribute("movies", movieDao.getAllMovies());
+        return "movielist";
+    }
+
+    @RequestMapping(value = "recommendation", method = RequestMethod.GET)
+    public String getRecomendations(ModelMap modelMap, Principal principal) {
+        if (modelMap.get("movies") != null)
+            return "recommendations";
+
+        modelMap.addAttribute("movies", accountDao.personalRecommendation(
+                personsDao.getPersonByEmail(principal.getName()).getSsn()));
+        return "recommendations";
+    }
+
+    @RequestMapping(value = "search", method = RequestMethod.GET)
+    public String getSearch() {
+        return "search";
+    }
+
+
+
 /*
     @RequestMapping(value = "insert", method = RequestMethod.GET)
     public ModelAndView insertMovies(ModelMap modelMap) {

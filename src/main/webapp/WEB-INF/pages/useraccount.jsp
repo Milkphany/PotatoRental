@@ -20,6 +20,11 @@
     <jsp:include page="header.jsp"/>
     <div id="moviepagebody">
         <div class="content">
+            <c:if test="${not empty message} ">
+                <div class="error">
+                        ${message}
+                </div>
+            </c:if>
             <span class="header1">Account information: <c:out value="${userid}" escapeXml="true"/></span>
             <hr>
 

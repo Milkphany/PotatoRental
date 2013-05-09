@@ -54,6 +54,28 @@
 
             </center>
         </div>
+        <c:if test="${not empty recommended}" >
+            <hr>
+            <span class="header2">Personal Recommendations</span>
+            <hr>
+            <div class="image_carousel">
+                <div id="foopop">
+                    <c:forEach var="movie" items="${recommended}">
+                        <img class="poster toolmeow" src="/images/posters/${movie.id}.jpg"
+                             id="${movie.id}"
+                             title="<div class='movtt'><div class='header1'>${movie.name}</div>
+                                     <br>${movie.type}<br>
+                                     <p>Set in the South two years before the Civil War, Django Unchained
+                                     stars Jamie Foxx as Django, a slave whose brutal history with his
+                                     former owners lands him face-to-face with German-born bounty hunter Dr. King Schultz
+                                     (Christoph Waltz). Schultz is on the trail of the murderous Brittle brothers,
+                                     and only Django can lead him to his bounty.</p>
+                                     </div>"
+                                />
+                    </c:forEach>
+                </div>
+            </div>
+        </c:if>
     </div>
     
 </div>

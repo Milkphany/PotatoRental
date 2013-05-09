@@ -22,6 +22,9 @@ public interface MovieDao {
 
     public void insertMovie(Movie movie);
 
+    public void updateMovie(Movie movie);
+
+
     public List<Actor> getMovieActors(Movie movie);
 
     /**

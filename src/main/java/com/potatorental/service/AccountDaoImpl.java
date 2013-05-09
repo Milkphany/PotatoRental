@@ -162,4 +162,18 @@ public class AccountDaoImpl implements AccountDao {
 
         return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(select, ssn, ssn, ssn, 50));
     }
+
+    @Override
+    public List<Movie> personalRecommendation(int ssn) {
+        String sql = "SELECT M.Id, M.Name, M.Type " +
+                "FROM Movie M  " +
+                "WHERE M.Type IN(SELECT O.MovieType FROM OrderInformation O  " +
+                "WHERE O.CustId = ? AND  " +
+                "O.MovieCount >= (SELECT MAX(MovieCount) FROM OrderInformation M  " +
+                "WHERE M.CustId = ?))  " +
+                "AND M.Id NOT IN(SELECT P.MovieId FROM PastOrder P " +
+                "WHERE P.CustId = ?) limit ?";
+
+        return PotatoService.addMoviesFromMap(jdbcTemplate.queryForList(sql, ssn, ssn, ssn, 50));
+    }
 }
