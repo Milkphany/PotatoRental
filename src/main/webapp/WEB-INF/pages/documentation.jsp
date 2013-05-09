@@ -30,8 +30,8 @@
 <dt><a href="#">Viewing Currently Held Movies</a></dt>
 <dd>
     <p>
-        1. Click on Settings link in navigation bar.<br/>
-        2. Click on History.</p>
+        You can view currently held movies in your <a hef="#">Order History</a>. You can get to this page by clicking on <strong>Settings</strong> in the navigation bar and then clicking on <strong>Rentals</strong>. 
+        Movies in this table that are labeled as "CURRENTLY HELD" are movies that you have not yet returned.</p>
 
 
 </dd>
@@ -40,19 +40,19 @@
 
 
 <dd><p>
-    <strong>View rental queue: </strong>Click on Queue link in navigation bar.<br/>
-    <strong>Add movie to queue:</strong> Press +QUEUE button on a movie page or in movie list.<br/>
-    <strong>Rearrange movies in queue:</strong> In Queue, click and drag movies into desired order.<br/>
-    <strong>Remove movie from queue:</strong> In Queue, hover over movie to delete. Click on Remove link.
+    To view your rental queue, click <strong>Queue</strong> in the navigation bar. You can click and drag movies on this page to modify which DVDs you will receive next. 
+    <br>
+    To remove a movie from your queue, simply hover over the title and click <strong>Remove</strong>.
+    <br>
+    To add a movie to your queue, visit the movie's page and click the <strong>+Queue</strong> button.
 </p>
 </dd>
 
 <dt><a href="#">Account Settings</a></dt>
-<dd><p>Click Settings in navigation bar.</p></dd>
+<dd><p>You can view and modify your account details by clicking on <strong>Settings</strong> in the navigation bar.</p></dd>
 
 <dt><a href="#">Order History</a></dt>
-<dd><p>1. Click Settings in navigation bar.<br/>
-    2. Click History in sidebar.</p>
+<dd><p>You view your current and past orders by clicking on <strong>Settings</strong> in the navigation bar and then clicking on <strong>Rentals</strong>. </p>
 </dd>
 
 <dt><a href="#">Viewing Available Movies</a></dt>
@@ -62,8 +62,8 @@
 
 <dt><a href="#">Viewing Best-Selling Movies</a></dt>
 <dd><p>
-    1. Mouse over Browse link in navigation bar.<br/>
-    2. Click on Popular link.
+    To view our best sellers, hover over <strong>Browse</strong> in the navigation bar, then click <strong>Popular</strong>. This page displays our 30 most popular films.
+
 </p></dd>
 
 <dt><a href="#">Viewing Movie Suggestions</a></dt>
@@ -74,22 +74,33 @@
 <dd></dd>
 
 <dt><a href="#">Adding, Editing, and Deleting Customer Information</a></dt>
-<dd></dd>
+<dd><p>
+        To edit a customer's information, click on <strong>Customers</strong> in the navigation bar. 
+        This will produce a list of all customers and their information. 
+        <br>
+        Next, click on the name of the user you wish to edit. 
+        <br> 
+        Fill in the form with information you wish to update, then click <strong>Submit</strong> to update.
+        <br>
+        To delete a customer, click <strong>Delete</strong> on the aforementioned page. <br>
+        
+    </p></dd>
 
 <dt><a href="#">Producing Customer Mailing Lists</a></dt>
 <dd></dd>
 
 <dt><a href="#">Producing Movie Suggestions</a></dt>
-<dd></dd>
+<dd><p>To view suggestions for a particular customer, click on <strong>Customers</strong> in the navigation bar. 
+        This will produce a list of all customers and their information. 
+        <br>
+        Next, click on the name of the user you wish to draw up suggestions for.  </p></dd>
 
 <h2>User Guide: Managers</h2>
 <dt><a href="#">Adding, Editing, and Deleting Movies</a></dt>
 
 <dd>
     <p>
-        <strong>Adding Movies:</strong> <br/>
-        <strong>Editing/Deleting Movies:</strong> Navigate to movie page. Click Edit in top left corner. Then click
-        Delete to remove movie.
+        To edit a movie, visit the movie page and click <strong>Edit</strong> in the upper right hand corner of the page.
     </p>
 </dd>
 
@@ -100,7 +111,7 @@
 <dd></dd>
 
 <dt><a href="#">Comprehensive Movie Listing</a></dt>
-<dd></dd>
+<dd><p>To view a listing of all movies, you can visit the Movies A-Z page. You can access this page by hovering over <strong>Browse</strong> in the navigation bar and then clicking <strong>A-Z</strong>.</p></dd>
 
 <dt><a href="#">Viewing Movie Rentals</a></dt>
 <dd></dd>
@@ -112,7 +123,7 @@
 <dd></dd>
 
 <dt><a href="#">Viewing Most Popular Movies</a></dt>
-<dd></dd>
+<dd><p>To view our best sellers, hover over <strong>Browse</strong> in the navigation bar, then click <strong>Popular</strong>. This page displays our 30 most popular films.</p></dd>
 
 
 <h2>Programmer Guide</h2>
