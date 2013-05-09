@@ -437,3 +437,5 @@ hr {
 #code table {border:0}
 #code table td {padding: 10px; background-color: #eee; border:0}
 #code table td.medium {background-color: #00caa6}
+
+.grey {color:grey; font-style:italic}
