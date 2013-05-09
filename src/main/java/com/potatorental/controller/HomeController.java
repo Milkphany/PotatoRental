@@ -70,4 +70,10 @@ public class HomeController {
     public String getDocumentation() {
         return "documentation";
     }
+    
+    @RequestMapping(value = "tables", method = RequestMethod.GET)
+    public String getTables() {
+        return "tables";
+    }
+    
 }
