@@ -391,7 +391,8 @@ hr {
            min-height: 500px;}
 
 .mainactor {display:block;
-           min-height: 250px;}
+           min-height: 500px;
+width: 100%}
 
 .cast {
     padding:5px;
@@ -439,3 +440,25 @@ hr {
 #code table td.medium {background-color: #00caa6}
 
 .grey {color:grey; font-style:italic}
+
+.filmography {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 270px;
+    
+}
+
+.filmography div {
+    float:left;
+    padding: 7px;
+    
+    max-width: 200px;
+    
+    min-height: 350px;
+    
+}
+
+.filmography div:last-child {
+    float:none;
+}
