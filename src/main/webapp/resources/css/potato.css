@@ -432,3 +432,8 @@ hr {
 }
 
 .actorimage a {position: absolute; top: 0px}
+
+#code {font-family: "Inconsolata", "Lucida Console", sans-serif}
+#code table {border:0}
+#code table td {padding: 10px; background-color: #eee; border:0}
+#code table td.medium {background-color: #00caa6}
