@@ -21,6 +21,11 @@
 	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
 }
 
+#planlist #orderhistory {
+    text-align: Left;
+    
+}
+
 #planlist th:first-child {
 	text-align: left;
 	padding-left:20px;
