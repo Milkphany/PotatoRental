@@ -12,7 +12,9 @@ import java.util.List;
  */
 public interface ActorDao {
 
-    public void addActor(Actor actor, Movie movie);
+    public void insertActor(Actor actor, Movie movie);
+
+    public void insertActor(Actor actor);
 
     public void removeActor(Actor actor);
 

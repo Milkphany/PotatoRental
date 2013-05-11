@@ -26,7 +26,7 @@ public class ActorDaoImpl implements ActorDao{
     }
 
     @Override
-    public void addActor(Actor actor, Movie movie) {
+    public void insertActor(Actor actor, Movie movie) {
         String checkactor = "select * from actor where name = ?";
         try {
             actor = jdbcTemplate.queryForObject(checkactor, new BeanPropertyRowMapper<>(Actor.class), actor.getName());
@@ -42,6 +42,12 @@ public class ActorDaoImpl implements ActorDao{
 
         String appearin = "insert ignore into appearedin values (?, ?)";
         jdbcTemplate.update(appearin, actor.getId(), movie.getId());
+    }
+
+    @Override
+    public void insertActor(Actor actor) {
+        String sql = "insert into actor (name, age, mf, rating) values (?, ?, ?, ?)";
+        jdbcTemplate.update(sql, actor.getName(), actor.getAge(), actor.getMf(), actor.getRating());
     }
 
     @Override

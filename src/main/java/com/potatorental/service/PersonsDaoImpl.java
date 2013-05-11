@@ -120,7 +120,7 @@ public class PersonsDaoImpl implements PersonsDao {
         String buy = "insert into purchase (datetime) values (?)";
         int t = jdbcTemplate.update(buy, new Date());
 
-        String rent = "insert into rental values(?, ?, ?, LAST_INSERT_ID())";
+        String rent = "insert into rental values(?, ?, ?, last_insert_id())";
         jdbcTemplate.update(rent, accountid, employeeid, movieid);
 
         String remove = "delete from movieq where accountid = ? and movieid = ?";

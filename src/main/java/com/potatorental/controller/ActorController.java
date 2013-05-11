@@ -7,17 +7,15 @@ import com.potatorental.repository.MovieDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * User: Milky
@@ -28,8 +26,8 @@ import java.util.Random;
 @RequestMapping("/actors")
 public class ActorController {
 
-    private MovieDao movieDao;
-    private ActorDao actorDao;
+    private final MovieDao movieDao;
+    private final ActorDao actorDao;
 
     @Autowired
     public ActorController(MovieDao movieDao, ActorDao actorDao) {
@@ -39,7 +37,7 @@ public class ActorController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getActors() {
-        return new ModelAndView("actors", "actors", actorDao.getNumActors(100));
+        return new ModelAndView("actors", "actors", actorDao.getAllActors());
     }
 
     @RequestMapping(value = "{actorid}", method = RequestMethod.GET)
@@ -50,6 +48,31 @@ public class ActorController {
         modelMap.addAttribute(actor);
         modelMap.addAttribute("actormovies", movies);
         return new ModelAndView("actor", modelMap);
+    }
+
+    @ModelAttribute("addActor")
+    public Actor getActor() {
+        return new Actor();
+    }
+
+    @RequestMapping(value = "addActor", method = RequestMethod.GET)
+    public String getAddActor() {
+        return "actoraddform";
+    }
+
+    @RequestMapping(value = "addActor", method = RequestMethod.POST)
+    public String postAddActor(@ModelAttribute Actor addActor, BindingResult bindingResult,
+                               RedirectAttributes redirectAttributes, ModelMap modelMap) {
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("message", "Error with the form");
+            return "redirect:/movies/addMovie";
+        }
+
+//        actorDao.insertActor(addActor, movieDao.getMovieByName());
+        actorDao.insertActor(addActor);
+        redirectAttributes.addFlashAttribute("messages", "You have successfully added a movie");
+
+        return "redirect:/actors";
     }
 
    /* @RequestMapping(value = "insert", method = RequestMethod.GET)
@@ -80,7 +103,7 @@ public class ActorController {
                             actor.setMf(ran.nextFloat() > 0.7 ? "F" : "M");
                             actor.setRating(ran.nextInt(100) < 30 ? ran.nextInt(3) + 2 : ran.nextInt(2) + 4);
 
-                            actorDao.addActor(actor, movie);
+                            actorDao.insertActor(actor, movie);
 
                             actors.add(actor);
                         }
