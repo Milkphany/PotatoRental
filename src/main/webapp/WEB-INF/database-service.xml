@@ -5,7 +5,7 @@
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://25.105.234.142:3306/potatocat" />
+        <property name="jdbcUrl" value="jdbc:mysql://25.201.0.228:3306/potatocat" />
         <property name="user"  value="spring" />
         <property name="password"  value="potato" />
         <property name="loginTimeout" value="10" />
